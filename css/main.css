@@ -1,0 +1,151 @@
+
+/* ==========================================================================
+   Base styles
+   ========================================================================== */
+/*Font*/
+/* h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+body,
+button,
+input,
+select,
+textarea {
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 400;
+} */
+
+/*Headings*/
+/* h1 {
+  font-size: 3em;
+  font-weight: 500;
+}
+
+h2 {
+  font-size: 32px;
+  font-weight: 500;
+}
+
+h3 {
+  font-size: 22px;
+  font-weight: 500;
+}
+
+p,
+li {
+  font-size: 20px;
+} */
+
+/* 
+a {
+  color: white;
+  -webkit-transition: all .4s ease;
+  transition: all .4s ease;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+} */
+
+
+/* a:hover:not(.button) {
+  color: rgb(125, 160, 255);
+  color: var(--theme-color-light);
+} */
+/* 
+a.black {
+  color: black;
+} */
+/* 
+a.black:hover {
+  color: rgba(0, 0, 0, 0.5);
+} */
+
+/* ==========================================================================
+   Preloader
+   ========================================================================== */
+.loading {
+  overflow: hidden;
+  height: 100vh;
+}
+
+form #website {
+  display: none;
+}
+
+.preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  background-color: white;
+}
+
+.preloader-circle {
+  position: fixed;
+  left: calc(50% - 25px);
+  top: calc(50% - 25px);
+  opacity: 0;
+  z-index: 21;
+  /*shape & color*/
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: BLACK;
+}
+
+/*animations*/
+.preloader-circle:first-child {
+  -webkit-animation: loader 2s infinite;
+  animation: loader 2s infinite;
+}
+
+.preloader-circle:nth-child(2) {
+  -webkit-animation: loader 2s 1s infinite cubic-bezier(0, 0, 0.32, 1.08);
+  animation: loader 2s 1s infinite cubic-bezier(0, 0, 0.32, 1.08);
+}
+
+@-webkit-keyframes loader {
+  0% {
+    opacity: 1;
+    -webkit-transform: scale(0);
+    transform: scale(0);
+  }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+
+@keyframes loader {
+  0% {
+    opacity: 1;
+    -webkit-transform: scale(0);
+    transform: scale(0);
+  }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+
+/* ==========================================================================
+   Header
+   ========================================================================== */
+
+   
+/* ==========================================================================
+   Body
+   ========================================================================== */
+
+
+/* ==========================================================================
+   Footer
+   ========================================================================== */
