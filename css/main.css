@@ -1,9 +1,8 @@
-
 /* ==========================================================================
    Base styles
    ========================================================================== */
 /*Font*/
-/* h1,
+h1,
 h2,
 h3,
 h4,
@@ -16,7 +15,7 @@ select,
 textarea {
   font-family: 'DM Sans', sans-serif;
   font-weight: 400;
-} */
+}
 
 /*Headings*/
 /* h1 {
@@ -33,11 +32,11 @@ h3 {
   font-size: 22px;
   font-weight: 500;
 }
-
+*/
 p,
 li {
-  font-size: 20px;
-} */
+  font-size: 18px;
+}
 
 /* 
 a {
@@ -140,12 +139,57 @@ form #website {
    Header
    ========================================================================== */
 
-   
+
 /* ==========================================================================
    Body
    ========================================================================== */
+.hero {
+  height: 60vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.4)), to(rgba(0, 0, 0, 0.4))), url(https://map.mateokrossler.com/img/ar-8-min.jpg);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(https://map.mateokrossler.com/img/ar-8-min.jpg);
+}
+
+.hero .container {
+  height: 60vh;
+  align-items: flex-start;
+
+}
+
+
+.hero h1,
+.hero h5 {
+  color: white;
+}
+
+@media only screen and (min-width:801px) {
+  .col.s12.m6.l6.valign-wrapper {
+    min-height: 430px;
+  }
+}
 
 
 /* ==========================================================================
    Footer
    ========================================================================== */
+
+
+
+/* ==========================================================================
+   Fixes Materialize
+   ========================================================================== */
+.section {
+  padding-top: 70px;
+  padding-bottom: 70px;
+}
+
+.valign-wrapper {
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* .row {
+  display: flex;
+} */

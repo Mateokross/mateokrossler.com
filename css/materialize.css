@@ -2574,7 +2574,9 @@ html {
   box-sizing: border-box;
 }
 
-*, *:before, *:after {
+*,
+*:before,
+*:after {
   box-sizing: inherit;
 }
 
@@ -2742,7 +2744,8 @@ video.responsive-video {
   color: rgba(255, 255, 255, 0.7);
 }
 .breadcrumb i,
-.breadcrumb [class^=mdi-], .breadcrumb [class*=mdi-],
+.breadcrumb [class^=mdi-],
+.breadcrumb [class*=mdi-],
 .breadcrumb i.material-icons {
   display: inline-block;
   float: left;
@@ -2791,7 +2794,8 @@ video.responsive-video {
   transform: translateX(-50%);
 }
 
-.pin-top, .pin-bottom {
+.pin-top,
+.pin-bottom {
   position: relative;
 }
 
@@ -2814,8 +2818,9 @@ ul.staggered-list li {
 /*********************
   Media Query Classes
 **********************/
-@media only screen and (max-width : 600px) {
-  .hide-on-small-only, .hide-on-small-and-down {
+@media only screen and (max-width : 900px) {
+  .hide-on-small-only,
+.hide-on-small-and-down {
     display: none !important;
   }
 }
@@ -2826,13 +2831,13 @@ ul.staggered-list li {
   }
 }
 
-@media only screen and (min-width : 601px) {
+@media only screen and (min-width : 901px) {
   .hide-on-med-and-up {
     display: none !important;
   }
 }
 
-@media only screen and (min-width: 600px) and (max-width: 992px) {
+@media only screen and (min-width: 900px) and (max-width: 992px) {
   .hide-on-med-only {
     display: none !important;
   }
@@ -2862,19 +2867,19 @@ ul.staggered-list li {
   }
 }
 
-@media only screen and (min-width: 600px) and (max-width: 992px) {
+@media only screen and (min-width: 900px) and (max-width: 992px) {
   .show-on-medium {
     display: block !important;
   }
 }
 
-@media only screen and (max-width : 600px) {
+@media only screen and (max-width : 900px) {
   .show-on-small {
     display: block !important;
   }
 }
 
-@media only screen and (min-width : 601px) {
+@media only screen and (min-width : 901px) {
   .show-on-medium-and-up {
     display: block !important;
   }
@@ -2886,7 +2891,7 @@ ul.staggered-list li {
   }
 }
 
-@media only screen and (max-width : 600px) {
+@media only screen and (max-width : 900px) {
   .center-on-small-only {
     text-align: center;
   }
@@ -2908,7 +2913,9 @@ ul.staggered-list li {
   background-color: rgba(51, 51, 51, 0.08);
 }
 
-table, th, td {
+table,
+th,
+td {
   border: none;
 }
 
@@ -2933,7 +2940,8 @@ table.highlight > tbody > tr {
 table.highlight > tbody > tr:hover {
   background-color: rgba(242, 242, 242, 0.5);
 }
-table.centered thead tr th, table.centered tbody tr td {
+table.centered thead tr th,
+table.centered tbody tr td {
   text-align: center;
 }
 
@@ -2941,7 +2949,8 @@ tr {
   border-bottom: 1px solid rgba(0, 0, 0, 0.12);
 }
 
-td, th {
+td,
+th {
   padding: 15px 5px;
   display: table-cell;
   text-align: left;
@@ -3102,7 +3111,9 @@ table.responsive-table td {
   height: 0;
   overflow: hidden;
 }
-.video-container iframe, .video-container object, .video-container embed {
+.video-container iframe,
+.video-container object,
+.video-container embed {
   position: absolute;
   top: 0;
   left: 0;
@@ -3196,7 +3207,8 @@ table.responsive-table td {
   text-align: right;
 }
 
-.center, .center-align {
+.center,
+.center-align {
   text-align: center;
 }
 
@@ -3300,7 +3312,7 @@ table span.badge {
   width: 90%;
 }
 
-@media only screen and (min-width : 601px) {
+@media only screen and (min-width : 901px) {
   .container {
     width: 85%;
   }
@@ -3528,7 +3540,7 @@ table span.badge {
 .row .col.push-s12 {
   left: 100%;
 }
-@media only screen and (min-width : 601px) {
+@media only screen and (min-width : 901px) {
   .row .col.m1 {
     width: 8.3333333333%;
     margin-left: auto;
@@ -4239,7 +4251,7 @@ nav .input-field label.active i {
   position: fixed;
 }
 
-@media only screen and (min-width : 601px) {
+@media only screen and (min-width : 901px) {
   nav.nav-extended .nav-wrapper {
     min-height: 64px;
   }
@@ -4289,15 +4301,15 @@ h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
 }
 
 h1 {
-  font-size: 4.2rem;
+  font-size: 5rem;
   line-height: 110%;
-  margin: 2.8rem 0 1.68rem 0;
+  margin: 3.3333333333rem 0 2rem 0;
 }
 
 h2 {
-  font-size: 3.56rem;
+  font-size: 1.9rem;
   line-height: 110%;
-  margin: 2.3733333333rem 0 1.424rem 0;
+  margin: 1.2666666667rem 0 0.76rem 0;
 }
 
 h3 {
@@ -4349,102 +4361,102 @@ small {
     font-size: 1.2rem;
   }
 }
-@media only screen and (min-width: 390px) {
+@media only screen and (min-width: 375px) {
   .flow-text {
     font-size: 1.224rem;
   }
 }
-@media only screen and (min-width: 420px) {
+@media only screen and (min-width: 390px) {
   .flow-text {
     font-size: 1.248rem;
   }
 }
-@media only screen and (min-width: 450px) {
+@media only screen and (min-width: 405px) {
   .flow-text {
     font-size: 1.272rem;
   }
 }
-@media only screen and (min-width: 480px) {
+@media only screen and (min-width: 420px) {
   .flow-text {
     font-size: 1.296rem;
   }
 }
-@media only screen and (min-width: 510px) {
+@media only screen and (min-width: 435px) {
   .flow-text {
     font-size: 1.32rem;
   }
 }
-@media only screen and (min-width: 540px) {
+@media only screen and (min-width: 450px) {
   .flow-text {
     font-size: 1.344rem;
   }
 }
-@media only screen and (min-width: 570px) {
+@media only screen and (min-width: 465px) {
   .flow-text {
     font-size: 1.368rem;
   }
 }
-@media only screen and (min-width: 600px) {
+@media only screen and (min-width: 480px) {
   .flow-text {
     font-size: 1.392rem;
   }
 }
-@media only screen and (min-width: 630px) {
+@media only screen and (min-width: 495px) {
   .flow-text {
     font-size: 1.416rem;
   }
 }
-@media only screen and (min-width: 660px) {
+@media only screen and (min-width: 510px) {
   .flow-text {
     font-size: 1.44rem;
   }
 }
-@media only screen and (min-width: 690px) {
+@media only screen and (min-width: 525px) {
   .flow-text {
     font-size: 1.464rem;
   }
 }
-@media only screen and (min-width: 720px) {
+@media only screen and (min-width: 540px) {
   .flow-text {
     font-size: 1.488rem;
   }
 }
-@media only screen and (min-width: 750px) {
+@media only screen and (min-width: 555px) {
   .flow-text {
     font-size: 1.512rem;
   }
 }
-@media only screen and (min-width: 780px) {
+@media only screen and (min-width: 570px) {
   .flow-text {
     font-size: 1.536rem;
   }
 }
-@media only screen and (min-width: 810px) {
+@media only screen and (min-width: 585px) {
   .flow-text {
     font-size: 1.56rem;
   }
 }
-@media only screen and (min-width: 840px) {
+@media only screen and (min-width: 600px) {
   .flow-text {
     font-size: 1.584rem;
   }
 }
-@media only screen and (min-width: 870px) {
+@media only screen and (min-width: 615px) {
   .flow-text {
     font-size: 1.608rem;
   }
 }
-@media only screen and (min-width: 900px) {
+@media only screen and (min-width: 630px) {
   .flow-text {
     font-size: 1.632rem;
   }
 }
-@media only screen and (min-width: 930px) {
+@media only screen and (min-width: 645px) {
   .flow-text {
     font-size: 1.656rem;
   }
 }
-@media only screen and (min-width: 960px) {
+@media only screen and (min-width: 660px) {
   .flow-text {
     font-size: 1.68rem;
   }
@@ -4628,13 +4640,13 @@ small {
   position: fixed;
   z-index: 10000;
 }
-@media only screen and (max-width : 600px) {
+@media only screen and (max-width : 900px) {
   #toast-container {
     min-width: 100%;
     bottom: 0%;
   }
 }
-@media only screen and (min-width : 601px) and (max-width : 992px) {
+@media only screen and (min-width : 901px) and (max-width : 992px) {
   #toast-container {
     left: 5%;
     bottom: 7%;
@@ -4678,7 +4690,7 @@ small {
 .toast.rounded {
   border-radius: 24px;
 }
-@media only screen and (max-width : 600px) {
+@media only screen and (max-width : 900px) {
   .toast {
     width: 100%;
     border-radius: 0;
@@ -6012,7 +6024,7 @@ textarea.materialize-textarea + label:after {
     width: calc(100% - 3rem);
   }
 }
-@media only screen and (max-width : 600px) {
+@media only screen and (max-width : 900px) {
   .input-field .prefix ~ input {
     width: 80%;
     width: calc(100% - 3rem);
@@ -7743,7 +7755,7 @@ input[type=range]::-ms-thumb {
 }
 
 /* Media Queries */
-@media only screen and (min-width : 601px) {
+@media only screen and (min-width : 901px) {
   .datepicker-modal {
     max-width: 625px;
   }
@@ -7931,7 +7943,7 @@ input[type=range]::-ms-thumb {
 }
 
 /* Media Queries */
-@media only screen and (min-width : 601px) {
+@media only screen and (min-width : 901px) {
   .timepicker-modal {
     max-width: 600px;
   }
