@@ -1,18 +1,12 @@
 <!-- Todo -->
-<!-- meter imagenes mas chicas -->
-<!-- meter blur en loading https://css-tricks.com/the-blur-up-technique-for-loading-background-images/ -->
 <!-- armar página de desarrollo -->
-<!-- linkear página de fotos -->
 <!-- armar mejor pagina de fotos -->
-<!-- actualizar cv -->
-<!-- hacer version en -->
-<!-- cambiar iconos -->
 <!-- agregar alts -->
-<!-- armar footer -->
-<!-- detalles -->
-
+<!-- agregar alts -->
+<!-- agregar textos -->
+<!-- Add `rel="noopener"` or `rel="noreferrer"` to any external links to improve performance and prevent security vulnerabilities. -->
 <!DOCTYPE html>
-<html lang="es-ar">
+<html lang="es">
 
 <head>
   <!-- google indexing -->
@@ -30,7 +24,9 @@
   <link rel="shortcut icon" href="favicon.ico" />
   <link rel="manifest" href="site.webmanifest">
   <link rel="apple-touch-icon" href="icon.png">
-  <!-- <meta name="theme-color" content="#333333" /> -->
+  <meta name="theme-color" content="#4e606f" />
+  <meta name="msapplication-navbutton-color" content="#4e606f">
+  <meta name="apple-mobile-web-app-status-bar-style" content="#4e606f">
 
   <!-- fuente/s  -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -53,8 +49,11 @@
 
   <header>
     <ul id="nav-mobile" class="sidenav">
-      <li><a href="https://www.linkedin.com/in/mateokrossler/" target="_blank">LinkedIn</a></li>
-      <li><a href=" MateoKrosslerCV.pdf" target="_blank">Ver CV</a></li>
+      <li>
+        <h5>Mateo Krössler</h5>
+      </li>
+      <li><a href="https://www.linkedin.com/in/mateokrossler/" target="_blank" rel="noreferrer">LinkedIn</a></li>
+      <li><a href=" MateoKrosslerCV.pdf" target="_blank" rel="noreferrer">Ver CV</a></li>
       <li><a href="mailto:mateokrossler@gmail.com">Email</a></li>
       <li><a href=" https://en.mateokrossler.com">EN </a></li>
     </ul>
@@ -62,9 +61,8 @@
       <div class="nav-wrapper container">
         <a id="logo-container" href="#" class="brand-logo black-text hide">Mateo Krossler</a>
         <ul class="right hide-on-med-and-down">
-          <li><a href="https://www.linkedin.com/in/mateokrossler/" target="_blank">LinkedIn</a>
-          </li>
-          <li><a href=" MateoKrosslerCV.pdf" target="_blank">Ver CV</a></li>
+          <li><a href="https://www.linkedin.com/in/mateokrossler/" target="_blank" rel="noreferrer">LinkedIn</a></li>
+          <li><a href=" MateoKrosslerCV.pdf" target="_blank" rel="noreferrer">Ver CV</a></li>
           <li><a href="mailto:mateokrossler@gmail.com">Email</a></li>
           <li><a href="https://en.mateokrossler.com">EN</a></li>
         </ul>
@@ -94,7 +92,7 @@
             voluptates sed cupiditate libero!</p>
         </div>
         <div class="col s12 m6 l6 center ">
-          <img class="responsive-img" width="350px" src="img/yo.jpg" alt="">
+          <img class="responsive-img" width="350px" src="img/yo-min.jpg" alt="">
         </div>
       </div>
     </section>
@@ -109,9 +107,9 @@
             voluptates sed cupiditate libero!</p>
         </div>
         <div class="col s12 m6 l6 center" id="cv">
-          <a href="#">
+          <a href="MateoKrosslerCV.pdf" target="_blank" rel="noreferrer">
             <div class=" image-link">
-              <img class="responsive-img" src="https://mateokrossler.com/img/cv-es.gif" alt="">
+              <img class="responsive-img" width="300px" src="img/cv-min.png" alt="">
               <div class="overlay">
                 <div class="text">Ver CV</div>
               </div>
@@ -128,11 +126,11 @@
           <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ducimus dolores repellendus in deleniti molestias
             consequuntur ipsa laborum cum vero qui reprehenderit, voluptatibus, dolor alias adipisci voluptate
             voluptates sed cupiditate libero!</p>
-          <a href="#">
+          <a href="desarrollo.html" target="_blank" rel="noreferrer">
             <div class="center-align image-link">
-              <img class="responsive-img" src="img/agrorrhh.jpg" alt="">
+              <img class="responsive-img" width="580px" src="img/agrorrhh-min.png" alt="">
               <div class="overlay">
-                <div class="text">Otros proyectos</div>
+                <div class="text">Otros Proyectos</div>
               </div>
             </div>
           </a>
@@ -143,11 +141,11 @@
           <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ducimus dolores repellendus in deleniti molestias
             consequuntur ipsa laborum cum vero qui reprehenderit, voluptatibus, dolor alias adipisci voluptate
             voluptates sed cupiditate libero!</p>
-          <a href="#">
+          <a href="https://map.mateokrossler.com/" target="_blank" rel="noreferrer">
             <div class="center-align image-link">
-              <img class="responsive-img" src="img/colonia.jpg" alt="">
+              <img class="responsive-img" width="580px" src="img/colonia-min.jpg" alt="">
               <div class="overlay">
-                <div class="text">Más fotos</div>
+                <div class="text">Más Fotos</div>
               </div>
             </div>
           </a>
@@ -161,13 +159,13 @@
   <footer class="page-footer">
     <div class="container footer-items">
       <ul>
-        <li><a href=" MateoKrosslerCV.pdf" target="_blank">Ver CV</a></li>
+        <li><a href="https://www.linkedin.com/in/mateokrossler/" target="_blank" rel="noreferrer">LinkedIn</a></li>
+        <li><i class="material-icons tiny">brightness_1</i></li>
+        <li><a href="MateoKrosslerCV.pdf" target="_blank" rel="noreferrer">Ver CV</a></li>
+        <li><i class="material-icons tiny">brightness_1</i></li>
+        <li><a href="mailto:mateokrossler@gmail.com">mateokrossler@gmail.com</a></li>
         <li><i class="material-icons tiny">brightness_1</i></li>
         <li><a href="https://en.mateokrossler.com">English</a></li>
-        <li><i class="material-icons tiny">brightness_1</i></li>
-        <li><a href="mailto:mateokrossler@gmail.com">Email</a></li>
-        <li><i class="material-icons tiny">brightness_1</i></li>
-        <li><a href="https://www.linkedin.com/in/mateokrossler/" target="_blank">LinkedIn</a></li>
       </ul>
     </div>
     <div class="footer-copyright">
