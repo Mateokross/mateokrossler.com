@@ -13,7 +13,7 @@ button,
 input,
 select,
 textarea {
-  font-family: 'DM Sans', sans-serif;
+  font-family: 'Source Sans Pro', sans-serif;
   font-weight: 400;
 }
 
@@ -148,8 +148,7 @@ form #website {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.4)), to(rgba(0, 0, 0, 0.4))), url(https://map.mateokrossler.com/img/ar-8-min.jpg);
-  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(https://map.mateokrossler.com/img/ar-8-min.jpg);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url(/img/fondo.jpg);
 }
 
 .hero .container {
@@ -158,16 +157,78 @@ form #website {
 
 }
 
+.hero h1 {
+  margin: 0;
+  font-family: 'PT Serif', 'Source Sans Pro', sans-serif;
+}
 
 .hero h1,
 .hero h5 {
   color: white;
 }
 
-@media only screen and (min-width:801px) {
+main {
+  background-color: #fafafa;
+}
+
+@media only screen and (min-width:901px) {
+
+  /* cambia el orden de los items */
+  #section-2 .row {
+    display: flex;
+    flex-direction: row-reverse;
+  }
+
+  /* centra los textos verticalmente */
   .col.s12.m6.l6.valign-wrapper {
     min-height: 430px;
   }
+}
+
+
+/* overlays imágenes */
+.image-link {
+  position: relative;
+  margin: auto;
+  overflow: hidden;
+  box-sizing: content-box;
+}
+
+.image-link .overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: .5s ease;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.image-link:hover .overlay {
+  opacity: 1;
+}
+
+.image-link .text {
+  color: white;
+  font-size: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+
+/* section 2 */
+
+#section-2 #cv .image-link,
+#section-2 #cv .image-link img {
+  max-width: 300px;
 }
 
 
@@ -180,9 +241,22 @@ form #website {
 /* ==========================================================================
    Fixes Materialize
    ========================================================================== */
+.row {
+  margin-bottom: 0;
+}
+
+
 .section {
   padding-top: 70px;
   padding-bottom: 70px;
+}
+
+@media only screen and (max-width:901px) {
+
+  .section {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
 }
 
 .valign-wrapper {
@@ -190,6 +264,11 @@ form #website {
   justify-content: center;
 }
 
-/* .row {
-  display: flex;
-} */
+.responsive-img {
+  display: block;
+  margin: auto;
+}
+
+.page-footer {
+  background-color: #1c1c1c;
+}

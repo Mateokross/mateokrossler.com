@@ -21,6 +21,7 @@
 
   <!-- fuente/s  -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=PT+Serif&family=Source+Sans+Pro&display=swap" rel="stylesheet">
 
   <!-- css -->
   <!-- <link href="css/template.css" type="text/css" rel="stylesheet" media="screen,projection" /> -->
@@ -37,23 +38,22 @@
   </div>
   <!---->
 
-  <header>
-    <ul id="nav-mobile" class="sidenav">
+  <header style="height: 0;">
+    <!-- <ul id="nav-mobile" class="sidenav">
       <li><a href="#section-1">Navbar Link 1</a></li>
       <li><a href="#section-2">Navbar Link 2</a></li>
-    </ul>
-    <div class="navbar-fixed" style="height: 0;">
-      <nav class="transparent z-depth-0" role="navigation">
-        <div class="nav-wrapper container">
-          <a id="logo-container" href="#" class="brand-logo black-text hide">Mateo Krossler</a>
-          <ul class="right hide-on-med-and-down">
-            <li><a href="#section-1" class="white-text">Navbar Link 1</a></li>
-            <li><a href="#section-2" class="white-text">Navbar Link 2</a></li>
-          </ul>
-          <a href="#" data-target="nav-mobile" class="right sidenav-trigger"><i class="material-icons ">menu</i></a>
-        </div>
-      </nav>
-    </div>
+    </ul> -->
+    <nav class="transparent z-depth-0" role="navigation">
+      <div class="nav-wrapper container">
+        <a id="logo-container" href="#" class="brand-logo black-text hide">Mateo Krossler</a>
+        <ul class="right hide-on-med-and-down">
+          <li><a href="#section-1" class="white-text">LinkedIn</a></li>
+          <li><a href="#section-2" class="white-text">Descargar CV</a></li>
+          <li><a href="#section-2" class="white-text">Email</a></li>
+        </ul>
+        <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons ">menu</i></a>
+      </div>
+    </nav>
   </header>
 
   <main>
@@ -68,7 +68,7 @@
 
 
 
-    <section class="container section">
+    <section class="container section" id="section-1">
       <div class="row">
         <div class="col s12 m6 l6 valign-wrapper">
           <h2>¿Quien Soy?</h2>
@@ -82,7 +82,7 @@
       </div>
     </section>
 
-    <section class="container section">
+    <section class="container section" id="section-2">
       <div class="row">
         <div class="col s12 m6 l6 valign-wrapper">
           <h2>Experiencia y CV</h2>
@@ -91,36 +91,49 @@
             consequuntur ipsa laborum cum vero qui reprehenderit, voluptatibus, dolor alias adipisci voluptate
             voluptates sed cupiditate libero!</p>
         </div>
-        <div class="col s12 m6 l6  center">
-          <img class="responsive-img" width="300px" src="https://mateokrossler.com/img/cv-es.gif" alt=""
-            style="box-shadow: 0 0px 7px 0 rgba(0, 0, 0, 0.14)">
+        <div class="col s12 m6 l6 center" id="cv">
+          <a href="#">
+            <div class=" image-link">
+              <img class="responsive-img" src="https://mateokrossler.com/img/cv-es.gif" alt="">
+              <div class="overlay">
+                <div class="text">Descargar CV</div>
+              </div>
+            </div>
+          </a>
         </div>
       </div>
     </section>
 
-    <section class="container section">
+    <section class="container section" id="section-3">
       <div class="row">
-        <div class="col s12 m6 l6">
+        <div class="col s12 m6 l6" style="padding-right: 50px;">
           <h2>Desarollo Web</h2>
           <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ducimus dolores repellendus in deleniti molestias
             consequuntur ipsa laborum cum vero qui reprehenderit, voluptatibus, dolor alias adipisci voluptate
             voluptates sed cupiditate libero!</p>
-          <a href="https://asesorrural.com.ar" target="_blank">
-            <video class="asesorrural" loop="" autoplay="" playsinline="" muted=""
-              style="width: 100%;max-width: 550px;transition: all .4s ease;">
-              <source src=" https://mateokrossler.com/img/asesorrural.mp4" type="video/mp4">
-            </video>
+          <a href="#">
+            <div class="center-align image-link">
+              <img class="responsive-img" src="img/agrorrhh.jpg" alt="">
+              <div class="overlay">
+                <div class="text">Otros proyectos</div>
+              </div>
+            </div>
           </a>
-
-          <a href="#" class="btn-large waves-effect waves-light">Otros proyectos</a>
         </div>
-        <div class="col s12 m6 l6">
+
+        <div class="col s12 m6 l6" style="padding-left: 50px;">
           <h2>Fotografía</h2>
           <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ducimus dolores repellendus in deleniti molestias
             consequuntur ipsa laborum cum vero qui reprehenderit, voluptatibus, dolor alias adipisci voluptate
             voluptates sed cupiditate libero!</p>
-          <img class="responsive-img " width="550px" src="img/colonia.jpg" alt="">
-          <a href="#" class="btn-large waves-effect waves-light">Más fotos</a>
+          <a href="#">
+            <div class="center-align image-link">
+              <img class="responsive-img" src="img/colonia.jpg" alt="">
+              <div class="overlay">
+                <div class="text">Más fotos</div>
+              </div>
+            </div>
+          </a>
         </div>
       </div>
     </section>
@@ -128,7 +141,7 @@
 
   </main>
 
-  <footer class="page-footer grey darken-3">
+  <footer class="page-footer">
     <div class="container">
       <div class="row">
         <div class="col l3 s12">
