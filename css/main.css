@@ -76,13 +76,11 @@ form #website {
 @-webkit-keyframes loader {
   0% {
     opacity: 1;
-    -webkit-transform: scale(0);
     transform: scale(0);
   }
 
   100% {
     opacity: 0;
-    -webkit-transform: scale(1);
     transform: scale(1);
   }
 }
@@ -90,13 +88,11 @@ form #website {
 @keyframes loader {
   0% {
     opacity: 1;
-    -webkit-transform: scale(0);
     transform: scale(0);
   }
 
   100% {
     opacity: 0;
-    -webkit-transform: scale(1);
     transform: scale(1);
   }
 }
@@ -104,6 +100,24 @@ form #website {
 /* ==========================================================================
    Header
    ========================================================================== */
+header nav {
+  height: 0;
+  position: absolute;
+  z-index: 100;
+}
+
+@media only screen and (max-width:992px) {
+  header nav {
+    position: fixed !important;
+  }
+}
+
+header nav i {
+  text-shadow: 0 0 7px rgba(0, 0, 0, 0.6);
+  font-size: 31px !important;
+  transform: translateX(21px);
+}
+
 #nav-mobile {
   padding-top: 5%;
 }
@@ -119,6 +133,9 @@ form #website {
 
 #nav-mobile a {
   font-size: 1.2rem;
+}
+
+.nav-wrapper {
   color: #fafafa;
 }
 
@@ -138,7 +155,15 @@ form #website {
   display: flex;
 }
 
+@media only screen and (max-width:650px) {
+  .hero {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url(/img/fondo-mobile-min.jpg);
+  }
+
+}
+
 .hero .blur {
+  -webkit-backdrop-filter: blur(5px);
   backdrop-filter: blur(5px);
   width: 100%;
   display: flex;
@@ -158,8 +183,8 @@ form #website {
   color: white;
 }
 
-.hero h1,
-.hero h5 {
+.hero h5,
+.hero i {
   color: rgba(255, 255, 255, 0.9);
 }
 
@@ -195,6 +220,8 @@ main {
   margin: auto;
   overflow: hidden;
   box-sizing: content-box;
+  /* arregla un bug en el que ocupa mas espacio vertical */
+  line-height: 0
 }
 
 .image-link .overlay {
@@ -208,6 +235,7 @@ main {
   opacity: 0;
   transition: .3s ease;
   background-color: rgba(0, 0, 0, 0.3);
+  -webkit-backdrop-filter: blur(6px);
   backdrop-filter: blur(6px);
 }
 
@@ -221,8 +249,6 @@ main {
   position: absolute;
   top: 50%;
   left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
   text-align: center;
 }
@@ -240,7 +266,17 @@ main {
   padding-bottom: 140px;
 }
 
+
+
 @media only screen and (min-width:901px) {
+  #section-3 .row {
+    display: flex;
+  }
+
+  #section-3 .col {
+    flex: 1;
+  }
+
   #section-3 .col:first-child {
     padding-right: 50px;
   }
@@ -261,7 +297,7 @@ main {
    Footer
    ========================================================================== */
 .page-footer {
-  background-color: #4e606f;
+  background-color: #00141d;
 }
 
 /* footer items container */
@@ -295,7 +331,7 @@ footer ul {
 
 .footer-items li i {
   font-size: 8px;
-  color: rgba(0, 0, 0, 0.18);
+  color: rgba(255, 255, 255, 0.2);
 }
 
 
@@ -354,4 +390,70 @@ footer ul {
 .responsive-img {
   display: block;
   margin: auto;
+}
+
+/* ==========================================================================
+   Página Desarrollo
+   ========================================================================== */
+
+.hero.secondary {
+  height: 30vh;
+}
+
+.hero.secondary i {
+  transform: translateY(5px);
+}
+
+#carousel-agrorrhh.carousel {
+  height: 500px !important;
+}
+
+#carousel-agrorrhh .carousel-item {
+  width: 500px !important;
+  height: 500px !important;
+}
+
+@media only screen and (max-width:600px) {
+  #carousel-agrorrhh.carousel {
+    height: 350px !important;
+  }
+
+  #carousel-agrorrhh .carousel-item {
+    width: 300px !important;
+    height: 300px !important;
+  }
+}
+
+#carousel-others .carousel-item {
+  width: 300px !important;
+  height: 300px !important;
+}
+
+video {
+  max-width: 100%;
+}
+
+#asesorrural .overlay {
+  width: 600px;
+  max-width: 100%;
+  margin: auto;
+}
+
+.carousel-item:not(.active) .overlay {
+  opacity: 0 !important;
+}
+
+/* ==========================================================================
+   Browser Fixes
+   ========================================================================== */
+/* Firefox */
+
+@-moz-document url-prefix() {
+  .hero {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url(/img/fondo-firefox.jpg) !important;
+  }
+
+  .image-link .overlay {
+    background-color: rgba(0, 0, 0, 0.6);
+  }
 }

@@ -1,10 +1,3 @@
-<!-- Todo -->
-<!-- armar página de desarrollo -->
-<!-- armar mejor pagina de fotos -->
-<!-- agregar alts -->
-<!-- agregar alts -->
-<!-- agregar textos -->
-<!-- Add `rel="noopener"` or `rel="noreferrer"` to any external links to improve performance and prevent security vulnerabilities. -->
 <!DOCTYPE html>
 <html lang="es">
 
@@ -34,8 +27,8 @@
 
   <!-- css -->
   <!-- <link href="css/template.css" type="text/css" rel="stylesheet" media="screen,projection" /> -->
-  <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection" />
-  <link href="css/main.css" type="text/css" rel="stylesheet" media="screen,projection" />
+  <link href="css/materialize.min.css" type="text/css" rel="stylesheet" media="screen,projection" />
+  <link href="css/main.min.css" type="text/css" rel="stylesheet" media="screen,projection" />
   <!-- <link rel="stylesheet" href="styles/debug.css"> -->
 </head>
 
@@ -57,9 +50,9 @@
       <li><a href="mailto:mateokrossler@gmail.com">Email</a></li>
       <li><a href=" https://en.mateokrossler.com">EN </a></li>
     </ul>
-    <nav class=" transparent z-depth-0" role="navigation" style="height: 0;position: absolute;z-index: 100;">
+    <nav class=" transparent z-depth-0" role="navigation">
       <div class="nav-wrapper container">
-        <a id="logo-container" href="#" class="brand-logo black-text hide">Mateo Krossler</a>
+        <a id="logo-container" href="#" class="brand-logo black-text hide">Mateo Krössler</a>
         <ul class="right hide-on-med-and-down">
           <li><a href="https://www.linkedin.com/in/mateokrossler/" target="_blank" rel="noreferrer">LinkedIn</a></li>
           <li><a href=" MateoKrosslerCV.pdf" target="_blank" rel="noreferrer">Ver CV</a></li>
@@ -86,13 +79,16 @@
     <section class="container section" id="section-1">
       <div class="row">
         <div class="col s12 m6 l6 valign-wrapper">
-          <h2>¿Quien Soy?</h2>
-          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ducimus dolores repellendus in deleniti molestias
-            consequuntur ipsa laborum cum vero qui reprehenderit, voluptatibus, dolor alias adipisci voluptate
-            voluptates sed cupiditate libero!</p>
+          <h2>¿Quién Soy?</h2>
+          <p>Soy estudiante de la Lic. en Administración y Sistemas en el Instituto Tecnológico de Buenos Aires (ITBA).
+            Me
+            interesan mucho los negocios y la
+            tecnología y por eso estudio mi carrera. Soy curioso, proactivo y me gusta aprender. En los últimos años
+            aprendí desarrollo web y bastante de Adobe Photoshop y Lightroom entre otro software. Me gusta mucho viajar
+            y sacar fotos con mi cámara.</p>
         </div>
         <div class="col s12 m6 l6 center ">
-          <img class="responsive-img" width="350px" src="img/yo-min.jpg" alt="">
+          <img class="responsive-img" width="350px" src="img/yo-min.jpg" alt="Yo">
         </div>
       </div>
     </section>
@@ -101,15 +97,16 @@
       <div class="row">
         <div class="col s12 m6 l6 valign-wrapper">
           <h2>Experiencia y CV</h2>
-          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ducimus dolores repellendus in deleniti
-            molestias
-            consequuntur ipsa laborum cum vero qui reprehenderit, voluptatibus, dolor alias adipisci voluptate
-            voluptates sed cupiditate libero!</p>
+          <p>En este momento estudio y participo del Club Trama (una organización estudiantil del ITBA) como Coordinador
+            del Club de Consultoría y Co-director del Podcast "¿Que estás tramando?". Trabajé como desarrollador web
+            freelance e hice una pasantía en una empresa de comercio exterior. Para la pasantía implemente herramientas
+            de software, me encargué con clientes y proveedores internacionales, preparé presentaciones y planillas de
+            excel.</p>
         </div>
         <div class="col s12 m6 l6 center" id="cv">
           <a href="MateoKrosslerCV.pdf" target="_blank" rel="noreferrer">
             <div class=" image-link">
-              <img class="responsive-img" width="300px" src="img/cv-min.png" alt="">
+              <img class="responsive-img" width="300px" src="img/cv-min.png" alt="Curriculum">
               <div class="overlay">
                 <div class="text">Ver CV</div>
               </div>
@@ -123,12 +120,12 @@
       <div class="row">
         <div class="col s12 m6 l6">
           <h2>Desarollo Web</h2>
-          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ducimus dolores repellendus in deleniti molestias
-            consequuntur ipsa laborum cum vero qui reprehenderit, voluptatibus, dolor alias adipisci voluptate
-            voluptates sed cupiditate libero!</p>
-          <a href="desarrollo.html" target="_blank" rel="noreferrer">
+          <p>En el tiempo que trabajé de desarrollador pude aprender y usar HTML, CSS,
+            JS, PHP y SQL. Mi proyecto más ambicioso fue una bolsa de trabajo, una plataforma con dos tipos de usuarios
+            y diferentes tipos de suscripciones pagas. </p>
+          <a href="desarrollo.html">
             <div class="center-align image-link">
-              <img class="responsive-img" width="580px" src="img/agrorrhh-min.png" alt="">
+              <img class="responsive-img" width="580px" src="img/agrorrhh-min.png" alt="Screenshot interfaz AgroRRHH">
               <div class="overlay">
                 <div class="text">Otros Proyectos</div>
               </div>
@@ -136,14 +133,16 @@
           </a>
         </div>
 
-        <div class="col s12 m6 l6">
-          <h2>Fotografía</h2>
-          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ducimus dolores repellendus in deleniti molestias
-            consequuntur ipsa laborum cum vero qui reprehenderit, voluptatibus, dolor alias adipisci voluptate
-            voluptates sed cupiditate libero!</p>
+        <div class="col s12 m6 l6" style="display: flex;flex-direction: column;justify-content: space-between;">
+          <div>
+            <h2>Fotografía</h2>
+            <p>Me gusta viajar y sacar fotos. Tuve la suerte de poder visitar varios países y tengo
+              armadas un par de páginas con algunas de mis fotos favoritas. </p>
+          </div>
           <a href="https://map.mateokrossler.com/" target="_blank" rel="noreferrer">
             <div class="center-align image-link">
-              <img class="responsive-img" width="580px" src="img/colonia-min.jpg" alt="">
+              <img class="responsive-img" width="580px" src="img/colonia-min.jpg"
+                alt="Foto tomada en Colonia, Alemania">
               <div class="overlay">
                 <div class="text">Más Fotos</div>
               </div>
