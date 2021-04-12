@@ -1,3 +1,0 @@
-Este fue mi proyecto más ambicioso. Este sitio es una una bolsa de trabajo para el sector agropecuario. Es una plataforma con dos tipos de usuarios, diferentes tipos de suscripciones pagas y un panel de administrador. Para poder desarrollarla aprendí a usar la tecnología back-end PHP para conectar el front-end de la página con una base de datos MySQL. Fueron usados HTML, CSS, JS, JQuery, PHP y MySQL para completar el desarrollo.
-
-En esta plataforma, usuarios registrados pueden publicar promociones de cursos y algunos usuarios especificos pueden publicar videos. Incluye un panel de administrador que permite verificar usuarios entre otras funcionalidades. Para el desarrollo usé HTML, CSS, JS, JQuery, PHP y MySQL. La página no está en uso todavía.

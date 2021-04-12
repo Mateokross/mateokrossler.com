@@ -9,7 +9,7 @@
   <!-- custom -->
   <title>Mateo Krössler - Desarrollo</title>
   <meta name="description"
-    content="Entusiasta de la Tecnología y los Negocios | Estudiante de Lic. en Administración y Sistemas en ITBA.">
+    content="Mi trabajo como desarrollador web freelance.">
   <link rel="shortcut icon" href="favicon.ico" />
   <link rel="manifest" href="site.webmanifest">
   <link rel="apple-touch-icon" href="icon.png">
@@ -19,13 +19,14 @@
 
   <!-- fuente/s  -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=PT+Serif&family=Source+Sans+Pro&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=PT+Serif&family=Lato&display=swap" rel="stylesheet">
 
   <!-- css -->
-  <!-- <link href="css/template.css" type="text/css" rel="stylesheet" media="screen,projection" /> -->
-  <link href="css/materialize.min.css" type="text/css" rel="stylesheet" media="screen,projection" />
-  <link href="css/main.min.css" type="text/css" rel="stylesheet" media="screen,projection" />
+  <link href="css/materialize.min.css" type="text/css" rel="stylesheet" media="screen" />
+  <link href="css/splide.min.css" type="text/css" rel="stylesheet" media="screen" />
+  <link href="css/main.min.css?v=2.1" type="text/css" rel="stylesheet" media="screen" />
   <!-- <link rel="stylesheet" href="css/debug.css"> -->
+
 </head>
 
 <body class="loading">
@@ -44,7 +45,7 @@
       <li><a href="https://www.linkedin.com/in/mateokrossler/" target="_blank" rel="noreferrer">LinkedIn</a></li>
       <li><a href=" MateoKrosslerCV.pdf" target="_blank" rel="noreferrer">Ver CV</a></li>
       <li><a href="mailto:mateokrossler@gmail.com">Email</a></li>
-      <li><a href=" https://en.mateokrossler.com">EN </a></li>
+      <li><a href=" https://en.mateokrossler.com/development.html">English</a></li>
     </ul>
     <nav class=" transparent z-depth-0" role="navigation" style="height: 0;position: absolute;z-index: 100;">
       <div class="nav-wrapper container">
@@ -53,7 +54,7 @@
           <li><a href="https://www.linkedin.com/in/mateokrossler/" target="_blank" rel="noreferrer">LinkedIn</a></li>
           <li><a href=" MateoKrosslerCV.pdf" target="_blank" rel="noreferrer">Ver CV</a></li>
           <li><a href="mailto:mateokrossler@gmail.com">Email</a></li>
-          <li><a href="https://en.mateokrossler.com">EN</a></li>
+          <li><a href="https://en.mateokrossler.com/development.html">English</a></li>
         </ul>
         <a href="#" data-target="nav-mobile" class="sidenav-trigger right"><i class="material-icons ">menu</i></a>
       </div>
@@ -61,6 +62,10 @@
   </header>
 
   <main>
+
+
+
+    
     <section class="hero secondary">
       <div class="blur">
         <div class="container">
@@ -71,18 +76,42 @@
     </section>
 
     <section class="container section">
+      <h2>Plataforma E-Ventos</h2>
+      <p>Este fue mi proyecto más ambicioso. La plataforma le permite a los usuarios navegar exposiciones virtuales desde cualquier parte del mundo. Se puede navegar por los distintos halls y sus stands y atender conferencias y conciertos. También contiene un chat y una conexión a un sitio de networking.</p>
+      <p>Las imágenes son de Spannabis Virtual Edition, el primer evento llevado a cabo en esta plataforma, con +4000 invitados.</p>
+      <div class="splide" id="splide-eventos">
+        <div class="splide__track">
+          <ul class="splide__list">
+            <div class="splide__slide"><img data-splide-lazy="img/ejemplos/eventos-01.jpg"></div>
+            <div class="splide__slide"><img data-splide-lazy="img/ejemplos/eventos-02.jpg"></div>
+            <div class="splide__slide"><img data-splide-lazy="img/ejemplos/eventos-03.jpg"></div>
+            <div class="splide__slide"><img data-splide-lazy="img/ejemplos/eventos-04.jpg"></div>
+            <div class="splide__slide"><img data-splide-lazy="img/ejemplos/eventos-05.jpg"></div>
+            <div class="splide__slide"><img data-splide-lazy="img/ejemplos/eventos-06.jpg"></div>
+            <div class="splide__slide"><img data-splide-lazy="img/ejemplos/eventos-07.jpg"></div>
+            <div class="splide__slide"><img data-splide-lazy="img/ejemplos/eventos-08.jpg"></div>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+
+    <section class="container section">
       <h2>AgroRRHH</h2>
-      <p>Este fue mi proyecto más ambicioso. El sitio es una una bolsa de trabajo para el sector agropecuario. Es una
-        plataforma con dos tipos de usuarios, diferentes tipos de suscripciones pagas y un panel de administrador. Para
+      <p>Esta plataforma es una bolsa de trabajo para el sector agropecuario. El sitio tiene dos tipos de usuarios, diferentes tipos de suscripciones pagas y un panel de administrador. Para
         poder desarrollarla aprendí a usar la tecnología back-end PHP para conectar el front-end de la página con una
         base de datos MySQL. Fueron usados HTML, CSS, JS, JQuery, PHP y MySQL para completar el desarrollo.</p>
-      <div class="carousel" id="carousel-agrorrhh">
-        <img class="carousel-item" src="img/agrorrh-01.jpg">
-        <img class="carousel-item" src="img/agrorrh-02.jpg">
-        <img class="carousel-item" src="img/agrorrh-03.jpg">
-        <img class="carousel-item" src="img/agrorrh-04.jpg">
-        <img class="carousel-item" src="img/agrorrh-05.jpg">
-        <img class="carousel-item" src="img/agrorrh-06.jpg">
+      <div class="splide" id="splide-agrorrhh">
+        <div class="splide__track">
+          <ul class="splide__list">
+            <div class="splide__slide"><img data-splide-lazy="img/ejemplos/agrorrh-01.jpg"></div>
+            <div class="splide__slide"><img data-splide-lazy="img/ejemplos/agrorrh-02.jpg"></div>
+            <div class="splide__slide"><img data-splide-lazy="img/ejemplos/agrorrh-03.jpg"></div>
+            <div class="splide__slide"><img data-splide-lazy="img/ejemplos/agrorrh-04.jpg"></div>
+            <div class="splide__slide"><img data-splide-lazy="img/ejemplos/agrorrh-05.jpg"></div>
+            <div class="splide__slide"><img data-splide-lazy="img/ejemplos/agrorrh-06.jpg"></div>
+          </ul>
+        </div>
       </div>
     </section>
 
@@ -96,7 +125,7 @@
         <a href="https://asesorrural.com.ar" target="_blank" rel="noreferrer">
           <div class="image-link">
             <video class="asesorrural" loop="" autoplay="" playsinline="" muted="">
-              <source src="img/asesorrural.mp4" type="video/mp4">
+              <source src="video/asesorrural.mp4" type="video/mp4">
             </video>
             <div class="overlay">
               <div class="text">Abrir Sitio</div>
@@ -111,33 +140,41 @@
     <section class="container section" id="others">
       <h2 style="text-align:center">Otras Páginas</h2>
       <div class="carousel" id="carousel-others">
-        <a class="carousel-item" href="ejemplos/hamburgueseria/index.html">
+        <a class="carousel-item" href="https://bravocarne.com.ar/" target="_blank" rel="noreferrer">
           <div class="center-align image-link">
-            <img src="ejemplos/thumbs/gb-es-min.jpg" alt="Página web hamburguesería">
+            <img src="img/ejemplos/bravo-min.jpg" alt="Página web Bravo">
             <div class="overlay">
               <div class="text">Abrir Sitio</div>
             </div>
           </div>
         </a>
-        <a class="carousel-item" href="ejemplos/fotografia/index.html">
+        <a class="carousel-item" href="https://clubtrama.com/" target="_blank" rel="noreferrer">
           <div class="center-align image-link">
-            <img src="ejemplos/thumbs/pp-es-min.jpg" alt="Página web fotografía">
+            <img src="img/ejemplos/trama-min.jpg" alt="Página web Club Trama">
             <div class="overlay">
               <div class="text">Abrir Sitio</div>
             </div>
           </div>
         </a>
-        <a class="carousel-item" href="ejemplos/ppt/index.html">
+        <a class="carousel-item" href="ejemplos/fotografia/index.html" target="_blank" rel="noreferrer">
           <div class="center-align image-link">
-            <img src="ejemplos/thumbs/rps-es-min.jpg" alt="Juego piedra, papel o tijera">
+            <img src="img/ejemplos/pp-en-min.jpg" alt="Página web fotografía">
             <div class="overlay">
               <div class="text">Abrir Sitio</div>
             </div>
           </div>
         </a>
-        <a class="carousel-item" href="https://map.mateokrossler.com/">
+        <a class="carousel-item" href="ejemplos/ppt/index.html" target="_blank" rel="noreferrer">
           <div class="center-align image-link">
-            <img src="img/map-min.png" alt="Página web mapa de fotos">
+            <img src="img/ejemplos/rps-en-min.jpg" alt="Juego piedra, papel o tijera">
+            <div class="overlay">
+              <div class="text">Abrir Sitio</div>
+            </div>
+          </div>
+        </a>
+        <a class="carousel-item" href="https://map.mateokrossler.com/" target="_blank" rel="noreferrer">
+          <div class="center-align image-link">
+            <img src="img/ejemplos/map-min.png" alt="Página web mapa de fotos">
             <div class="overlay">
               <div class="text">Abrir Sitio</div>
             </div>
@@ -158,24 +195,25 @@
         <li><i class="material-icons tiny">brightness_1</i></li>
         <li><a href="mailto:mateokrossler@gmail.com">mateokrossler@gmail.com</a></li>
         <li><i class="material-icons tiny">brightness_1</i></li>
-        <li><a href="https://en.mateokrossler.com">English</a></li>
+        <li><a href="https://en.mateokrossler.com/development.html">English</a></li>
       </ul>
     </div>
     <div class="footer-copyright">
       <div class="container center-align">
         Copyright © <span class="year">2020</span>. Todos los
-        derechos reservados. Desarrollo por <a href="https://www.mateokrossler.com">Mateo Krössler.</a>
+        derechos reservados. Desarrollo por <a href="https://en.mateokrossler.com">Mateo Krössler.</a>
       </div>
     </div>
   </footer>
 
 
   <!--  Scripts-->
-  <script src="https://code.jquery.com/jquery-3.5.0.min.js"
-    integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+  <script>window.jQuery || document.write('<script src="js/jquery.min.js">\x3C/script>')</script>
   <script src="js/materialize.min.js"></script>
+  <script src="js/splide.min.js"></script>
   <script src="js/main.js"></script>
-  <script src="js/init.js"></script>
+  <script src="js/init.js?v=2.1"></script>
 
 </body>
 
