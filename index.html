@@ -13,7 +13,7 @@
   <!-- custom -->
   <title>Mateo Krössler</title>
   <meta name="description"
-    content="Entusiasta de la Tecnología y los Negocios | Estudiante de Lic. en Administración y Sistemas en ITBA | Pasante en Kavak, el primer unicornio mexicano.">
+    content="Entusiasta de la Tecnología y los Negocios | Estudiante de Lic. en Administración y Sistemas en ITBA | Pasante en Kavak, startup valuada en $4 Billion.">
   <link rel="shortcut icon" href="favicon.ico" />
   <link rel="manifest" href="site.webmanifest">
   <link rel="apple-touch-icon" href="icon.png">
@@ -23,11 +23,13 @@
 
   <!-- fuente/s  -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=PT+Serif&family=Lato&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter&family=Sora:wght@600;800&display=swap" rel="stylesheet">
 
   <!-- css -->
   <link href="css/materialize.min.css" type="text/css" rel="stylesheet" media="screen" />
-  <link href="css/main.min.css?v=2.1" type="text/css" rel="stylesheet" media="screen" />
+  <link href="css/aos.min.css" type="text/css" rel="stylesheet" media="screen" />
+  <link href="css/main.min.css?v=3" type="text/css" rel="stylesheet" media="screen" />
+  <link href="css/main.css?v=3" type="text/css" rel="stylesheet" media="screen" />
   <!-- <link rel="stylesheet" href="styles/debug.css"> -->
 
 </head>
@@ -68,7 +70,7 @@
     <section class="hero">
       <div class="blur">
         <div class="container">
-          <h1>Mateo Krössler</h1>
+          <h1 class="name">Mateo Krössler</h1>
           <h4>Estudiante de Lic. en Administración y Sistemas en ITBA</h4>
         </div>
       </div>
@@ -77,13 +79,11 @@
 
 
     <section class="container section" id="section-1">
-      <div class="row">
+      <div class="row" data-aos="fade-up">
         <div class="col s12 m6 l6 valign-wrapper">
           <h2>¿Quién Soy?</h2>
-          <p class="center">Soy estudiante de la Lic. en Administración y Sistemas en el Instituto Tecnológico de Buenos
-            Aires (ITBA) y pasante en Kavak, el primer unicornio mexicano. Soy una persona curiosa y proactiva con una
-            pasión por el aprendizaje. Disfruto de ponerme desafíos difíciles y lograrlos aprendiendo nuevos conceptos o
-            herramientas en el proceso. Me gusta mucho viajar y sacar fotos con mi cámara.</p>
+          <p class="">Soy estudiante de la Lic. en Administración y Sistemas en el <a href="https://www.itba.edu.ar/" target="_blank" rel="noreferrer">Instituto Tecnológico de Buenos
+            Aires (ITBA)</a> y pasante en <a href="https://techcrunch.com/2021/09/21/mexicos-kavak-raises-700m-for-its-used-car-marketplace-doubling-its-valuation-to-8-7b/" target="_blank" rel="noreferrer" >Kavak</a>, la segunda startup más valiosa de América Latina. Actualmente estoy trabajando en un area de consultoría interna operativa. Soy una persona curiosa y proactiva motivado por los desafíos y el aprendizaje. Me gusta mucho viajar y sacar fotos.</p>
         </div>
         <div class="col s12 m6 l6 center ">
           <img class="responsive-img" width="350px" src="img/yo-min.jpg" alt="Yo">
@@ -92,14 +92,10 @@
     </section>
 
     <section class="section" id="section-2">
-      <div class="container">
+      <div class="container" data-aos="fade-up">
         <div class="content">
           <h2>Experiencia y CV</h2>
-          <p class="center">Actualmente estoy realizando una pasantía en Kavak, generando análisis relevantes para la
-            toma de decisiones y armando herramientas para nuevos procesos y para la automatización u optimización de
-            otros preexistentes. También estudio y participo del Club Trama, una organización estudiantil del ITBA, como
-            Coordinador del Club de Consultoría y del Podcast Trama. Con Trama organizamos eventos con McKinsey, BCG,
-            Bain, Accenture y armamos un grupo de preparación para el desafiante ingreso a estas empresas.</p>
+          <p class="center">En la universidad participé del <a href="https://clubtrama.com/" target="_blank" rel="noreferrer" >Club Trama</a>, una organización de estudiantes, como coordinador del Club de Consultoría y del Podcast. Junto a mis compañeros organicé eventos con las consultoras más grandes, un grupo de preparación para el desafiante ingreso a estas empresas y un <a href="https://open.spotify.com/show/7tcE6aC8G2qFLOUBxT4sPI" target="_blank" rel="noreferrer" >podcast</a> donde entrevistamos a múltiples líderes, emprendedores y CEOs.</p>
           <a href="MateoKrosslerCV.pdf" target="_blank" rel="noreferrer" class="btn">Ver CV</a>
         </div>
       </div>
@@ -107,11 +103,9 @@
 
     <section class="container section" id="section-3">
       <div class="row">
-        <div class="col s12 m6 l6">
+        <div class="col s12 m6 l6" data-aos="fade-right">
           <h2>Desarollo Web</h2>
-          <p>En el tiempo que trabajé de desarrollador pude aprender y usar HTML, CSS,
-            JS, PHP y SQL. Mi proyecto más ambicioso fue una plataforma de exposiciones virtuales en la que los usuarios
-            pueden navegar por distintos halls y sus stands y atender conferencias y conciertos.</p>
+          <p>Uno de mis primeros trabajos. Aprendí y trabajé de desarrollador mientras estudiaba negocios. Mi proyecto más ambicioso fue una plataforma de exposiciones virtuales con más de <b>6000</b> usuarios internacionales. En ella, los usuarios pueden navegar por distintos halls y sus stands y atender conferencias y conciertos.</p>
           <a href="desarrollo.html">
             <div class="center-align image-link">
               <img class="responsive-img" width="580px" src="img/spannabis-min.jpg" alt="Screenshot interfaz AgroRRHH">
@@ -122,11 +116,11 @@
           </a>
         </div>
 
-        <div class="col s12 m6 l6" style="display: flex;flex-direction: column;justify-content: space-between;">
+        <div class="col s12 m6 l6" style="display: flex;flex-direction: column;justify-content: space-between;" data-aos="fade-left">
           <div>
             <h2>Fotografía</h2>
             <p>Me gusta viajar y sacar fotos. Tuve la suerte de poder visitar varios países y tengo
-              armadas un par de páginas mostrando algunas de mis fotos favoritas. </p>
+              armadas un par de páginas mostrando algunas de mis fotos favoritas. Tengo algunas publicadas en <a href="https://unsplash.com/photos/6Vh05qMNziA" target="_blank" rel="noreferrer" >Unsplash</a>, donde ya acumulé más de <b>800k</b> visualizaciones (octubre 2021).</p>
           </div>
           <a href="https://mateokrossler.com/ejemplos/fotografia/index.html" target="_blank" rel="noreferrer">
             <div class="center-align image-link">
@@ -158,7 +152,7 @@
     </div>
     <div class="footer-copyright">
       <div class="container center-align">
-        Copyright © <span class="year">2020</span>. Todos los
+        Copyright © <span class="year">2021</span>. Todos los
         derechos reservados. Diseño y desarrollo por <a href="https://www.mateokrossler.com">Mateo Krössler.</a>
       </div>
     </div>
@@ -172,6 +166,7 @@
   <script>
     window.jQuery || document.write('<script src="js/jquery.min.js">\x3C/script>')
   </script>
+  <script src="js/aos.js"></script>
   <script src="js/materialize.min.js"></script>
   <script src="js/main.js"></script>
   <script src="js/init.js"></script>

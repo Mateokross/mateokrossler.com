@@ -3,7 +3,11 @@
    ========================================================================== */
 /*Font*/
 h1,
-h2,
+h2 {
+  font-family: 'Sora', sans-serif;
+  font-weight: 600;
+}
+
 h3,
 h4,
 h5,
@@ -13,7 +17,8 @@ button,
 input,
 select,
 textarea {
-  font-family: 'Lato', sans-serif;
+  /* font-family: 'Lato', sans-serif; */
+  font-family: 'Inter', sans-serif;
   font-weight: 400;
 }
 
@@ -35,8 +40,14 @@ li {
 }
 
 a {
-  color: white;
+  color: #e85d2d;
   transition: color .3s ease;
+}
+
+footer a,
+header a,
+.hero a {
+  color: white;
 }
 
 footer a:hover,
@@ -170,7 +181,8 @@ header nav i {
 }
 
 #nav-mobile h5 {
-  font-family: 'PT Serif', 'Source Sans Pro', sans-serif;
+  /* font-family: 'PT Serif', 'Source Sans Pro', sans-serif; */
+  font-family: 'Sora', sans-serif;
   padding-bottom: 10%
 }
 
@@ -187,7 +199,8 @@ header nav i {
    Hero
    ========================================================================== */
 .hero {
-  height: 60vh;
+  /* height: 75vh; */
+  height: 85vh;
   /* fondo */
   background-size: cover;
   background-position: center;
@@ -218,11 +231,16 @@ header nav i {
 
 .hero h1 {
   margin: 0;
-  font-family: 'PT Serif', 'Source Sans Pro', sans-serif;
+  font-family: 'Sora', sans-serif;
+  transition: all .4s ease;
 }
 
 .hero h1 {
   color: white;
+}
+
+.hero h4 {
+  margin-top: 0.75rem
 }
 
 .hero h4,
@@ -230,6 +248,11 @@ header nav i {
   color: rgba(255, 255, 255, 0.9);
 }
 
+@media only screen and (min-width:950px) {
+  .hero h1.name {
+    font-size: 5.5rem;
+  }
+}
 
 @media only screen and (max-width:600px) {
   .hero h1 {
@@ -310,7 +333,7 @@ main {
 
 #section-2 .content {
   text-align: center;
-  max-width: 900px;
+  max-width: 800px;
   margin: auto;
 }
 
@@ -429,8 +452,10 @@ footer ul {
 }
 
 .section {
-  padding-top: 70px;
-  padding-bottom: 70px;
+  padding-top: 120px;
+  padding-bottom: 120px;
+  /* padding-top: 70px;
+  padding-bottom: 70px; */
 }
 
 @media only screen and (max-width:901px) {
@@ -453,9 +478,15 @@ footer ul {
 /* ==========================================================================
    Página Desarrollo
    ========================================================================== */
-
 .hero.secondary {
-  height: 30vh;
+  height: 35vh;
+}
+
+@media only screen and (max-width:600px) {
+  .hero.secondary {
+    height: 40vh;
+  }
+
 }
 
 .hero.secondary i {
