@@ -1,0 +1,71 @@
+﻿<!doctype html>
+<html class="no-js" lang="">
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Rock, Paper, Scissors</title>
+    <meta name="description" content="Rock, Paper, Scissors game by Mateo Krössler">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="manifest" href="site.webmanifest">
+    <link rel="apple-touch-icon" href="icon.png">
+
+
+    <link rel="stylesheet" href="css/normalize.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
+  </head>
+
+  <body class="loading">
+    <!--PRELOADER-->
+    <div class="preloader">
+        <div class="preloader-circle"></div>
+        <div class="preloader-circle"></div>
+      </div>
+    <!---->
+    <main>
+      <section class="item-container">
+        <div class="item-content">
+          <div><img class="item" onclick="play('Rock')" src="img/rock.svg"></div>
+          <div><img class="item" onclick="play('Paper')" src="img/paper.svg"></div>
+          <div><img class="item" onclick="play('Scissors')" src="img/scissors.svg"></div>
+        </div>
+        
+      </section>
+      <section class='text'>
+        <h2 id="choice">Choose your play</h2>
+        <h1 id="result"></h1>
+      </section>
+      <section class='counter'>
+        <h2></h2>
+      </section>
+      <section class='info-button'>
+        <img src="img/i.svg" alt="info" >
+      </section>
+      <section class='info' >
+        <div>
+          <p>Game made for fun on christmas vacation 2019 at Ponte Vedra Beach, FL, USA.</p>
+          <div><img src="img/me-min.jpg" alt="me on the beach"></div>
+          <p>You can contact me at <a href="mailto:mateokrossler@gmail.com"><b> mateokrossler@gmail.com</b></a>, check out my <a href="https://www.en.mateokrossler.com" target=“_blank”><b>main site</b></a> or my <a href="https://www.linkedin.com/in/mateokrossler/?locale=en_US" target=“_blank”><b>linkedin profile</b></a></p>
+          
+          <p class='small-text'>Copyright © <span class="year">2019</span> <a href="https://www.en.mateokrossler.com">mateokrossler.com.</a> All rights reserved. Icons made by <a href="https://www.freepik.com/" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" 			    title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/"title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></p>
+        </div>
+      </section>
+    </main>
+    <footer>
+
+    </footer>
+
+
+
+
+
+
+    <script src="js/modernizr-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="js/plugins.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+
+</html>
