@@ -10,23 +10,23 @@ Como usar:
 
 
 */
-var dictionary  = {
-    "english": {
-        "indexHeader": "Business and Tech graduate from ITBA",
-        "indexWho": "About Me",
-        "indexExperience": "Experience & Curriculum",
-        "indexDevelopment": "Web Development",
-        "indexPhotography": "Photography",
-    },
-    "spanish": {
-        "indexHeader": "Lic. en Administración y Sistemas del ITBA",
-        "indexWho": "¿Quién Soy?",
-        "indexExperience": "Experiencia y CV",
-        "indexDevelopment": "Desarollo Web",
-        "indexPhotography": "Fotografía",
+// var dictionary  = {
+//     "english": {
+//         "indexHeader": "Business and Tech graduate from ITBA",
+//         "indexWho": "About Me",
+//         "indexExperience": "Experience & Curriculum",
+//         "indexDevelopment": "Web Development",
+//         "indexPhotography": "Photography",
+//     },
+//     "spanish": {
+//         "indexHeader": "Lic. en Administración y Sistemas del ITBA",
+//         "indexWho": "¿Quién Soy?",
+//         "indexExperience": "Experiencia y CV",
+//         "indexDevelopment": "Desarollo Web",
+//         "indexPhotography": "Fotografía",
         
-    }
-};
+//     }
+// };
 
 //defino el lenguaje basandome en la cookie
 var selectedLanguage = readCookie('language');
@@ -70,16 +70,16 @@ function setLanguage(language, setCookieBool) { // language: string - setCookie:
         //add class to selector
     }
 
-    //cambio el contenido de texto 
-    $("[data-translate]").each(function(){
-        //change Placeholder texts on forms
-        if($(this).is( "input" )){
-            $(this).attr('Placeholder',dictionary[language][$(this).data("translate")] )
-        //change other texts
-        } else{
-            $(this).text(dictionary[language][$(this).data("translate")])
-        }
-    })
+    // //cambio el contenido de texto 
+    // $("[data-translate]").each(function(){
+    //     //change Placeholder texts on forms
+    //     if($(this).is( "input" )){
+    //         $(this).attr('Placeholder',dictionary[language][$(this).data("translate")] )
+    //     //change other texts
+    //     } else{
+    //         $(this).text(dictionary[language][$(this).data("translate")])
+    //     }
+    // })
 
     //cambio el lang del html
     if (language == 'english') {
