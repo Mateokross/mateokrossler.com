@@ -28,14 +28,17 @@ Como usar:
 //     }
 // };
 
+
+
 //defino el lenguaje basandome en la cookie
 var selectedLanguage = readCookie('language');
 
 //set language if cookie is set
 if ((selectedLanguage == 'english') || (selectedLanguage == 'spanish')) {
     setLanguage(selectedLanguage, 0);
-}else{ //if not set, select spanish as default and set a cookie
-    selectedLanguage = 'spanish';
+}else{ //if not set, set language based on browser preferences
+    var browserLang = navigator.language.substring(0, 2);
+    selectedLanguage = browserLang == "es" ? "spanish" : "english";
     setLanguage(selectedLanguage, 1);
 }
 
