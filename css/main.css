@@ -102,7 +102,7 @@ body {
 }
 
 main {
-  height: calc(100% - 30px);
+  height: calc(100vh - 30px);
 }
 
 main.content {
