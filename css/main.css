@@ -100,6 +100,8 @@ body {
 
 }
 
+
+
 main.content {
   padding: 60px 80px;
   display: flex;
@@ -147,10 +149,16 @@ main.content {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    background-color: rgba(255, 255, 255, .3);
+    height: 100px;
   }
 }
 
-
+@media only screen and (max-width:480px) {
+  main.content {
+    padding: 20px 25px;
+  }
+}
 
 /* ==========================================================================
    Left-content
@@ -177,7 +185,7 @@ main.content {
 }
 
 .masked-overflow {
-  height: 450px;
+  max-height: calc(100vh - 91px - 80px - 80px - 50px);
   --scrollbar-width: 0px;
   --mask-height: 50px;
   overflow-y: auto;
@@ -205,6 +213,41 @@ main.content {
   width: var(--scrollbar-width);
 }
 
+@media only screen and (max-width:1000px) {
+  .left-content .title {
+    margin-bottom: 50px;
+  }
+
+  .masked-overflow {
+    max-height: calc(100vh - 91px - 80px - 50px - 50px);
+  }
+}
+
+@media only screen and (max-width:730px) {
+  .left-content .title {
+    margin-bottom: 20px;
+  }
+
+  .masked-overflow {
+    max-height: calc(100vh - 91px - 80px - 20px - 10px - 100px);
+  }
+}
+
+@media only screen and (max-width:480px) {
+  .left-content .title h1 {
+    font-size: 2em;
+  }
+
+  .left-content .title h3 {
+    font-size: 1.2em;
+    margin: 5px 0 0 0;
+  }
+
+  .left-content .section-content h1 {
+    font-size: 1.7em;
+  }
+
+}
 
 /* ==========================================================================
    right-content
@@ -216,6 +259,7 @@ ul.socials {
   flex-direction: row;
   justify-content: flex-end;
   margin: 0 0 100px 0;
+  padding: 0;
   text-decoration: none;
 }
 
@@ -258,7 +302,33 @@ ul.socials li svg {
   filter: drop-shadow(0px 0px 4px rgba(255, 255, 255, 0.25)); */
 }
 
+@media only screen and (max-width:730px) {
+  ul.socials {
+    margin: 0;
+    padding: 0;
+    align-items: flex-end;
+  }
 
+  .section-links {
+    flex-direction: row;
+    margin: 0;
+    padding: 0;
+    align-items: flex-end;
+  }
+
+  .section-links ul {
+    margin: 0;
+  }
+
+  .section-links button {
+    margin: 3px 0 3px 0;
+    font-size: 16px;
+  }
+
+  .section-links button:last-child {
+    margin: 3px 0 0px 0;
+  }
+}
 
 
 /* ==========================================================================
@@ -283,6 +353,32 @@ footer p {
 footer p,
 footer a {
   color: rgba(255, 255, 255, 0.55);
+}
+
+@media only screen and (max-width:1000px) {
+  footer p {
+    margin: 0 60px
+  }
+}
+
+@media only screen and (max-width:730px) {
+  footer {
+    align-items: flex-start;
+  }
+
+  footer p {
+    margin: 0 45px;
+    font-size: 11px;
+  }
+}
+
+@media only screen and (max-width:480px) {
+
+
+  footer p {
+    margin: 0 25px;
+    font-size: 10px;
+  }
 }
 
 /* ==========================================================================
