@@ -33,6 +33,7 @@ button {
   font: inherit;
   cursor: pointer;
   outline: inherit;
+  -webkit-tap-highlight-color: transparent;
 }
 
 /*Font*/
@@ -101,16 +102,12 @@ body {
 
 }
 
-main {
-  height: calc(100% - 30px);
-}
-
 main.content {
+  height: calc(100% - 30px);
   padding: 60px 80px;
   display: flex;
   flex-direction: row;
 }
-
 
 .left-content {
   width: 75%;
@@ -168,6 +165,61 @@ main.content {
     width: calc(100% - (25px * 2));
   }
 }
+
+/* ==========================================================================
+   Mobile intro animations
+   ========================================================================== */
+
+@media only screen and (max-width:480px) {
+  .left-content {
+    animation-name: fadeInUp;
+    animation-duration: 8s;
+    justify-content: space-between;
+  }
+
+  .left-content .section-content {
+    opacity: 0;
+    animation-name: fadeIn;
+    animation-duration: 4s;
+    animation-delay: 8s;
+  }
+
+  .right-content,
+  footer {
+    animation-name: fadeIn;
+    animation-duration: 4s;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(40vh);
+  }
+
+  40% {
+    opacity: 1;
+    transform: translateY(40vh);
+  }
+
+  100% {
+    opacity: 1;
+    height: auto;
+    transform: translateY(0vh);
+  }
+}
+
+
 
 /* ==========================================================================
    Left-content
@@ -340,6 +392,8 @@ ul.socials li svg {
 }
 
 
+
+
 /* ==========================================================================
    Footer
    ========================================================================== */
@@ -389,6 +443,7 @@ footer a {
     font-size: 10px;
   }
 }
+
 
 /* ==========================================================================
    Helpers
