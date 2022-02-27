@@ -103,9 +103,9 @@ body {
 
 main {
   /* height: calc(100vh - 30px); */
-  height: 100vh;
+  height: calc(100vh - 30px);
   /* Fallback for browsers that do not support Custom Properties */
-  height: calc(var(--vh, 1vh) * 100);
+  height: calc(var(--vh, 1vh) * 100 - 30px);
 }
 
 main.content {
