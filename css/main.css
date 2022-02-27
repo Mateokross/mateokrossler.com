@@ -166,59 +166,6 @@ main.content {
   }
 }
 
-/* ==========================================================================
-   Mobile intro animations
-   ========================================================================== */
-
-@media only screen and (max-width:480px) {
-  .left-content {
-    animation-name: fadeInUp;
-    animation-duration: 8s;
-    justify-content: space-between;
-  }
-
-  .left-content .section-content {
-    opacity: 0;
-    animation-name: fadeIn;
-    animation-duration: 4s;
-    animation-delay: 8s;
-    animation-fill-mode: forwards;
-  }
-
-  .right-content,
-  footer {
-    animation-name: fadeIn;
-    animation-duration: 4s;
-  }
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-
-  to {
-    opacity: 1;
-  }
-}
-
-@keyframes fadeInUp {
-  0% {
-    opacity: 0;
-    transform: translateY(40vh);
-  }
-
-  40% {
-    opacity: 1;
-    transform: translateY(40vh);
-  }
-
-  100% {
-    opacity: 1;
-    height: auto;
-    transform: translateY(0vh);
-  }
-}
 
 
 
@@ -297,12 +244,13 @@ main.content {
 
 @media only screen and (max-width:480px) {
   .left-content .title h1 {
-    font-size: 2em;
+    font-size: 1.5em;
   }
 
   .left-content .title h3 {
     font-size: 1.2em;
     margin: 5px 0 0 0;
+    /* display: none; */
   }
 
   .left-content .section-content h1 {
@@ -445,6 +393,108 @@ footer a {
   }
 }
 
+/* ==========================================================================
+   Mobile intro animations
+   ========================================================================== */
+
+@media only screen and (max-width:480px) {
+
+  .left-content {
+    animation-name: fadeInUp;
+    animation-duration: 6s;
+    justify-content: space-between;
+  }
+
+  .left-content .section-content {
+    opacity: 0;
+    animation-name: fadeIn;
+    animation-duration: 3s;
+    animation-delay: 6s;
+    animation-fill-mode: forwards;
+  }
+
+  .right-content,
+  footer {
+    animation-name: fadeIn;
+    animation-duration: 3s;
+    animation-delay: 3s;
+    opacity: 0;
+    animation-fill-mode: forwards;
+  }
+
+  .left-content .title h1 {
+    font-size: 1.5em;
+    animation-name: scaleDownTitle;
+    animation-duration: 6s;
+  }
+
+  .left-content .title h3 {
+    animation-name: scaleDownSubtitle;
+    animation-duration: 6s;
+    animation-fill-mode: forwards;
+
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(40vh);
+  }
+
+  40% {
+    opacity: 1;
+    transform: translateY(40vh);
+  }
+
+  100% {
+    opacity: 1;
+    height: auto;
+    transform: translateY(0vh);
+  }
+}
+
+@keyframes scaleDownTitle {
+  0% {
+    font-size: 2em;
+  }
+
+  40% {
+    font-size: 2em;
+  }
+
+  100% {
+    font-size: 1.5em;
+  }
+}
+
+@keyframes scaleDownSubtitle {
+  0% {
+    font-size: 1.2em;
+    opacity: 1;
+  }
+
+  40% {
+    font-size: 1.2em;
+    opacity: 1;
+  }
+
+  100% {
+    font-size: 0.8em;
+    margin: 3px 0 0 0;
+    opacity: 0.85;
+  }
+}
 
 /* ==========================================================================
    Helpers
