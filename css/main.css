@@ -106,7 +106,7 @@ main {
   height: calc(100vh - 100px);
   /* Fallback for browsers that do not support Custom Properties */
   height: calc(var(--vh, 1vh) * 100 - 100px);
-  height: 95vh;
+  height: 95%;
 }
 
 main.content {
