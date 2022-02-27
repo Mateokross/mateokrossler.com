@@ -182,6 +182,7 @@ main.content {
     animation-name: fadeIn;
     animation-duration: 4s;
     animation-delay: 8s;
+    animation-fill-mode: forwards;
   }
 
   .right-content,
