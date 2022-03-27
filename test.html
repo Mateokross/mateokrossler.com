@@ -25,7 +25,7 @@
   <link href="css/materialize.min.css" type="text/css" rel="stylesheet" media="screen" />
   <link href="css/aos.min.css" type="text/css" rel="stylesheet" media="screen" />
   <link href="css/splide.min.css" type="text/css" rel="stylesheet" media="screen" />
-  <link href="css/main.min.css?v=3" type="text/css" rel="stylesheet" media="screen" />
+  <link href="css/main.css?v=3" type="text/css" rel="stylesheet" media="screen" />
   <!-- <link rel="stylesheet" href="css/debug.css"> -->
 
 </head>
@@ -101,7 +101,7 @@
 
     
 
-    <section class="container section project active" data-aos="fade-up" style="max-width: 1000px;">
+    <section class="container section project active" data-aos="fade-up" style="max-width: 1000px;" id="project-eventos">
       <h2 class="spanish">Plataforma E-Ventos</h2>
       <h2 class="english">E-Ventos Platform</h2>
       <div class="splide" id="splide-eventos">
@@ -140,6 +140,71 @@
       <p class="spanish">Este fue mi proyecto más ambicioso. La plataforma le permite a los usuarios navegar exposiciones virtuales desde cualquier parte del mundo. Se puede navegar por los distintos halls y sus stands y atender conferencias y conciertos. También contiene un chat y una conexión a un sitio de networking.</p>
       <p class="spanish">Las imágenes son de Spannabis Virtual Edition, el primer evento llevado a cabo en esta plataforma, con <b>+4000</b> invitados.</p>
     </section>
+
+    <section class="container section project hide" data-aos="fade-up" style="max-width: 1000px;" id="project-test2">
+      <h2 class="spanish">Plataforma TEST2</h2>
+      <h2 class="english">E-Ventos TEST2</h2>
+      <div class="splide" id="splide-test2">
+        <div class="splide__track">
+          <ul class="splide__list">
+            <div class="splide__slide"><img data-splide-lazy="https://images.unsplash.com/photo-1648159643766-1ba916a2bccf?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"></div>
+            <div class="splide__slide"><img data-splide-lazy="https://wallpaperaccess.com/full/235201.jpg"></div>
+          </ul>
+        </div>
+      </div>
+      <p class="english">This was my most ambitious project. The platform allows users to visit virtual exhibitions from anywhere in the world. You can browse the different halls and their stands, attend conferences and concerts. It also contains a chat and a connection to a networking site. </p>
+      <p class="english"> The images are from Spannabis Virtual Edition, the first event held on this platform, with <b>+4000</b> guests. </p>
+      <p class="spanish">Este fue mi proyecto más ambicioso. La plataforma le permite a los usuarios navegar exposiciones virtuales desde cualquier parte del mundo. Se puede navegar por los distintos halls y sus stands y atender conferencias y conciertos. También contiene un chat y una conexión a un sitio de networking.</p>
+      <p class="spanish">Las imágenes son de Spannabis Virtual Edition, el primer evento llevado a cabo en esta plataforma, con <b>+4000</b> invitados.</p>
+    </section>
+
+    <section class="container section project-selector" data-aos="fade-up" style="max-width: 1000px;">
+      <div class="row">
+        <div class="col l3 m2 s2">
+          <div onclick="toggleSlider('eventos')">
+            <p>Project1</p>
+          </div>
+        </div>
+        <div class="col l3 m2 s2" >
+          <div onclick="toggleSlider('test')">
+            <p>Project2</p>
+          </div>
+        </div>
+        <div class="col l3 m2 s2">
+          <div onclick="toggleSlider('test2')">
+            <p>Project3</p>
+          </div>
+        </div>
+        <div class="col l3 m2 s2">
+          <div>
+            <p>Project4</p>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col l3 m2 s2">
+          <div>
+            <p>Project1</p>
+          </div>
+        </div>
+        <div class="col l3 m2 s2">
+          <div>
+            <p>Project2</p>
+          </div>
+        </div>
+        <div class="col l3 m2 s2">
+          <div>
+            <p>Project3</p>
+          </div>
+        </div>
+        <div class="col l3 m2 s2">
+          <div>
+            <p>Project4</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
 
 
   </main>

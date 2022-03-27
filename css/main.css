@@ -498,18 +498,6 @@ footer ul {
   margin: auto;
 }
 
-#splide-agrorrhh .splide__slide {
-  transition: opacity .4s ease, padding .4s ease;
-  cursor: pointer;
-}
-
-#splide-agrorrhh .splide__slide:not(.is-active) {
-  opacity: 0.5;
-  padding: 20px;
-}
-
-
-
 .splide__slide img {
   width: 100%;
   height: auto;
@@ -530,24 +518,28 @@ footer ul {
   fill: white;
 }
 
-#carousel-others .carousel-item {
-  width: 300px !important;
-  height: 300px !important;
+.project {
+  padding-bottom: 0;
 }
 
-video {
-  max-width: 100%;
+.project-selector {
+  /* width: 100%; */
+  /* max-width: 1000px; */
+  padding-top: 0
 }
 
-#asesorrural .overlay {
-  width: 600px;
-  max-width: 100%;
-  margin: auto;
+.project-selector .row {
+  background-color: purple;
+  width: 100%;
+  height: 150px;
 }
 
-.carousel-item:not(.active) .overlay {
-  opacity: 0 !important;
+.project-selector .col {
+  background-color: grey;
+  width: 100%;
+  height: 100%;
 }
+
 
 /* ==========================================================================
    Browser Fixes

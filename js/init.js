@@ -24,18 +24,28 @@ $(document).ready(function () {
 });
 
 function deploySlider(id){
+    //genero el selector - con default el del proyecto de eventos
     var selector = id ? "#" + id : "#splide-eventos" 
-    // console.log(selector)
 
-    //agregar validacion para no hacer mount repetidas veces
-    new Splide( selector, {
+    //me fijo los splide actuales
+    var activeSliders = []
+    for (var slider of $(".splide.is-active")){
+      activeSliders.push("#" + slider.id);
+    }
+
+    //cargo el splide nuevo si no está activo  
+    if(activeSliders.includes(selector) == false){
+      console.log("cargo splide")
+      new Splide( selector, {
         type   : 'loop',
         perPage: 1,
         autoplay: true,
         lazyLoad: 'sequential',
         pagination: false,
         padding: 0,
-    }).mount();
+      }).mount();
+    }
+    
 }
 
 function toggleSlider(id){
@@ -44,7 +54,6 @@ function toggleSlider(id){
     //hide active slider
     $(".container.section.project.active").removeClass("active").addClass("hide");
     //show new slider
-    $("#project-"+id).addClass("active").removeClass("hide");
-
-    
+    $("#project-"+id).addClass("active").removeClass("hide")[0].scrollIntoView({behavior: "smooth"});
+        
 }
