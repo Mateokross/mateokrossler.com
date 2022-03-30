@@ -4,14 +4,14 @@ $(document).ready(function () {
 /* ==========================================================================
   AOS - https://michalsnik.github.io/aos/
   ========================================================================== */
-  if(window.innerWidth >= 991){
-    AOS.init({
-        offset: 300,
-        delay: 200,
-        duration: 1800,
-        once: true
-      });
-  }
+  // if(window.innerWidth >= 991){
+  //   AOS.init({
+  //       offset: 300,
+  //       delay: 200,
+  //       duration: 1800,
+  //       once: true
+  //     });
+  // }
 
   /* ==========================================================================
   Slider - https://splidejs.com/documents/
