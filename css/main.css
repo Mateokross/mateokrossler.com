@@ -4,7 +4,7 @@
 /*Font*/
 h1,
 h2 {
-  font-family: 'Sora', sans-serif;
+  font-family: 'Raleway', sans-serif;
   font-weight: 600;
 }
 
@@ -181,8 +181,7 @@ header nav i {
 }
 
 #nav-mobile h5 {
-  /* font-family: 'PT Serif', 'Source Sans Pro', sans-serif; */
-  font-family: 'Sora', sans-serif;
+  font-family: 'Raleway', sans-serif;
   padding-bottom: 10%
 }
 
@@ -231,12 +230,13 @@ header nav i {
 
 .hero h1 {
   margin: 0;
-  font-family: 'Sora', sans-serif;
+  font-family: 'Raleway', sans-serif;
   transition: all .4s ease;
+  color: white;
 }
 
-.hero h1 {
-  color: white;
+.hero.secondary h1 {
+  font-size: 4em;
 }
 
 .hero h4 {
