@@ -13,6 +13,17 @@ $(document).ready(function () {
       });
   }
 
+  /* ==========================================================================
+  Slider
+  ========================================================================== */
+  //init sliders
+  deploySliders()
+
+  //add onclick function to thumbnails
+  $(".project-selector div.col").click(function(){
+    toggleSlider(this.id)}
+    );
+
 /* ==========================================================================
   Otros 
   ========================================================================== */
@@ -20,40 +31,39 @@ $(document).ready(function () {
         edge: 'right'
     });
 
-    deploySlider()
+    
 });
 
-function deploySlider(id){
-    //genero el selector - con default el del proyecto de eventos
-    var selector = id ? "#" + id : "#splide-eventos" 
 
-    //me fijo los splide actuales
-    var activeSliders = []
-    for (var slider of $(".splide.is-active")){
-      activeSliders.push("#" + slider.id);
-    }
-
-    //cargo el splide nuevo si no está activo  
-    if(activeSliders.includes(selector) == false){
-      console.log("cargo splide")
-      new Splide( selector, {
-        type   : 'loop',
-        perPage: 1,
-        autoplay: true,
-        lazyLoad: 'sequential',
-        pagination: false,
-        padding: 0,
-      }).mount();
-    }
-    
+function deploySliders(){
+  //loopeo todos los splide
+  for (var slider of $(".splide")){
+    //selecciono el id
+    var selector = "#" + slider.id;
+    //lo inicializo
+    new Splide( selector, {
+      type: 'loop',
+      perPage: 1,
+      autoplay: false,
+      lazyLoad: 'sequential',
+      pagination: false,
+      padding: 0,
+      start: 0
+    }).mount();
+  }
+  
 }
 
 function toggleSlider(id){
-    //deploy slider
-    deploySlider("splide-" + id)
+    
+    //change active thumbnail
+    $(".project-selector .col.active").removeClass("active")
+    $("#" + id).addClass("active")
     //hide active slider
     $(".container.section.project.active").removeClass("active").addClass("hide");
     //show new slider
-    $("#project-"+id).addClass("active").removeClass("hide")[0].scrollIntoView({behavior: "smooth"});
+    var project = id.slice(10);
+    $("#project-" + project).addClass("active").removeClass("hide")[0].scrollIntoView({behavior: "smooth", duration: 500});
+
         
 }
