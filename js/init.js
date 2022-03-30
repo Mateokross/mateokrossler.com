@@ -14,29 +14,9 @@ $(document).ready(function () {
   }
 
   /* ==========================================================================
-  Slider
+  Slider - https://splidejs.com/documents/
   ========================================================================== */
   //init sliders
-  deploySliders()
-
-  //add onclick function to thumbnails
-  $(".project-selector div.col").click(function(){
-    toggleSlider(this.id)}
-    );
-
-/* ==========================================================================
-  Otros 
-  ========================================================================== */
-    $('.sidenav').sidenav({
-        edge: 'right'
-    });
-
-    
-});
-
-
-function deploySliders(){
-  //loopeo todos los splide
   for (var slider of $(".splide")){
     //selecciono el id
     var selector = "#" + slider.id;
@@ -51,19 +31,46 @@ function deploySliders(){
       start: 0
     }).mount();
   }
+
+
+/* ==========================================================================
+  Materialize - https://materializecss.com/
+  ========================================================================== */
+    $('.sidenav').sidenav({
+        edge: 'right'
+    });
+
+
+/* ==========================================================================
+  TypewriterJS v2 - https://github.com/tameemsafi/typewriterjs
+  ========================================================================== */
+
+  //Si estoy en la página index, inicializo el typewriter
+
+  if($(".hero h4.spanish").length){
+    new Typewriter('.hero h4.spanish', {
+      strings: ['Lic. en Administración y Sistemas del ITBA', 'Analista de Producto en Kavak'],
+      autoStart: true,
+      cursor:"",
+      delay: 15,
+      deleteSpeed: 30,
+      loop: true,
+      pauseFor: 2500
+    });
   
-}
+    new Typewriter('.hero h4.english', {
+      strings: ['Business and Tech graduate from ITBA', 'Product Analyst at Kavak'],
+      autoStart: true,
+      cursor:"",
+      delay: 15,
+      deleteSpeed: 30,
+      loop: true,
+      pauseFor: 2500
+    });
+  }
 
-function toggleSlider(id){
+
+
     
-    //change active thumbnail
-    $(".project-selector .col.active").removeClass("active")
-    $("#" + id).addClass("active")
-    //hide active slider
-    $(".container.section.project.active").removeClass("active").addClass("hide");
-    //show new slider
-    var project = id.slice(10);
-    $("#project-" + project).addClass("active").removeClass("hide")[0].scrollIntoView({behavior: "smooth", duration: 500});
+});
 
-        
-}
