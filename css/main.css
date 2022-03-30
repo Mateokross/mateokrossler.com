@@ -599,7 +599,8 @@ footer ul {
 }
 
 .project-selector .col .project-wrapper .project-text-wrapper,
-.project-selector:hover .col.active .project-wrapper .project-text-wrapper {
+.project-selector:hover .col.active .project-wrapper .project-text-wrapper,
+.project-selector:focus .col.active .project-wrapper .project-text-wrapper {
   position: absolute;
   top: 0;
   left: 0;
@@ -612,7 +613,8 @@ footer ul {
 
 .project-selector .col.active .project-wrapper .project-text-wrapper,
 .project-selector .col:hover .project-wrapper .project-text-wrapper,
-.project-selector .col.active:hover .project-wrapper .project-text-wrapper {
+.project-selector .col:focus .project-wrapper .project-text-wrapper .project-selector .col.active:hover .project-wrapper .project-text-wrapper,
+.project-selector .col.active:focus .project-wrapper .project-text-wrapper {
   opacity: 1;
   background-color: rgba(0, 0, 0, .3);
   -webkit-backdrop-filter: blur(6px);
@@ -625,6 +627,7 @@ footer ul {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  padding: 5px;
 }
 
 .project-selector .col .project-wrapper .project-text-wrapper .project-text p {
