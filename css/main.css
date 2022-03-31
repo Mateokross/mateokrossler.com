@@ -523,13 +523,12 @@ footer ul {
   background-color: rgba(255, 255, 255, 0.3);
   -webkit-backdrop-filter: blur(6px);
   backdrop-filter: blur(6px);
-  -webkit-box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.75);
-  -moz-box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.75);
   box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.75);
 }
 
 .splide__arrow svg {
   fill: white;
+  -webkit-filter: drop-shadow(0px 0px 1px rgba(0, 0, 0, 0.6));
   filter: drop-shadow(0px 0px 1px rgba(0, 0, 0, 0.6));
 }
 
@@ -636,8 +635,6 @@ footer ul {
 .project-selector .col .project-wrapper .project-text-wrapper .project-text {
   width: 100%;
   height: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   padding: 5px;
 }
