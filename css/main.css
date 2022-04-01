@@ -57,7 +57,7 @@ footer a:focus {
 
 .btn {
   background-color: #e85d2d;
-  border-radius: 3px;
+  border-radius: 8px;
   border: none;
   color: #fff;
   cursor: pointer;
@@ -305,7 +305,8 @@ main {
   overflow: hidden;
   box-sizing: content-box;
   /* arregla un bug en el que ocupa mas espacio vertical */
-  line-height: 0
+  line-height: 0;
+  border-radius: 10px;
 }
 
 .image-link .overlay {
@@ -337,6 +338,10 @@ main {
   text-align: center;
 }
 
+/*primer seccion*/
+/* #section-1 img.yo{
+  border-radius: 10px;
+} */
 
 /* section cv */
 #section-2 {
