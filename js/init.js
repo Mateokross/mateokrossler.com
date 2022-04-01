@@ -1,5 +1,4 @@
 $(document).ready(function () {
-  console.log("test #2")
 
 /* ==========================================================================
   AOS - https://michalsnik.github.io/aos/
