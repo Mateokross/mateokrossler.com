@@ -6,7 +6,24 @@ $(window).on("load", function () {
   $(".preloader").fadeOut(400);
   $("body").removeClass("loading");
 
-
+  /* ==========================================================================
+  Slider - https://splidejs.com/documents/
+  ========================================================================== */
+  //init sliders
+  for (var slider of $(".splide")){
+    //selecciono el id
+    var selector = "#" + slider.id;
+    //lo inicializo
+    new Splide( selector, {
+      type: 'loop',
+      perPage: 1,
+      autoplay: false,
+      lazyLoad: 'nearby',
+      pagination: false,
+      padding: 0,
+      start: 0
+    }).mount();
+  }
   /* ==========================================================================
     Auto-updating year (footer)
     ========================================================================== */

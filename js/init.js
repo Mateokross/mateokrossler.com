@@ -1,5 +1,5 @@
 $(document).ready(function () {
-
+  console.log("test #1")
 
 /* ==========================================================================
   AOS - https://michalsnik.github.io/aos/
@@ -13,24 +13,6 @@ $(document).ready(function () {
   //     });
   // }
 
-  /* ==========================================================================
-  Slider - https://splidejs.com/documents/
-  ========================================================================== */
-  //init sliders
-  for (var slider of $(".splide")){
-    //selecciono el id
-    var selector = "#" + slider.id;
-    //lo inicializo
-    new Splide( selector, {
-      type: 'loop',
-      perPage: 1,
-      autoplay: false,
-      lazyLoad: 'sequential',
-      pagination: false,
-      padding: 0,
-      start: 0
-    }).mount();
-  }
 
 
 /* ==========================================================================
