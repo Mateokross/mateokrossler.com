@@ -1,76 +1,70 @@
 $(document).ready(function () {
 
-
 /* ==========================================================================
   AOS - https://michalsnik.github.io/aos/
   ========================================================================== */
-  if(window.innerWidth >= 991){
-    AOS.init({
-        offset: 300,
-        delay: 200,
-        duration: 1800,
-        once: true
-      });
-  }
+  // if(window.innerWidth >= 991){
+  //   AOS.init({
+  //       offset: 300,
+  //       delay: 200,
+  //       duration: 1800,
+  //       once: true
+  //     });
+  // }
 
+  /* ==========================================================================
+  Slider - https://splidejs.com/documents/
+  ========================================================================== */
+  //lo inicializo en página de desarrollo
+  if($("#splide-eventos").length){
+    new Splide( "#splide-eventos", {
+      type: 'loop',
+      perPage: 1,
+      autoplay: false,
+      lazyLoad: 'sequential',
+      pagination: false,
+      padding: 0,
+      start: 0
+    }).mount();
+  }
 /* ==========================================================================
-  Otros 
+  Materialize - https://materializecss.com/
   ========================================================================== */
     $('.sidenav').sidenav({
         edge: 'right'
     });
 
-    $('.materialboxed').materialbox();
-    // $('#carousel-eventos').carousel({
-    //     dist: -130,
-    //     numVisible: 3
-    // });
-    $('#carousel-agrorrhh').carousel({
-        dist: -130,
-        numVisible: 3
-    });
-    $('#carousel-others').carousel({
-        dist: -30,
-        numVisible: 3
-    });
 
-    new Splide( '#splide-eventos', {
-        type   : 'loop',
-        perPage: 1,
-        autoplay: true,
-        lazyLoad: 'sequential',
-        pagination: false,
-        padding: 0,
-    }).mount();
+/* ==========================================================================
+  TypewriterJS v2 - https://github.com/tameemsafi/typewriterjs
+  ========================================================================== */
 
-    new Splide( '#splide-agrorrhh', {
-        type   : 'loop',
-        perPage: 1,
-        autoplay: true,
-        lazyLoad: 'sequential',
-        width:1500,
-        heightRatio: 0.3333,
-        perPage:3,
-        focus    : 'center',
-        trimSpace: false,
-        arrows: false,
-        pagination: false,
-        gap: '1em',
-        breakpoints: {
-            1700: {
-                width:900,
-                heightRatio: 1,
-                perPage: 1,
-                heightRatio: 1,
-                gap: '0px',
-                padding: 200,
-            },
-            820: {
-                perPage: 1,
-                heightRatio: 1,
-                gap: '0px',
-                padding: 35,
-            },
-        }
-    }).mount();
+  //Si estoy en la página index, inicializo el typewriter
+
+  if($(".hero h4.spanish").length){
+    new Typewriter('.hero h4.spanish', {
+      strings: ['Lic. en Administración y Sistemas del ITBA', 'Analista de Producto en Kavak'],
+      autoStart: true,
+      cursor:"",
+      delay: 15,
+      deleteSpeed: 30,
+      loop: true,
+      pauseFor: 2500
+    });
+  
+    new Typewriter('.hero h4.english', {
+      strings: ['Business and Tech graduate from ITBA', 'Product Analyst at Kavak'],
+      autoStart: true,
+      cursor:"",
+      delay: 15,
+      deleteSpeed: 30,
+      loop: true,
+      pauseFor: 2500
+    });
+  }
+
+
+
+    
 });
+

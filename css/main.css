@@ -4,7 +4,7 @@
 /*Font*/
 h1,
 h2 {
-  font-family: 'Sora', sans-serif;
+  font-family: 'Raleway', sans-serif;
   font-weight: 600;
 }
 
@@ -181,8 +181,7 @@ header nav i {
 }
 
 #nav-mobile h5 {
-  /* font-family: 'PT Serif', 'Source Sans Pro', sans-serif; */
-  font-family: 'Sora', sans-serif;
+  font-family: 'Raleway', sans-serif;
   padding-bottom: 10%
 }
 
@@ -231,12 +230,13 @@ header nav i {
 
 .hero h1 {
   margin: 0;
-  font-family: 'Sora', sans-serif;
+  font-family: 'Raleway', sans-serif;
   transition: all .4s ease;
+  color: white;
 }
 
-.hero h1 {
-  color: white;
+.hero.secondary h1 {
+  font-size: 4em;
 }
 
 .hero h4 {
@@ -254,6 +254,14 @@ header nav i {
   }
 }
 
+@media only screen and (max-width:667px) {
+  .hero h4 {
+    /*fix de multiline moviendo heading*/
+    position: absolute;
+    padding-right: 15px;
+  }
+}
+
 @media only screen and (max-width:600px) {
   .hero h1 {
     font-size: 4rem;
@@ -261,6 +269,10 @@ header nav i {
 
   .hero h4 {
     font-size: 1.9rem;
+  }
+
+  .hero.secondary h1 {
+    font-size: 3em;
   }
 }
 
@@ -336,10 +348,6 @@ main {
   max-width: 800px;
   margin: auto;
 }
-
-/* #section-2 #cv .image-link {
-  max-width: 300px;
-} */
 
 /* section 3 */
 
@@ -445,8 +453,6 @@ footer ul {
    Cambios Materialize
    ========================================================================== */
 
-
-
 .row {
   margin-bottom: 0;
 }
@@ -498,21 +504,14 @@ footer ul {
   margin: auto;
 }
 
-#splide-agrorrhh .splide__slide {
-  transition: opacity .4s ease, padding .4s ease;
-  cursor: pointer;
+.splide__track {
+  border-radius: 10px;
 }
-
-#splide-agrorrhh .splide__slide:not(.is-active) {
-  opacity: 0.5;
-  padding: 20px;
-}
-
-
 
 .splide__slide img {
   width: 100%;
   height: auto;
+  border-radius: 10px;
 }
 
 .splide__pagination__page.is-active {
@@ -524,30 +523,128 @@ footer ul {
   background-color: rgba(255, 255, 255, 0.3);
   -webkit-backdrop-filter: blur(6px);
   backdrop-filter: blur(6px);
+  box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.75);
 }
 
 .splide__arrow svg {
   fill: white;
+  -webkit-filter: drop-shadow(0px 0px 1px rgba(0, 0, 0, 0.6));
+  filter: drop-shadow(0px 0px 1px rgba(0, 0, 0, 0.6));
 }
 
-#carousel-others .carousel-item {
-  width: 300px !important;
-  height: 300px !important;
+.project {
+  padding-bottom: 0;
 }
 
-video {
-  max-width: 100%;
+.project-selector {
+  padding-top: 0
 }
 
-#asesorrural .overlay {
-  width: 600px;
-  max-width: 100%;
+@media only screen and (max-width:992px) {
+  .project-selector {
+    height: 625px
+  }
+}
+
+.project-selector .row {
+  width: 100%;
+  height: 150px;
+}
+
+.project-selector .col {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  padding: 4px;
+}
+
+.project-selector .col .project-wrapper {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  border-radius: 10px;
+}
+
+.project-selector #thumbnail-asesorrural .project-img {
+  background-image: url("../img/project-thumbs/asesorrural-thumb.jpg");
+}
+
+.project-selector #thumbnail-agrorrhh .project-img {
+  background-image: url("../img/project-thumbs/agrorrhh-thumb.jpg");
+}
+
+.project-selector #thumbnail-rps .project-img {
+  background-image: url("../img/project-thumbs/rps-thumb.jpg");
+}
+
+.project-selector #thumbnail-map .project-img {
+  background-image: url("../img/project-thumbs/map-thumb.jpg");
+}
+
+.project-selector #thumbnail-bravo .project-img {
+  background-image: url("../img/project-thumbs/bravo-thumb.jpg");
+}
+
+.project-selector #thumbnail-trama .project-img {
+  background-image: url("../img/project-thumbs/trama-thumb.jpg");
+}
+
+.project-selector #thumbnail-portfolio .project-img {
+  background-image: url("../img/project-thumbs/portfolio-thumb.jpg");
+}
+
+.project-selector #thumbnail-eventos .project-img {
+  background-image: url("../img/project-thumbs/eventos-thumb.jpg");
+}
+
+
+
+.project-selector .col .project-wrapper .project-img {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100%;
+}
+
+.project-selector .col .project-wrapper .project-text-wrapper,
+.project-selector:hover .col.active .project-wrapper .project-text-wrapper,
+.project-selector:focus .col.active .project-wrapper .project-text-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+  transition: all .3s ease;
+}
+
+.project-selector .col.active .project-wrapper .project-text-wrapper,
+.project-selector .col:hover .project-wrapper .project-text-wrapper,
+.project-selector .col:focus .project-wrapper .project-text-wrapper .project-selector .col.active:hover .project-wrapper .project-text-wrapper,
+.project-selector .col.active:focus .project-wrapper .project-text-wrapper {
+  opacity: 1;
+  background-color: rgba(0, 0, 0, .3);
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+}
+
+.project-selector .col .project-wrapper .project-text-wrapper .project-text {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  padding: 5px;
+}
+
+.project-selector .col .project-wrapper .project-text-wrapper .project-text p {
+  color: white;
   margin: auto;
+  text-align: center;
 }
 
-.carousel-item:not(.active) .overlay {
-  opacity: 0 !important;
-}
 
 /* ==========================================================================
    Browser Fixes
