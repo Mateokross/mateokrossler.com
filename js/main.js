@@ -10,7 +10,7 @@ $(window).on("load", function () {
   Slider - https://splidejs.com/documents/
   ========================================================================== */
   //init sliders
-  for (var slider of $(".splide")){
+  for (var slider of $(".splide:not(#splide-eventos)")){
     //selecciono el id
     var selector = "#" + slider.id;
     //lo inicializo
@@ -18,7 +18,7 @@ $(window).on("load", function () {
       type: 'loop',
       perPage: 1,
       autoplay: false,
-      lazyLoad: 'nearby',
+      lazyLoad: 'sequential',
       pagination: false,
       padding: 0,
       start: 0

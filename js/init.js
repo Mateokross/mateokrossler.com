@@ -1,5 +1,5 @@
 $(document).ready(function () {
-  console.log("test #1")
+  console.log("test #2")
 
 /* ==========================================================================
   AOS - https://michalsnik.github.io/aos/
@@ -13,7 +13,19 @@ $(document).ready(function () {
   //     });
   // }
 
-
+  /* ==========================================================================
+  Slider - https://splidejs.com/documents/
+  ========================================================================== */
+  //lo inicializo
+  new Splide( "#splide-eventos", {
+    type: 'loop',
+    perPage: 1,
+    autoplay: false,
+    lazyLoad: 'sequential',
+    pagination: false,
+    padding: 0,
+    start: 0
+  }).mount();
 
 /* ==========================================================================
   Materialize - https://materializecss.com/
