@@ -15,17 +15,18 @@ $(document).ready(function () {
   /* ==========================================================================
   Slider - https://splidejs.com/documents/
   ========================================================================== */
-  //lo inicializo
-  new Splide( "#splide-eventos", {
-    type: 'loop',
-    perPage: 1,
-    autoplay: false,
-    lazyLoad: 'sequential',
-    pagination: false,
-    padding: 0,
-    start: 0
-  }).mount();
-
+  //lo inicializo en página de desarrollo
+  if($("#splide-eventos").length){
+    new Splide( "#splide-eventos", {
+      type: 'loop',
+      perPage: 1,
+      autoplay: false,
+      lazyLoad: 'sequential',
+      pagination: false,
+      padding: 0,
+      start: 0
+    }).mount();
+  }
 /* ==========================================================================
   Materialize - https://materializecss.com/
   ========================================================================== */
