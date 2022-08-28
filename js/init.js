@@ -32,6 +32,9 @@ $(document).ready(function () {
     theme: 'mateo',
     interactive: true,
     maxWidth: 600,
+    popperOptions: {
+      strategy: 'fixed',
+    },
   });
 
   tippy('.tippy-development.english',{
@@ -41,6 +44,9 @@ $(document).ready(function () {
     theme: 'mateo',
     interactive: true,
     maxWidth: 600,
+    popperOptions: {
+      strategy: 'fixed',
+    },
   });
 
 
@@ -54,6 +60,9 @@ $(document).ready(function () {
     theme: 'mateo',
     interactive: true,
     maxWidth: 600,
+    popperOptions: {
+      strategy: 'fixed',
+    },
   });
 
   tippy('.tippy-photography.english',{
@@ -63,6 +72,9 @@ $(document).ready(function () {
     theme: 'mateo',
     interactive: true,
     maxWidth: 600,
+    popperOptions: {
+      strategy: 'fixed',
+    },
   });
 
 
