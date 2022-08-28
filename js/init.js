@@ -19,21 +19,51 @@ $(document).ready(function () {
   /* ==========================================================================
   Tippy JS - https://atomiks.github.io/tippyjs/v6/getting-started/
   ========================================================================== */
+  //revisar setContent https://atomiks.github.io/tippyjs/v6/methods/
 
 
-  const photographyModalContent = document.getElementById('photography-modal-content');
+  const developmentModalContentSpanish = document.getElementById('development-modal-content-spanish');
+  const developmentModalContentEnglish = document.getElementById('development-modal-content-english');
 
-  tippy('.tippy-photography',{
-    content: photographyModalContent.innerHTML,
+  tippy('.tippy-development.spanish',{
+    content: developmentModalContentSpanish.innerHTML,
     allowHTML: true,
-    placement: 'bottom',
+    placement: 'right',
     theme: 'mateo',
     interactive: true,
     maxWidth: 600,
-    offset: [0, 20],
   });
 
-  console.log("test")
+  tippy('.tippy-development.english',{
+    content: developmentModalContentEnglish.innerHTML,
+    allowHTML: true,
+    placement: 'right',
+    theme: 'mateo',
+    interactive: true,
+    maxWidth: 600,
+  });
+
+
+  const photographyModalContentSpanish = document.getElementById('photography-modal-content-spanish');
+  const photographyModalContentEnglish = document.getElementById('photography-modal-content-english');
+
+  tippy('.tippy-photography.spanish',{
+    content: photographyModalContentSpanish.innerHTML,
+    allowHTML: true,
+    placement: 'right',
+    theme: 'mateo',
+    interactive: true,
+    maxWidth: 600,
+  });
+
+  tippy('.tippy-photography.english',{
+    content: photographyModalContentEnglish.innerHTML,
+    allowHTML: true,
+    placement: 'right',
+    theme: 'mateo',
+    interactive: true,
+    maxWidth: 600,
+  });
 
 
 

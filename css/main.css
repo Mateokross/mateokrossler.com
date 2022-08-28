@@ -76,6 +76,14 @@ body{
   min-height: 100vh;
 }
 
+p, li, a{
+  font-size: 1.2vw;
+}
+
+h1{
+  font-size: 2.3em
+}
+
 a, .a {
   text-decoration: underline;
   color: #00141d;
@@ -124,14 +132,22 @@ header {
   justify-content: flex-end;
 }
 
+header .language-selector{
+  padding-top: 20px;
+  padding-right: 20px;
+  font-size: 0.9em;
+  text-decoration: none;
+  font-weight: bolder;
+}
+
 /* Main content */
 main.index{
-  width: 100%;
+  width: 100vw;
 }
 main.index .container{
-  width:100%;
+  width:100vw;
   margin: auto;
-  padding: 10%;
+  padding: 7vw;
 }
 
 main.index .container .content {
@@ -141,7 +157,7 @@ main.index .container .content {
 main.index .container .content ul{
   display: flex;
   justify-content: space-between;
-  max-width: 500px;
+  max-width: 400px;
 }
 
 main.index .container .content ul li.break{
@@ -149,7 +165,8 @@ main.index .container .content ul li.break{
   align-items: center;
 }
 main.index .container .content ul li.break i{
-  font-size: 0.7rem;
+  font-size: 0.3em;
+  opacity: 0.2;
 }
 
 
@@ -181,7 +198,7 @@ textarea {
   font-family: 'Inter', sans-serif;
   font-weight: 400;
 }
-
+/* 
 h2 {
   font-size: 2.1rem;
 }
@@ -196,7 +213,7 @@ li {
   li {
     font-size: 18px;
   }
-}
+} */
 
 
 

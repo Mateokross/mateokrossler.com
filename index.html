@@ -23,30 +23,33 @@
 
   <!-- css -->
   <link href="css/materialize.min.css" type="text/css" rel="stylesheet" media="screen" />
-  <!-- <link href="css/aos.min.css" type="text/css" rel="stylesheet" media="screen" /> -->
-  <link href="css/main.min.css?v=4" type="text/css" rel="stylesheet" media="screen" />
-  <!-- <link rel="stylesheet" href="styles/debug.css"> -->
+  <link href="css/main.min.css?v=0" type="text/css" rel="stylesheet" media="screen" />
 
 </head>
 
 <body class="loading">
-  <!--PRELOADER-->
+  <!-- preloader -->
   <div class="preloader">
     <div class="preloader-circle"></div>
     <div class="preloader-circle"></div>
   </div>
   <!---->
 
+  <!-- language select header -->
   <header>
-    <a href="#!" class="language-selector en spanish">English</a>
-    <a href="#!" class="language-selector es english">Español</a>
+    <p class="a language-selector en spanish">English</a>
+    <p class="a language-selector es english">Español</a>
   </header>
+  <!---->
 
+
+  <!-- main content -->
   <main class="index">
     <div class="container">
       <div class="content">
         <h1 class="name">Mateo Krössler</h1>
-          <p>Product manager en Arex Markets (Barcelona), construyendo software para ayudar a PyMEs. Egresado de Administración y Sistemas del Instituto Tecnológico de Buenos Aires (ITBA). Extremadamente curioso. Fan de conocer nuevos lugares, el cine y la fotografía.</p>
+          <p class="spanish">Product manager en AREX Markets en Barcelona, construyendo software para financiar PyMEs. Graduado con honores del Instituto Tecnológico de Buenos Aires (ITBA) de Lic. en Administración y Sistemas. Extremadamente curioso. Fan del viaje, el cine y la fotografía.</p>
+          <p class="english">Product manager at AREX Markets in Barcelona, building software to finance SMEs. Honorary graduate of Business Administration and Tech from the Buenos Aires Institute of Technology (ITBA). Extremely curious. Fan of traveling, cinema, and photography.</p>
           <ul>
             <li>
               <a href="https://www.linkedin.com/in/mateokrossler/" target="_blank" rel="noreferrer" class="spanish">LinkedIn</a>
@@ -56,8 +59,8 @@
             <li><a href="mailto:mateokrossler@gmail.com">Email</a></li>
             <li class="break"><i class="material-icons tiny">brightness_1</i></li>
             <li>
-              <p class="a spanish">Desarrollo</p>
-              <p class="a english">Development</p>
+              <a href="https://www.mateokrossler.com/development" target="_blank" rel="noreferrer" class="spanish tippy-development">Desarrollo</a>
+              <a href="https://www.mateokrossler.com/development" target="_blank" rel="noreferrer" class="english tippy-development">Development</a>
             </li>
             <li class="break"><i class="material-icons tiny">brightness_1</i></li>
             <li>
@@ -65,96 +68,31 @@
               <p class="a english tippy-photography">Photography</p>
             </li>      
           </ul>
-
       </div>
     </div>
+    <!---->
 
-    <div id="photography-modal-content" style="display:none">
-      <div>
-        <h2>Photography</h2>
-        <p>
-          I love traveling and taking pictures. I've been lucky enough to be able to visit several countries and I've
-          developed a couple of pages showcasing some of my favorite photos. I have some pictures posted on <a href="https://unsplash.com/photos/6Vh05qMNziA" target="_blank" rel="noreferrer" >Unsplash</a>, where I accumulated more than <b>1.5M</b> views and <b>~20K</b> downloads.</p>
-      </div>
-      <a href="https://unsplash.com/@mateokross" target="_blank" rel="noreferrer">
-        <div class="center-align image-link">
-          <img class="responsive-img" width="580px" src="img/colonia-min.jpg" alt="Picture taken in Cologne">
-          <div class="overlay">
-            <div class="text">More Pictures</div>
-          </div>
-        </div>
-      </a>
+    <!-- modals -->
+    <div id="development-modal-content-english" style="display:none">
+      <p>I learned development and worked while studying business. My most ambitious project was a virtual exhibition platform with more than <b>6000</b> international users. In it, users can navigate halls and stands for events and enjoy concerts and conferences. Integrated chat and networking systems helps guests enjoy content and make connections with other attendees.</p>
+      <img class="responsive-img" width="580px" src="img/spannabis-min.jpg" alt="Screenshot of site's interface">
+      <a href="/development.html" target="_blank" rel="noreferrer" class="">See more ></a>
     </div>
+    <div id="development-modal-content-spanish" style="display:none">
+      <p>Aprendí y trabajé de desarrollador web mientras estudiaba administración. Mi proyecto más ambicioso fue una plataforma de exposiciones virtuales con más de 6000 usuarios internacionales. En ella, los usuarios pueden navegar por distintos halls y stands de eventos, hacer networking y disfrutar de conciertos y conferencias.</p>
+      <img class="responsive-img" width="580px" src="img/spannabis-min.jpg" alt="Screenshot interfaz AgroRRHH">
+    </div>
+    <div id="photography-modal-content-english" style="display:none">
+      <p>I love traveling and taking pictures. I've been lucky enough to be able to visit several countries and practice my hobby there. I have some pictures posted on Unsplash, where I accumulated more than 2M views and 30K downloads. My pictures have been used on many websites and even on a french beer.</p>
+      <img class="responsive-img" width="580px" src="img/colonia-min.jpg" alt="Picture taken in Cologne">
+    </div>
+    <div id="photography-modal-content-spanish" style="display:none">
+      <p>Me gusta viajar y sacar fotos. Tuve la suerte de poder visitar varios países y practicar my hobby ahí. Tengo algunas publicadas en Unsplash, donde ya acumulé más de 2 millones de visualizaciones y 30 mil descargas. Mis fotos se usaron en varias páginas web y hasta en una cerveza francesa.</p>
+      <img class="responsive-img" width="580px" src="img/colonia-min.jpg" alt="Picture taken in Cologne">
+    </div>
+    <!---->
     
-         
-<!-- 
-
-    <section class="container section" id="section-3">
-
-      <div class="row spanish">
-        <div class="col s12 m6 l6" data-aos="fade-right">
-          <h2>Desarrollo Web</h2>
-          <p>Aprendí y trabajé de desarrollador mientras estudiaba administración. Mi proyecto más ambicioso fue una plataforma de exposiciones virtuales con más de <b>6000</b> usuarios internacionales. En ella, los usuarios pueden navegar por distintos halls y stands de eventos, hacer networking y disfrutar de conciertos y conferencias.</p>
-          <a href="development.html">
-            <div class="center-align image-link">
-              <img class="responsive-img" width="580px" src="img/spannabis-min.jpg" alt="Screenshot interfaz AgroRRHH">
-              <div class="overlay">
-                <div class="text">Más Proyectos</div>
-              </div>
-            </div>
-          </a>
-        </div>
-        <div class="col s12 m6 l6" style="display: flex;flex-direction: column;justify-content: space-between;" data-aos="fade-left">
-          <div>
-            <h2>Fotografía</h2>
-            <p>Me gusta viajar y sacar fotos. Tuve la suerte de poder visitar varios países y tengo
-              armadas un par de páginas mostrando algunas de mis fotos favoritas. Tengo algunas publicadas en <a href="https://unsplash.com/photos/6Vh05qMNziA" target="_blank" rel="noreferrer" >Unsplash</a>, donde ya acumulé más de <b>1,5 millones</b> de visualizaciones y <b>~20 mil</b> descargas.</p>
-          </div>
-          <a href="https://unsplash.com/@mateokross" target="_blank" rel="noreferrer">
-            <div class="center-align image-link">
-              <img class="responsive-img" width="580px" src="img/colonia-min.jpg"
-                alt="Foto tomada en Colonia, Alemania">
-              <div class="overlay">
-                <div class="text">Más Fotos</div>
-              </div>
-            </div>
-          </a>
-        </div>
-      </div>
-      <div class="row english">
-        <div class="col s12 m6 l6 english" data-aos="fade-right">
-          <h2>Web Development</h2>
-          <p>I learned development and worked while studying business. My most ambitious project was a virtual exhibition platform with more than <b>6000</b> international users. In it, users can navigate halls and stands for events and enjoy concerts and conferences. Integrated chat and networking systems helps guests enjoy content and make connections with other attendees</p>
-          <a href="development.html">
-            <div class="center-align image-link">
-              <img class="responsive-img" width="580px" src="img/spannabis-min.jpg" alt="Screenshot of site's interface">
-              <div class="overlay">
-                <div class="text">More Projects</div>
-              </div>
-            </div>
-          </a>
-        </div>
-        <div class="col s12 m6 l6 english" style="display: flex;flex-direction: column;justify-content: space-between;" data-aos="fade-left">
-          <div>
-            <h2>Photography</h2>
-            <p>
-              I love traveling and taking pictures. I've been lucky enough to be able to visit several countries and I've
-              developed a couple of pages showcasing some of my favorite photos. I have some pictures posted on <a href="https://unsplash.com/photos/6Vh05qMNziA" target="_blank" rel="noreferrer" >Unsplash</a>, where I accumulated more than <b>1.5M</b> views and <b>~20K</b> downloads.</p>
-          </div>
-          <a href="https://unsplash.com/@mateokross" target="_blank" rel="noreferrer">
-            <div class="center-align image-link">
-              <img class="responsive-img" width="580px" src="img/colonia-min.jpg" alt="Picture taken in Cologne">
-              <div class="overlay">
-                <div class="text">More Pictures</div>
-              </div>
-            </div>
-          </a>
-        </div>
-      </div>
-
-
-
-    </section> -->
+  
 
 
   </main>
