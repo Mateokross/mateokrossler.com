@@ -38,39 +38,54 @@
   <!---->
 
   <header>
-    <nav class=" transparent z-depth-0" role="navigation">
-      <div class="nav-wrapper container">
-        <ul class="right">
-          <li>
-            <a href="#!" class="language-selector en spanish">English</a>
-            <a href="#!" class="language-selector es english">Español</a>
-          </li>
-        </ul>
-      </div>
-    </nav>
+    <a href="#!" class="language-selector en spanish">English</a>
+    <a href="#!" class="language-selector es english">Español</a>
   </header>
 
-  <main>
-    <h1 class="name">Mateo Krössler</h1>
-    <p>Product manager en Arex Markets (Barcelona), construyendo software para ayudar a PyMEs. Egresado de Administración y Sistemas del Instituto Tecnológico de Buenos Aires (ITBA). Extremadamente curioso. Fan de conocer nuevos lugares, el cine y la fotografía.</p>
-    <ul>
-      <li>
-        <a href="https://www.linkedin.com/in/mateokrossler/" target="_blank" rel="noreferrer" class="spanish">LinkedIn</a>
-        <a href="https://www.linkedin.com/in/mateokrossler/?locale=en_US" target="_blank" rel="noreferrer" class="english">LinkedIn</a>
-      </li>
-      <li><i class="material-icons tiny">brightness_1</i></li>
-      <li>
-        <a href="MateoKrosslerCV.pdf" target="_blank" rel="noreferrer" class="spanish">Ver CV</a>
-        <a href="MateoKrosslerResume.pdf" target="_blank" rel="noreferrer" class="english">Curriculum</a>
-      </li>
-      <li><i class="material-icons tiny">brightness_1</i></li>
-      <li><a href="mailto:mateokrossler@gmail.com">mateokrossler@gmail.com</a></li>
-      <li><i class="material-icons tiny">brightness_1</i></li>
-      <li>
-        <a href="#!" class="language-selector en spanish">English</a>
-        <a href="#!" class="language-selector es english">Español</a>
-      </li>
-    </ul>
+  <main class="index">
+    <div class="container">
+      <div class="content">
+        <h1 class="name">Mateo Krössler</h1>
+          <p>Product manager en Arex Markets (Barcelona), construyendo software para ayudar a PyMEs. Egresado de Administración y Sistemas del Instituto Tecnológico de Buenos Aires (ITBA). Extremadamente curioso. Fan de conocer nuevos lugares, el cine y la fotografía.</p>
+          <ul>
+            <li>
+              <a href="https://www.linkedin.com/in/mateokrossler/" target="_blank" rel="noreferrer" class="spanish">LinkedIn</a>
+              <a href="https://www.linkedin.com/in/mateokrossler/?locale=en_US" target="_blank" rel="noreferrer" class="english">LinkedIn</a>
+            </li>
+            <li class="break"><i class="material-icons tiny">brightness_1</i></li>
+            <li><a href="mailto:mateokrossler@gmail.com">Email</a></li>
+            <li class="break"><i class="material-icons tiny">brightness_1</i></li>
+            <li>
+              <p class="a spanish">Desarrollo</p>
+              <p class="a english">Development</p>
+            </li>
+            <li class="break"><i class="material-icons tiny">brightness_1</i></li>
+            <li>
+              <p class="a spanish tippy-photography">Fotografía</p>
+              <p class="a english tippy-photography">Photography</p>
+            </li>      
+          </ul>
+
+      </div>
+    </div>
+
+    <div id="photography-modal-content" style="display:none">
+      <div>
+        <h2>Photography</h2>
+        <p>
+          I love traveling and taking pictures. I've been lucky enough to be able to visit several countries and I've
+          developed a couple of pages showcasing some of my favorite photos. I have some pictures posted on <a href="https://unsplash.com/photos/6Vh05qMNziA" target="_blank" rel="noreferrer" >Unsplash</a>, where I accumulated more than <b>1.5M</b> views and <b>~20K</b> downloads.</p>
+      </div>
+      <a href="https://unsplash.com/@mateokross" target="_blank" rel="noreferrer">
+        <div class="center-align image-link">
+          <img class="responsive-img" width="580px" src="img/colonia-min.jpg" alt="Picture taken in Cologne">
+          <div class="overlay">
+            <div class="text">More Pictures</div>
+          </div>
+        </div>
+      </a>
+    </div>
+    
          
 <!-- 
 
@@ -155,7 +170,9 @@
   <!-- <script src="js/aos.min.js"></script> -->
 <!--   <script src="js/materialize.min.js"></script>
   <script src="js/typewriter.min.js"></script> -->
-<!--   <script src="js/init.min.js?v=4"></script> -->
+  <script src="https://unpkg.com/@popperjs/core@2"></script>
+  <script src="https://unpkg.com/tippy.js@6"></script>
+  <script src="js/init.min.js?v=4"></script>
   <script src="js/main.min.js?v=4"></script>
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
