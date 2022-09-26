@@ -1,9 +1,19 @@
 /* ==========================================================================
+   Boilerplate code
+   ========================================================================== */
+/* Hide visually and from screen readers*/
+.hide, .language-select-hide {
+  display: none !important;
+}
+
+
+/* ==========================================================================
    Variables - Colors
    ========================================================================== */
 
-:root {
+html {
   --main-bg-color: white;
+  --main-bg-color-secondary: rgb(226,226,226);
   --main-text-color: black;
   --main-highlight-color: orange;
 }
@@ -165,7 +175,7 @@ header a, header p{
   padding: 20px;
   font-size: 0.9em;
   text-decoration: none !important;
-  font-weight: bolder !important;
+  /* font-weight: bolder !important; */
 }
 
 /* ==========================================================================
@@ -178,27 +188,120 @@ main.index{
 main.index .container{
   width:100vw;
   margin: auto;
-  padding: 7vw;
+  padding: 7vw 7vw 0 7vw;
 }
 
 main.index .container .content {
   max-width: 600px;
 }
 
-main.index .container .content ul{
+main.index .container .content ul.nav{
   display: flex;
   justify-content: space-between;
   max-width: 400px;
 }
 
-main.index .container .content ul li.break{
+main.index .container .content ul.nav li.break{
   display: flex;
   align-items: center;
 }
-main.index .container .content ul li.break i{
+main.index .container .content ul.nav li.break i{
   font-size: 0.3em;
   opacity: 0.2;
 }
+
+/* ==========================================================================
+   Mobile settings
+   ========================================================================== */
+@media only screen and (min-width:1121px) and (min-height:746px){
+  .hide-on-medium{
+    display: none!important;
+  }
+}
+
+@media only screen and (max-width:1120px), screen and (max-height:745px) {
+  /*helper*/
+  .hide-on-small{
+    display: none !important;
+  }
+
+  /*content*/
+
+  main.index .container .content h1{
+    margin-bottom: 10px
+  }
+
+  
+  main.index .container .content p{
+    margin-top: 10px
+  }
+
+
+  /*navigation*/
+
+  main.index .container .content ul.mobile-top-nav{
+    display: flex;
+  }
+
+  main.index .container .content ul.mobile-top-nav li:nth-child(1){
+    margin-right: 15px
+  }
+
+  main.index .container .content ul.mobile-top-nav li a{
+    text-decoration: none;
+    font-weight: bolder;
+    font-size: 0.8em;
+  }
+
+  main.index .container .content ul.mobile-bottom-nav{
+    display: flex;
+    justify-content: flex-start;
+  }
+
+  main.index .container .content ul.mobile-bottom-nav li:last-child{
+    margin-left: 60px
+  }
+
+  main.index .container .content ul.mobile-bottom-nav li p.active{
+    font-weight: bold;
+  }
+
+  /*modals-bubbles*/
+  main.index .tippy-bubble{
+    margin: 2.5vw;
+    padding: 4.5vw;
+    background-color: var(--main-bg-color-secondary);
+    border-radius: 10px;
+    max-width: 580px;
+  }
+
+  main.index .tippy-bubble p{
+    font-size: 1.2em
+  }
+
+  main.index .tippy-bubble a{
+    text-align: right;
+  }
+  
+}
+
+@media only screen and (min-width:675px){
+    /*modals-bubbles*/
+    main.index .tippy-bubble{
+      margin: 2.5vw 0 0 7vw;
+      padding: 30px 35px;
+    }
+
+    main.index .tippy-bubble p{
+      font-size: 18px
+    }
+
+}
+
+
+
+
+
 
 
 /* ==========================================================================
@@ -232,21 +335,25 @@ main.index .container .content ul li.break i{
   fill: var(--main-bg-color);
 }
 
-.tippy-box[data-theme~='mateo'] img{
+.tippy-box[data-theme~='mateo'] img, .tippy-bubble img{
   border-radius: 10px;
 }
 
-.tippy-box[data-theme~='mateo'] .tippy-content {
+.tippy-box[data-theme~='mateo'] .tippy-content{
   padding: 25px
 }
 
-.tippy-box[data-theme~='mateo'] .tippy-content p:first-child{
+.tippy-box[data-theme~='mateo'] .tippy-content p:first-child, .tippy-bubble p:first-child{
   margin-top: 0
 }
 
-.tippy-box[data-theme~='mateo'] .tippy-content a:last-child{
+.tippy-box[data-theme~='mateo'] .tippy-content a:last-child, .tippy-bubble a:last-child{
   margin-top: 10px;
   display: block;
+}
+
+.tippy-box[data-theme~='mateo'] .tippy-content a:last-child{
+  font-size: 1.1em;
 }
 
 

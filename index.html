@@ -23,7 +23,7 @@
 
   <!-- css -->
   <link href="css/materialize.min.css" type="text/css" rel="stylesheet" media="screen" />
-  <link href="css/main.min.css?v=0" type="text/css" rel="stylesheet" media="screen" />
+  <link href="css/main.css?v=0" type="text/css" rel="stylesheet" media="screen" />
   <link
   rel="stylesheet"
   href="https://unpkg.com/tippy.js@6/themes/light.css"
@@ -52,9 +52,18 @@
     <div class="container">
       <div class="content">
         <h1 class="name">Mateo Krössler</h1>
+        <ul class="hide-on-medium mobile-top-nav">
+          <li>
+            <a href="https://www.linkedin.com/in/mateokrossler/" target="_blank" rel="noreferrer" class="spanish">LinkedIn</a>
+            <a href="https://www.linkedin.com/in/mateokrossler/?locale=en_US" target="_blank" rel="noreferrer" class="english">LinkedIn</a>
+          </li>
+          <li>
+            <li><a href="mailto:mateokrossler@gmail.com">Email</a></li>
+          </li>
+        </ul>
           <p class="spanish">Product manager en AREX Markets en Barcelona, construyendo software para financiar PyMEs. Graduado con honores del Instituto Tecnológico de Buenos Aires (ITBA) de Lic. en Administración y Sistemas. Extremadamente curioso. Fan del viaje, el cine y la fotografía.</p>
           <p class="english">Product manager at AREX Markets in Barcelona, building software to finance SMEs. Honorary graduate of Business Administration and Tech from the Buenos Aires Institute of Technology (ITBA). Extremely curious. Fan of traveling, cinema, and photography.</p>
-          <ul>
+          <ul class="nav hide-on-small">
             <li>
               <a href="https://www.linkedin.com/in/mateokrossler/" target="_blank" rel="noreferrer" class="spanish">LinkedIn</a>
               <a href="https://www.linkedin.com/in/mateokrossler/?locale=en_US" target="_blank" rel="noreferrer" class="english">LinkedIn</a>
@@ -68,32 +77,44 @@
             </li>
             <li class="break"><i class="material-icons tiny">brightness_1</i></li>
             <li>
-              <p class="a spanish tippy-photography">Fotografía</p>
-              <p class="a english tippy-photography">Photography</p>
+              <a href="https://www.eyeem.com/u/mateokrossler/photos" target="_blank" rel="noreferrer" class="spanish tippy-photography">Fotografía</a>
+              <a href="https://www.eyeem.com/u/mateokrossler/photos" target="_blank" rel="noreferrer" class="english tippy-photography">Photography</a>
             </li>      
+          </ul>
+          <ul class="mobile-bottom-nav hide-on-medium">
+            <li>
+              <p class="a spanish development">Desarrollo</p>
+              <p class="a english development">Development</p>
+            </li>
+            <li>
+              <p class="a spanish photography">Fotografía</p>
+              <p class="a english photography">Photography</p>
+            </li>   
           </ul>
       </div>
     </div>
     <!---->
 
-    <!-- modals -->
-    <div id="development-modal-content-english" style="display:none">
+    <!-- modal content/bubbles -->
+    <div class="tippy-bubble hide hide-on-medium english development" id="development-modal-content-english">
       <p>I learned development and worked while studying business. My most ambitious project was a virtual exhibition platform with more than <b>6000</b> international users. In it, users can navigate halls and stands for events and enjoy concerts and conferences. Integrated chat and networking systems helps guests enjoy content and make connections with other attendees.</p>
       <img class="responsive-img" width="580px" src="img/spannabis-min.jpg" alt="Screenshot of site's interface">
       <a href="/development.html" target="_blank" rel="noreferrer" class="">See more ></a>
     </div>
-    <div id="development-modal-content-spanish" style="display:none">
+    <div class="tippy-bubble hide hide-on-medium spanish development" id="development-modal-content-spanish">
       <p>Aprendí y trabajé de desarrollador web mientras estudiaba administración. Mi proyecto más ambicioso fue una plataforma de exposiciones virtuales con más de 6000 usuarios internacionales. En ella, los usuarios pueden navegar por distintos halls y stands de eventos, hacer networking y disfrutar de conciertos y conferencias.</p>
       <img class="responsive-img" width="580px" src="img/spannabis-min.jpg" alt="Screenshot interfaz AgroRRHH">
       <a href="/development.html" target="_blank" rel="noreferrer" class="">Ver más ></a>
     </div>
-    <div id="photography-modal-content-english" style="display:none">
+    <div class="tippy-bubble hide hide-on-medium english photography" id="photography-modal-content-english">
       <p>I love traveling and taking pictures. I've been lucky enough to be able to visit several countries and practice my hobby there. I have some pictures posted on Unsplash, where I accumulated more than 2M views and 30K downloads. My pictures have been used on many websites and even on a french beer.</p>
       <img class="responsive-img" width="580px" src="img/foto-birra-min.jpeg" alt="Picture taken in Cologne">
+      <a href="https://www.eyeem.com/u/mateokrossler/photos" target="_blank" rel="noreferrer" class="">See more ></a>
     </div>
-    <div id="photography-modal-content-spanish" style="display:none">
+    <div class="tippy-bubble hide hide-on-medium spanish photography" id="photography-modal-content-spanish">
       <p>Me gusta viajar y sacar fotos. Tuve la suerte de poder visitar varios países y practicar my hobby ahí. Tengo algunas publicadas en Unsplash, donde ya acumulé más de 2 millones de visualizaciones y 30 mil descargas. Mis fotos se usaron en varias páginas web y hasta en una cerveza francesa.</p>
       <img class="responsive-img" width="580px" src="img/foto-birra-min.jpeg" alt="Picture taken in Cologne">
+      <a href="https://www.eyeem.com/u/mateokrossler/photos" target="_blank" rel="noreferrer" class="">Ver más ></a>
     </div>
     <!---->
     
@@ -116,7 +137,7 @@
   <script src="https://unpkg.com/@popperjs/core@2"></script>
   <script src="https://unpkg.com/tippy.js@6"></script>
   <script src="js/init.min.js?v=4"></script>
-  <script src="js/main.min.js?v=4"></script>
+  <script src="js/main.js?v=4"></script>
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-MDNPVRYR4C"></script>

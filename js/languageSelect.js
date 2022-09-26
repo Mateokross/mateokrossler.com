@@ -64,12 +64,12 @@ function setLanguage(language, setCookieBool) { // language: string - setCookie:
     //change css depending on what is selected
     //escondo y muestro items 
     if (language == 'english') {
-        $(".english").removeClass("hide");
-        $(".spanish").addClass("hide");
+        $(".english").removeClass("language-select-hide");
+        $(".spanish").addClass("language-select-hide");
         //add class to selector
     } else if (language == 'spanish') {
-        $(".english").addClass("hide");
-        $(".spanish").removeClass("hide");
+        $(".english").addClass("language-select-hide");
+        $(".spanish").removeClass("language-select-hide");
         //add class to selector
     }
 

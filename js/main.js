@@ -7,6 +7,53 @@ $(window).on("load", function () {
   $("body").removeClass("loading");
 
   /* ==========================================================================
+  mobile botton nav
+  ========================================================================== */
+  const photographyToggle = $(".mobile-bottom-nav .photography")
+  const photographyBubble = $(".tippy-bubble.photography")
+  const developmentToggle = $(".mobile-bottom-nav .development")
+  const developmentBubble = $(".tippy-bubble.development")
+
+  photographyToggle.click(function(){
+    if($(this).hasClass("active")){
+      //remove active class from selector
+      photographyToggle.removeClass("active");
+      //hide bubble
+      photographyBubble.addClass("hide");
+    }else{
+       //remove active class from other selector
+      developmentToggle.removeClass("active");
+      //hide other bubble
+      developmentBubble.addClass("hide");
+      //add active class to selector
+      photographyToggle.addClass("active");
+      //show bubble
+      photographyBubble.removeClass("hide");
+    }
+   
+  });
+
+  developmentToggle.click(function(){
+    if($(this).hasClass("active")){
+      //remove active class from selector
+      developmentToggle.removeClass("active");
+      //hide bubble
+      developmentBubble.addClass("hide");
+    }else{
+      //remove active class from other selector
+      photographyToggle.removeClass("active");
+      //hide other bubble
+      photographyBubble.addClass("hide");
+      //add active class to selector
+      developmentToggle.addClass("active");
+      //show bubble
+      developmentBubble.removeClass("hide");
+    }
+  });
+
+
+
+  /* ==========================================================================
   Slider - https://splidejs.com/documents/
   ========================================================================== */
   //init sliders
@@ -24,11 +71,6 @@ $(window).on("load", function () {
       start: 0
     }).mount();
   }
-  /* ==========================================================================
-    Auto-updating year (footer)
-    ========================================================================== */
-  $("span.year").text(new Date().getFullYear());
-
 
   /* ==========================================================================
     Project Selector - Slider 
