@@ -12,10 +12,11 @@
    ========================================================================== */
 
 html {
-  --main-bg-color: white;
-  --main-bg-color-secondary: rgb(226,226,226);
-  --main-text-color: black;
-  --main-highlight-color: orange;
+  --bg-color: white;
+  --bg-color-secondary: rgb(226,226,226);
+  --text-color: black;
+  --highlight-color: orange;
+  --border-radius: 10px;
 }
 
 
@@ -26,9 +27,9 @@ html {
 
 h1,
 h2 {
-  font-family: 'Raleway', sans-serif;
-  font-weight: 600;
-  color: var(--main-text-color)
+  font-family: 'Work Sans', sans-serif;
+  font-weight: 800;
+  color: var(--text-color)
 }
 
 h3,
@@ -40,9 +41,9 @@ button,
 input,
 select,
 textarea {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Work Sans', sans-serif;
   font-weight: 400;
-  color: var(--main-text-color);
+  color: var(--text-color);
 }
 
 /* ==========================================================================
@@ -64,7 +65,7 @@ textarea {
     width: 100%;
     height: 100%;
     z-index: 9999;
-    background-color: var(--main-bg-color);
+    background-color: var(--bg-color);
   }
   
   .preloader-circle {
@@ -120,11 +121,15 @@ textarea {
    ========================================================================== */
 body{
   min-height: 100vh;
-  background-color: var(--main-bg-color);
+  background-color: var(--bg-color);
+}
+
+::-moz-selection {
+  background: var(--highlight-color);
 }
 
 ::selection {
-  background: var(--main-highlight-color);
+  background: var(--highlight-color);
 }
 
 p, li, a{
@@ -132,7 +137,8 @@ p, li, a{
 }
 
 h1{
-  font-size: 2.3em
+  font-size: 2.5em;
+  margin-bottom: 18px;
 }
 
 a, .a {
@@ -145,7 +151,7 @@ a:hover,
 a:focus,
 .a:hover,
 .a:focus  {
-  font-weight: bold;
+  font-weight: 600;
 }
 
 p.a{
@@ -167,12 +173,15 @@ header {
   width: 100%;
   top: 0;
   left:0;
-  background-color: var(--main-bg-color);
+  /* background-color: var(--bg-color); */
   z-index: 1;
 }
 
-header a, header p{
-  padding: 20px;
+header p.a, header a{
+  padding: 7px;
+  margin: 14px;
+  border-radius: var(--border-radius);
+  background-color: var(--bg-color);
   font-size: 0.9em;
   text-decoration: none !important;
   /* font-weight: bolder !important; */
@@ -249,7 +258,7 @@ main.index .container .content ul.nav li.break i{
 
   main.index .container .content ul.mobile-top-nav li a{
     text-decoration: none;
-    font-weight: bolder;
+    font-weight: 600;
     font-size: 0.8em;
   }
 
@@ -263,15 +272,15 @@ main.index .container .content ul.nav li.break i{
   }
 
   main.index .container .content ul.mobile-bottom-nav li p.active{
-    font-weight: bold;
+    font-weight: 600;
   }
 
   /*modals-bubbles*/
   main.index .tippy-bubble{
     margin: 2.5vw;
     padding: 4.5vw;
-    background-color: var(--main-bg-color-secondary);
-    border-radius: 10px;
+    background-color: var(--bg-color-secondary);
+    border-radius:  var(--border-radius);
     max-width: 580px;
   }
 
@@ -312,27 +321,27 @@ main.index .container .content ul.nav li.break i{
   box-shadow: 0 0 20px 4px rgba(154, 161, 177, 0.15),
     0 4px 80px -8px rgba(36, 40, 47, 0.25),
     0 4px 4px -2px rgba(91, 94, 105, 0.15);
-  background-color: var(--main-bg-color);
-  border-radius: 10px;
+  background-color: var(--bg-color);
+  border-radius: var(--border-radius);;
 }
 .tippy-box[data-theme~="mateo"][data-placement^="top"] > .tippy-arrow:before {
-  border-top-color: var(--main-bg-color);
+  border-top-color: var(--bg-color);
 }
 .tippy-box[data-theme~="mateo"][data-placement^="bottom"]
   > .tippy-arrow:before {
-  border-bottom-color: var(--main-bg-color);
+  border-bottom-color: var(--bg-color);
 }
 .tippy-box[data-theme~="mateo"][data-placement^="left"] > .tippy-arrow:before {
-  border-left-color: var(--main-bg-color);
+  border-left-color: var(--bg-color);
 }
 .tippy-box[data-theme~="mateo"][data-placement^="right"] > .tippy-arrow:before {
-  border-right-color: var(--main-bg-color);
+  border-right-color: var(--bg-color);
 }
 .tippy-box[data-theme~="mateo"] > .tippy-backdrop {
-  background-color: var(--main-bg-color);
+  background-color: var(--bg-color);
 }
 .tippy-box[data-theme~="mateo"] > .tippy-svg-arrow {
-  fill: var(--main-bg-color);
+  fill: var(--bg-color);
 }
 
 .tippy-box[data-theme~='mateo'] img, .tippy-bubble img{
@@ -399,7 +408,7 @@ main.development{
   height: 100%;
   overflow: hidden;
   position: relative;
-  border-radius: 10px;
+  border-radius: var(--border-radius);
 }
 
 .project-selector #thumbnail-asesorrural .project-img {
@@ -487,13 +496,13 @@ main.development{
   }
   
   .splide__track {
-    border-radius: 10px;
+    border-radius: var(--border-radius);;
   }
   
   .splide__slide img {
     width: 100%;
     height: auto;
-    border-radius: 10px;
+    border-radius: var(--border-radius);;
   }
   
   .splide__pagination__page.is-active {
