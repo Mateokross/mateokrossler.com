@@ -37,9 +37,14 @@ var selectedLanguage = readCookie('language');
 if ((selectedLanguage == 'english') || (selectedLanguage == 'spanish')) {
     setLanguage(selectedLanguage, 0);
 }else{ //if not set, set language based on browser preferences
-    var browserLang = navigator.language.substring(0, 2);
-    selectedLanguage = browserLang == "es" ? "spanish" : "english";
-    setLanguage(selectedLanguage, 1);
+    try {
+        var browserLang = navigator.language.substring(0, 2);
+        selectedLanguage = browserLang == "es" ? "spanish" : "english";
+        setLanguage(selectedLanguage, 1);
+    } catch (error) {
+        setLanguage('english', 1);
+    }
+    
 }
 
 //set language on selector change
