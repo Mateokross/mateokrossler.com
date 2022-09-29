@@ -1,61 +1,85 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <title>Page Not Found</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <style>
-        * {
-            line-height: 1.2;
-            margin: 0;
-        }
-        html {
-            color: #888;
-            display: table;
-            font-family: sans-serif;
-            height: 100%;
-            text-align: center;
-            width: 100%;
-        }
-        body {
-            display: table-cell;
-            vertical-align: middle;
-            margin: 2em auto;
-        }
-        h1 {
-            color: #555;
-            font-size: 2em;
-            font-weight: 400;
-        }
-        p {
-            margin: 0 auto;
-            width: 280px;
-        }
-        a {
-            text-decoration: none;
-            color: #555;
-        }
-        @media only screen and (max-width: 280px) {
-            body,
-            p {
-                width: 95%;
-            }
-            h1 {
-                font-size: 1.5em;
-                margin: 0 0 0.3em;
-            }
-        }
-    </style>
+  <!-- set up -->
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- custom -->
+  <title>Page Not Found</title>
+  <link rel="shortcut icon" href="favicon.ico" />
+
+  <!-- fuente/s  -->
+  <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- css -->
+  <link href="css/materialize.min.css" type="text/css" rel="stylesheet" media="screen" />
+  <link href="css/main.min.css?v=5.1" type="text/css" rel="stylesheet" media="screen" />
+  <link
+  rel="stylesheet"
+  href="https://unpkg.com/tippy.js@6/themes/light.css"
+/>
+
 </head>
 
-<body>
-    <h1>Pagina No Disponible</h1>
-    <br>
-    <p>La pagina a la que está tratando de ingresar no existe o ustéd no tiene el acceso a ella.</p>
-    <br>
-    <a href="index.html" aria-label="volver a la pagina principal"><strong>Volver</strong></a>
+<body class="loading">
+  <!-- preloader -->
+  <div class="preloader">
+    <div class="preloader-circle"></div>
+    <div class="preloader-circle"></div>
+  </div>
+  <!---->
+
+  <!-- language select header -->
+  <header>
+    <p class="a language-selector en spanish">English</a>
+    <p class="a language-selector es english">Español</a>
+  </header>
+  <!---->
+
+
+  <!-- main content -->
+  <main class="index">
+    <div class="main container">
+      <div class="content">
+        <h1 class="english">Page Not Found</h1>
+        <h1 class="spanish">Página No Encontrada</h1>
+          <p class="spanish">La pagina a la que está tratando de ingresar no existe o ustéd no tiene el acceso a ella.</p>
+          <p class="english">The site you are trying to access does not exist or you do not have access to it.</p>
+          <a href="/index.html" class="english tippy-photography">< Back to home</a>
+          <a href="/index.html" class="spanish tippy-photography">< Volver a inicio</a>
+      </div>
+    </div>
+    <!---->
+
+  
+
+
+  </main>
+
+
+
+  <!--  Scripts-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+    integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="
+    crossorigin="anonymous"></script>
+  <script>window.jQuery || document.write('<script src="js/jquery.min.js">\x3C/script>')</script>
+  <script src="js/languageSelect.min.js"></script>
+
+  <script src="js/init.min.js?v=5.0"></script>
+  <script src="js/main.min.js?v=5.0"></script>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-MDNPVRYR4C"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-MDNPVRYR4C');
+  </script>
+
 </body>
 
 </html>
-<!-- IE needs 512+ bytes: https://blogs.msdn.microsoft.com/ieinternals/2010/08/18/friendly-http-error-pages/ -->
