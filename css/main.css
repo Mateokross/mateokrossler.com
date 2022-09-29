@@ -194,41 +194,62 @@ header p.a, header a{
 main.index{
   width: 100vw;
 }
-main.index .container{
+main.index .main.container{
   width:100vw;
   margin: auto;
   padding: 7vw 7vw 0 7vw;
 }
 
-main.index .container .content {
+main.index .main.container .content {
   max-width: 600px;
 }
 
-main.index .container .content ul.nav{
+main.index .main.container .content ul.nav{
   display: flex;
   justify-content: space-between;
   max-width: 400px;
 }
 
-main.index .container .content ul.nav li.break{
+main.index .main.container .content ul.nav li.break{
   display: flex;
   align-items: center;
 }
-main.index .container .content ul.nav li.break i{
+main.index .main.container .content ul.nav li.break i{
   font-size: 0.3em;
   opacity: 0.2;
 }
 
+main.index .bubble.container{
+  width:100vw;
+  margin: auto;
+  padding: 15px 7vw 50px 7vw;
+}
+
+main.index .bubble.container .content {
+  max-width: 600px;
+}
+
+
 /* ==========================================================================
    Mobile settings
    ========================================================================== */
-@media only screen and (min-width:1121px) and (min-height:746px){
+@media only screen and (max-height:745px){
+  .tippy-box[data-theme~='mateo'] .tippy-content img{
+    max-width: 75%;
+  }
+  .tippy-box[data-theme~='mateo'] .tippy-content a{
+    text-align: right;
+  }
+}
+
+
+@media only screen and (min-width:1121px) and (min-height:661px){
   .hide-on-medium{
     display: none!important;
   }
 }
 
-@media only screen and (max-width:1120px), screen and (max-height:745px) {
+@media only screen and (max-width:1120px), screen and (max-height:660px) { 
   /*helper*/
   .hide-on-small{
     display: none !important;
@@ -236,72 +257,77 @@ main.index .container .content ul.nav li.break i{
 
   /*content*/
 
-  main.index .container .content h1{
+  main.index .main.container .content h1{
     margin-bottom: 10px
   }
 
   
-  main.index .container .content p{
+  main.index .main.container .content p{
     margin-top: 10px
   }
 
 
   /*navigation*/
 
-  main.index .container .content ul.mobile-top-nav{
+  main.index .main.container .content ul.mobile-top-nav{
     display: flex;
   }
 
-  main.index .container .content ul.mobile-top-nav li:nth-child(1){
+  main.index .main.container .content ul.mobile-top-nav li:nth-child(1){
     margin-right: 15px
   }
 
-  main.index .container .content ul.mobile-top-nav li a{
+  main.index .main.container .content ul.mobile-top-nav li a{
     text-decoration: none;
     font-weight: 600;
     font-size: 0.8em;
   }
 
-  main.index .container .content ul.mobile-bottom-nav{
+  main.index .main.container .content ul.mobile-bottom-nav{
     display: flex;
     justify-content: flex-start;
   }
 
-  main.index .container .content ul.mobile-bottom-nav li:last-child{
+  main.index .main.container .content ul.mobile-bottom-nav li:last-child{
     margin-left: 60px
   }
 
-  main.index .container .content ul.mobile-bottom-nav li p.active{
+  main.index .main.container .content ul.mobile-bottom-nav li p.active{
     font-weight: 600;
   }
 
   /*modals-bubbles*/
-  main.index .tippy-bubble{
-    margin: 2.5vw;
+  main.index .bubble.container .tippy-bubble{
+ /*    margin: 2.5vw; */
     padding: 4.5vw;
     background-color: var(--bg-color-secondary);
     border-radius:  var(--border-radius);
     max-width: 580px;
   }
 
-  main.index .tippy-bubble p{
+  main.index .bubble.container .tippy-bubble p{
     font-size: 1.2em
   }
 
-  main.index .tippy-bubble a{
+  main.index .bubble.container .tippy-bubble a{
     text-align: right;
   }
   
 }
 
-@media only screen and (min-width:675px){
+@media only screen and (max-width:675px){
+  main.index .bubble.container{
+    padding: 15px 2.5vw 50px 2.5vw;
+  }
+}
+
+@media only screen and (min-width:676px){
     /*modals-bubbles*/
-    main.index .tippy-bubble{
-      margin: 2.5vw 0 0 7vw;
+    main.index .bubble.container .tippy-bubble{
       padding: 30px 35px;
     }
 
-    main.index .tippy-bubble p{
+    main.index .bubble.container .tippy-bubble p{
       font-size: 18px
     }
 
