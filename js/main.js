@@ -92,5 +92,8 @@ $(window).on("load", function () {
     var project = id.slice(10);
     $("#project-" + project).addClass("active").removeClass("hide")[0].scrollIntoView({behavior: "smooth", duration: 500});
   }
+
+
+  
   
 });

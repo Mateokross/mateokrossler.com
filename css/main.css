@@ -15,7 +15,7 @@
 html {
   --bg-color: white;
   --bg-color-secondary: rgb(226, 226, 226);
-  --text-color: black;
+  --text-color: #010101;
   --highlight-color: orange;
   --border-radius: 10px;
 }
@@ -147,7 +147,7 @@ h1 {
 a,
 .a {
   text-decoration: underline;
-  color: #00141d;
+  color: var(--text-color);
   transition: color .3s ease;
 }
 
@@ -354,10 +354,11 @@ screen and (max-height:660px) {
    Tippy - Modals in main
    ========================================================================== */
 .tippy-box[data-theme~="mateo"] {
-  color: #26323d;
-  box-shadow: 0 0 20px 4px rgba(154, 161, 177, 0.15),
+  color: var(--text-color);
+  /* box-shadow: 0 0 20px 4px rgba(154, 161, 177, 0.15),
     0 4px 80px -8px rgba(36, 40, 47, 0.25),
-    0 4px 4px -2px rgba(91, 94, 105, 0.15);
+    0 4px 4px -2px rgba(91, 94, 105, 0.15); */
+    box-shadow: 0 0 20px 4px rgb(97 97 97 / 15%), 0 4px 80px -8px rgb(0 0 0 / 25%), 0 4px 4px -2px rgb(0 0 0 / 15%);
   background-color: var(--bg-color);
   border-radius: var(--border-radius);
   ;
@@ -411,7 +412,15 @@ screen and (max-height:660px) {
   font-size: 1.1em;
 }
 
-
+/* ==========================================================================
+   Footer
+   ========================================================================== */
+footer{
+  position: fixed;
+  bottom: 0;
+  text-align: center;
+  width: 100%;
+}
 
 
 /* ==========================================================================
@@ -606,14 +615,4 @@ main.development {
   .image-link .overlay {
     background-color: rgba(0, 0, 0, 0.6);
   }
-}
-
-/* ==========================================================================
-   Themes
-   ========================================================================== */
-
-.test h1, .test h2 {
-font-family: 'Oi', sans-serif;
-font-weight: 400;
-font-display:swap
 }

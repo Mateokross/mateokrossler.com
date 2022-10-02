@@ -16,21 +16,17 @@
   <!-- fuente/s  -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Oi&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Ultra&family=Erica+One&family=Work+Sans:wght@400;600;700&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
   <!-- css -->
   <link href="css/materialize.min.css" type="text/css" rel="stylesheet" media="screen" />
   <link href="css/main.min.css?v=5.1" type="text/css" rel="stylesheet" media="screen" />
-  <link
-  rel="stylesheet"
-  href="https://unpkg.com/tippy.js@6/themes/light.css"
-/>
+  <link href="css/themes.min.css?v=5.1" type="text/css" rel="stylesheet" media="screen" />
 
 </head>
 
-<body class="loading test">
+<body class="loading hippie">
   <!-- preloader -->
   <div class="preloader">
     <div class="preloader-circle"></div>
@@ -48,6 +44,7 @@
 
   <!-- main content -->
   <main class="index">
+    <div class="underlay"><div class="underlay-content"></div></div>
     <div class="main container">
       <div class="content">
         <h1 class="name">Mateo Krössler</h1>
@@ -122,11 +119,14 @@
 
     
     <!---->
-    
+
   
 
 
   </main>
+  <footer>
+    <p onclick="randomThemeCS()">Click here to see some crazy shit</p>
+  </footer>
 
 
 
@@ -143,6 +143,7 @@
   <script src="https://unpkg.com/tippy.js@6"></script>
   <script src="js/init.min.js?v=5.0"></script>
   <script src="js/main.min.js?v=5.0"></script>
+  <script src="js/themes.js?v=5.0"></script>
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-MDNPVRYR4C"></script>
