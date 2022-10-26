@@ -48,6 +48,34 @@ html .funky-orange {
     box-shadow: 0 0 20px 4px rgb(97 97 97 / 15%), 0 4px 80px -8px rgb(0 0 0 / 25%), 0 4px 4px -2px rgb(0 0 0 / 15%);
 }
 
+/* organic-green */
+@font-face {
+    font-family: windsorbold;
+    src: url(/fonts/windsorbold.ttf);
+}
+
+.organic-green h1,
+.organic-green h2 {
+    font-family: 'windsorbold', sans-serif;
+    font-weight: 400;
+}
+.organic-green h1 {
+    font-size: 2.7em;
+    margin-bottom: 14px;
+  }
+
+html .organic-green {
+    --bg-color: #1C6758;
+    --bg-color-secondary: #3b6a53;
+    --text-color: #D6CDA4;
+    --highlight-color: #EEF2E6;
+}
+
+
+.organic-green .preloader-circle {
+    background-color: var(--text-color);
+}
+
 
 /* nerd */
 .nerd * {

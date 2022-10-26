@@ -3,7 +3,7 @@
     Basics
 ========================================================================== */
 
-var themes = ['funky-orange', 'nerd', 'rainbow', 'forest', 'outrun', 'crt', 'psychedelic', 'star-wars', 'cool'];
+var themes = ['funky-orange', 'nerd', 'rainbow', 'forest', 'outrun', 'psychedelic', 'star-wars', 'cool'];
 var currentTheme = '';
 var body = $("body")
 
