@@ -43,8 +43,7 @@ if ((selectedLanguage == 'english') || (selectedLanguage == 'spanish')) {
         setLanguage(selectedLanguage, 1);
     } catch (error) {
         setLanguage('english', 1);
-    }
-    
+    }   
 }
 
 //set language on selector change
