@@ -75,15 +75,16 @@ form #website {
 
 .preloader-circle {
   position: fixed;
-  left: calc(50% - 25px);
-  top: calc(50% - 25px);
+  left: calc(50% - 75px);
+  top: calc(50% - 75px);
   opacity: 0;
   z-index: 21;
   /*shape & color*/
-  width: 50px;
-  height: 50px;
+  width: 150px;
+  height: 150px;
   border-radius: 50%;
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: var(--highlight-color);
+  filter: blur(40px);
 }
 
 /*animations*/
@@ -192,9 +193,11 @@ header a {
   padding: 7px;
   margin: 14px;
   border-radius: var(--border-radius);
-  /* background-color: var(--bg-color); */
+  background-color: var(--bg-color-secondary);
   font-size: 0.9em;
   text-decoration: none !important;
+  backdrop-filter: blur(19.3px);
+  -webkit-backdrop-filter: blur(19.3px);
   /* font-weight: bolder !important; */
 }
 

@@ -3,7 +3,7 @@ $(window).on("load", function () {
    Preloader
    ========================================================================== */
   // $(".preloader-circle").css("display", "none");
-  // $(".preloader").fadeOut(400);
+  $(".preloader").fadeOut(400);
   $(".preloader-circle").fadeOut(300);
   $(".preloader").fadeOut(1500);
   $("body").removeClass("loading");
