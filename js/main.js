@@ -52,7 +52,45 @@ $(window).on("load", function () {
       developmentBubble.removeClass("hide");
     }
   });
+  
+  /* ==========================================================================
+  background movement
+  ========================================================================== */
+  let blobtl = document.querySelector(".background svg#blob-tl");
+  let blobbl = document.querySelector(".background svg#blob-bl");
+  let blobtr = document.querySelector(".background svg#blob-tr");
+  let blobbr = document.querySelector(".background svg#blob-br");
+  let blobbm = document.querySelector(".background svg#blob-b");
 
+  if(window.innerWidth>600){
+    window.addEventListener('mousemove', (event) => {
+      let lefthalf = window.innerWidth / 2;
+      if (event.clientX < lefthalf) {
+          //hovered over left half
+          blobtr.classList.add('animation-paused');
+          blobbr.classList.add('animation-paused');
+          blobtl.classList.remove('animation-paused');
+          blobbl.classList.remove('animation-paused');
+          blobbm.classList.remove('animation-paused');
+
+      } else if (event.clientX >= lefthalf) {
+          //hovered over right half
+          blobtl.classList.add('animation-paused');
+          blobbl.classList.add('animation-paused');
+          blobtr.classList.remove('animation-paused');
+          blobbr.classList.remove('animation-paused');
+          blobbm.classList.remove('animation-paused');
+      }
+    });
+    window.addEventListener('mouseout', (event) => {
+      blobtr.classList.add('animation-paused');
+      blobbr.classList.add('animation-paused');
+      blobtl.classList.add('animation-paused');
+      blobbl.classList.add('animation-paused');
+      blobbm.classList.add('animation-paused');
+
+    });
+  }
 
 
   /* ==========================================================================
@@ -92,6 +130,8 @@ $(window).on("load", function () {
     var project = id.slice(10);
     $("#project-" + project).addClass("active").removeClass("hide")[0].scrollIntoView({behavior: "smooth", duration: 500});
   }
+
+
 
 
   
