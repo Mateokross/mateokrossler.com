@@ -60,12 +60,16 @@ $(window).on("load", function () {
   let blobbl = document.querySelector(".background svg#blob-bl");
   let blobtr = document.querySelector(".background svg#blob-tr");
   let blobbr = document.querySelector(".background svg#blob-br");
-  let blobbm = document.querySelector(".background svg#blob-b");
+  let blobbm = document.querySelector(".background svg#blob-bm");
+  console.log("cargo")
 
   if(window.innerWidth>600){
+    console.log(">600")
     window.addEventListener('mousemove', (event) => {
+      console.log("mouse move")
       let lefthalf = window.innerWidth / 2;
       if (event.clientX < lefthalf) {
+        console.log("left")
           //hovered over left half
           blobtr.classList.add('animation-paused');
           blobbr.classList.add('animation-paused');
@@ -74,6 +78,7 @@ $(window).on("load", function () {
           blobbm.classList.remove('animation-paused');
 
       } else if (event.clientX >= lefthalf) {
+        console.log("right");
           //hovered over right half
           blobtl.classList.add('animation-paused');
           blobbl.classList.add('animation-paused');
@@ -83,12 +88,12 @@ $(window).on("load", function () {
       }
     });
     window.addEventListener('mouseout', (event) => {
+      console.log("mouseout");
       blobtr.classList.add('animation-paused');
       blobbr.classList.add('animation-paused');
       blobtl.classList.add('animation-paused');
       blobbl.classList.add('animation-paused');
       blobbm.classList.add('animation-paused');
-
     });
   }
 

@@ -211,11 +211,32 @@ header a {
     background-size: cover;
   }
 
+  .grain {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    transform: translateZ(0);
+  }
+  .grain:before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    opacity: .03;
+    filter: contrast(10);
+    background-image: url(https://upload.wikimedia.org/wikipedia/commons/5/5c/Image_gaussian_noise_example.png);
+    background-repeat: repeat;
+    background-size: 100px;
+  } 
+
    .background{
     position: fixed;
     height: 100%;
     width: 100%;
-    z-index: -1;
+    z-index: -2;
     filter: blur(59px);
    }
 
