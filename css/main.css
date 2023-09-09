@@ -83,7 +83,7 @@ form #website {
   width: 150px;
   height: 150px;
   border-radius: 50%;
-  background-color: var(--highlight-color);
+  background-color: #813CCA;
   filter: blur(40px);
 }
 
