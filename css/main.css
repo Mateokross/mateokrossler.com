@@ -89,13 +89,13 @@ form #website {
 
 /*animations*/
 .preloader-circle:first-child {
-  -webkit-animation: loader 2s infinite;
-  animation: loader 2s infinite;
+  -webkit-animation: loader 2s 1s infinite;
+  animation: loader 2s 1s infinite;
 }
 
 .preloader-circle:nth-child(2) {
-  -webkit-animation: loader 2s 1s infinite cubic-bezier(0, 0, 0.32, 1.08);
-  animation: loader 2s 1s infinite cubic-bezier(0, 0, 0.32, 1.08);
+  -webkit-animation: loader 2s 2s infinite cubic-bezier(0, 0, 0.32, 1.08);
+  animation: loader 2s 2s infinite cubic-bezier(0, 0, 0.32, 1.08);
 }
 
 @-webkit-keyframes loader {
