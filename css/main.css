@@ -268,7 +268,8 @@ header a {
 
    @-webkit-keyframes blob-tl {
     to{
-      scale: 0.9;
+      scale: 1;
+      filter: brightness(1.3);
     }
   }
 
@@ -277,7 +278,7 @@ header a {
     scale: 1;
     translate: 588px 30px;
     padding: 156px 100px;
-    animation: blob-tr 4s infinite alternate-reverse ease-in-out;
+    animation: blob-tr 2.5s infinite alternate-reverse ease-in-out;
    }
 
    @-webkit-keyframes blob-tr {
@@ -290,9 +291,9 @@ header a {
   .background svg#blob-bl{
     fill: #dd74d3;
     scale: 1;
-    translate: -194px 261px;
+    translate: -194px 300px;
     padding: 156px 100px;
-    animation: blob-bl 3s infinite alternate-reverse;
+    animation: blob-bl 2.7s infinite alternate-reverse;
     animation-delay: 0.5;
    }
 
@@ -300,6 +301,7 @@ header a {
     to{
       translate: -400px 261px;
       opacity: 0.3;
+      scale: 1.2;
     }
   }
 
@@ -309,12 +311,13 @@ header a {
     scale: 1;
     translate: 120px 195px;
     padding: 156px 100px;
-    animation: blob-bm 2s infinite alternate-reverse;
+    animation: blob-bm 1.5s infinite alternate-reverse;
    }
 
    @-webkit-keyframes blob-bm {
     to{
-      scale: 1.2;
+      scale: 1.3;
+      filter: brightness(1.1);
     }
   }
 
@@ -329,6 +332,7 @@ header a {
    @-webkit-keyframes blob-br {
     to{
       scale: 1.3;
+      filter: brightness(1.15);
     }
   }
 
