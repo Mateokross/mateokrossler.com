@@ -155,14 +155,15 @@ a,
 .a {
   text-decoration: underline;
   color: var(--text-color);
-  transition: color .3s ease;
+  transition: color .1s ease;
 }
 
 a:hover,
 a:focus,
 .a:hover,
 .a:focus {
-  font-weight: 600;
+  /* font-weight: 600; */
+  text-shadow: 0 0 4px rgb(255 255 255 / 50%)
 }
 
 p.a {
@@ -372,7 +373,7 @@ main.index .main.container .content {
 main.index .main.container .content ul.nav {
   display: flex;
   justify-content: space-between;
-  max-width: 400px;
+  max-width: 300px;
 }
 
 main.index .main.container .content ul.nav li.break {
@@ -458,7 +459,7 @@ screen and (max-height:660px) {
   }
 
   main.index .main.container .content ul.mobile-bottom-nav li:last-child {
-    margin-left: 60px
+    /* margin-left: 60px */
   }
 
   main.index .main.container .content ul.mobile-bottom-nav li p.active {
@@ -575,13 +576,13 @@ screen and (max-height:660px) {
   margin-top: 0
 }
 
-.tippy-box[data-theme~='mateo'] .tippy-content a:last-child,
-.tippy-bubble a:last-child {
+.tippy-box[data-theme~='mateo'] .tippy-content > a:last-child,
+.tippy-bubble > a:last-child {
   margin-top: 10px;
   display: block;
 }
 
-.tippy-box[data-theme~='mateo'] .tippy-content a:last-child {
+.tippy-box[data-theme~='mateo'] .tippy-content > a:last-child {
   font-size: 1.1em;
 }
 
