@@ -373,7 +373,7 @@ main.index .main.container .content {
 main.index .main.container .content ul.nav {
   display: flex;
   justify-content: space-between;
-  max-width: 300px;
+  max-width: 273px;
 }
 
 main.index .main.container .content ul.nav li.break {
