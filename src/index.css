@@ -658,7 +658,7 @@ background-image: linear-gradient(
 
   .device-power-tab {
     top: 5.25rem;
-    right: -0.48rem;
+    right: -3px;
     width: 1.02rem;
     height: 2.55rem;
     border-radius: 0.44rem;
