@@ -3,7 +3,7 @@
 const content = {
   en: {
     intro: [
-      'Leading Product & Data at Powerbeans, an AI startup. 6+ years of experience building products.',
+      'Leading Product & Data at Powerbeans, an AI media and AdTech startup. 6+ years of experience building products.',
       'Extremely curious. Hobby photographer. Fan of nature, traveling, cinema, and reading.'
     ],
     buttons: {
@@ -11,40 +11,124 @@ const content = {
       photography: 'Photography'
     },
     work: [
-      'Product Manager with 6+ years of experience building B2B and B2C products.',
-      'Currently leading product development at PowerBeans, an AI and media startup, where I helped scale an audio player to 1.5B+ views and designed new experiences like a news carousel (2x engagement) and a redesigned mobile UX (+55% CTR).',
-      'Previously launched a lending and invoice financing API at AREX Markets (B2B fintech), and led the design and rollout of regional sales systems at Kavak, boosting monthly sales by 13%. I also developed products from scratch as a freelancer, including a virtual fair platform with 10,000+ international users.',
-      'I enjoy turning ideas into real products, working closely with design, data, and engineering.'
+      'At Powerbeans, I helped scale an AI audio player to 40M plays and designed new experiences like a news carousel (2x engagement) and a redesigned mobile UX (+55% CTR).',
+      'I previously launched a lending and invoice financing API at AREX Markets (B2B fintech), and led the design and rollout of regional sales systems at Kavak (ecommerce), boosting monthly sales by 13%. ',
+      'I also developed products from scratch as a freelancer, including a virtual fair platform with 10,000+ international users.',
+      'I enjoy turning ideas into real products, working closely with design, data, and engineering.',
+      'Learn more on my LinkedIn.'
     ],
     photography: [
-      "I published some of my pictures on Unsplash, where I've accumulated more than 6M views and 80K downloads.",
-      'They have been used on 100+ websites, including the official site of the city of Berlin. Some people made art with them, Buzzfeed used one on a quiz, and a beer company put one on their labels.'
+      "I published some of my pictures on Unsplash, where I've accumulated more than 9M views and 100K downloads.",
+      'They have been used on 100+ websites, including the official site of the city of Berlin. Some people made art with them, Buzzfeed used a couple on their quizzes, and a beer company put one on their labels.',
+      'See photos on Unsplash.'
     ],
-    placeholder: 'Select Work or Photography.',
     standby: 'Standby'
   },
   es: {
     intro: [
-      'Liderando Producto y Data en Powerbeans, una startup de IA y AdTech. +6 a\u00F1os construyendo productos digitales.',
-      'Extremadamente curioso. Fot\u00F3grafo de hobby. Fan de la naturaleza, viajar, el cine y la lectura.'
+      'Liderando Producto y Data en Powerbeans, una startup de IA y AdTech. +6 años construyendo productos digitales.',
+      'Extremadamente curioso. Fotógrafo de hobby. Fan de la naturaleza, viajar, el cine y la lectura.'
     ],
     buttons: {
       work: 'Trabajo',
-      photography: 'Fotograf\u00EDa'
+      photography: 'Fotografía'
     },
     work: [
-      'Product Manager con m\u00E1s de 6 a\u00F1os de experiencia construyendo productos B2B y B2C.',
-      'Actualmente lidero el desarrollo de producto en PowerBeans, una startup de IA y medios, donde ayud\u00E9 a escalar un reproductor de audio a m\u00E1s de 1.5B de visualizaciones y dise\u00F1\u00E9 nuevas experiencias como un carrusel de noticias (2x engagement) y un redise\u00F1o de UX mobile (+55% CTR).',
-      'Anteriormente lanc\u00E9 una API de lending y financiaci\u00F3n de facturas en AREX Markets (fintech B2B), y lider\u00E9 el dise\u00F1o e implementaci\u00F3n de sistemas regionales de ventas en Kavak, aumentando las ventas mensuales un 13%. Tambi\u00E9n desarroll\u00E9 productos desde cero como freelancer, incluyendo una plataforma de ferias virtuales con m\u00E1s de 10,000 usuarios internacionales.',
-      'Disfruto convertir ideas en productos reales, trabajando de cerca con dise\u00F1o, data e ingenier\u00EDa.'
+      'En Powerbeans, ayudé a escalar un reproductor de audio IA a más de 40M de reproducciones y diseñé nuevas experiencias como un carrusel de noticias (2x engagement) y rediseñé la UX en mobile (+55% CTR).',
+      'Antes lancé una API de préstamos en AREX Markets (fintech B2B), y lideré el diseño e implementación de sistemas regionales de ventas en Kavak (ecommerce), aumentando las ventas mensuales un 13%. ',
+      'También desarrollé productos desde cero como freelancer, incluyendo una plataforma de ferias virtuales con más de 10,000 usuarios internacionales.',
+      'Disfruto convertir ideas en productos reales, trabajando de cerca con diseño, data e ingeniería.',
+      'Conoce más en mi LinkedIn.'
     ],
     photography: [
-      'Publiqu\u00E9 algunas de mis fotos en Unsplash, donde acumul\u00E9 m\u00E1s de 6M de visualizaciones y 80K descargas.',
-      'Se han usado en m\u00E1s de 100 sitios web, incluyendo el sitio oficial de la ciudad de Berl\u00EDn. Algunas personas hicieron arte con ellas, Buzzfeed us\u00F3 una en un quiz, y una cervecera puso una en sus etiquetas.'
+      'Publiqué algunas fotos en Unsplash, donde acumulé más de 9 millones de vistas y 100 mil descargas.',
+      'Están siendo usadas en >100 páginas web, incluyendo el sitio oficial de la ciudad de Berlín. Hay gente que las usó para hacer arte, Buzzfeed usó algunas en sus quizzes, y una empresa de cerveza puso una en sus etiquetas.',
+      'Ver fotos en Unsplash.'
     ],
-    placeholder: 'Selecciona Trabajo o Fotograf\u00EDa.',
     standby: 'En espera'
   }
+}
+
+const PHOTOGRAPHY_LINKS = {
+  en: {
+    inline: [
+      {
+        label: 'art',
+        href: 'https://www.instagram.com/ruthannfineart/reel/Cg4-T2rlxbL/'
+      },
+      {
+        label: 'official site',
+        href: 'https://www.berlin.de/sen/kultur/kulturpolitik/'
+      },
+      {
+        label: 'quizzes',
+        href: 'https://www.buzzfeed.com/fluffyghost682/if-you-can-guess-these-places-from-a-single-photo#:~:text=Mateo%20Krossler%20on%20Unsplash'
+      },
+      {
+        label: 'their labels',
+        href: 'https://untappd.com/b/noiseless-sa-01-tropical-neipa/4232965'
+      },
+      {
+        label: 'See photos on Unsplash.',
+        href: 'https://unsplash.com/@mateokross'
+      }
+    ]
+  },
+  es: {
+    inline: [
+      {
+        label: 'arte',
+        href: 'https://www.instagram.com/ruthannfineart/reel/Cg4-T2rlxbL/'
+      },
+      {
+        label: 'sitio oficial',
+        href: 'https://www.berlin.de/sen/kultur/kulturpolitik/'
+      },
+      {
+        label: 'quizzes',
+        href: 'https://www.buzzfeed.com/fluffyghost682/if-you-can-guess-these-places-from-a-single-photo#:~:text=Mateo%20Krossler%20on%20Unsplash'
+      },
+      {
+        label: 'sus etiquetas',
+        href: 'https://untappd.com/b/noiseless-sa-01-tropical-neipa/4232965'
+      },
+      {
+        label: 'Ver fotos en Unsplash.',
+        href: 'https://unsplash.com/@mateokross'
+      }
+    ]
+  }
+}
+
+const WORK_LINKS = {
+  en: [
+    {
+      label: '+55% CTR',
+      href: 'https://www.linkedin.com/feed/update/urn:li:activity:7320465409940344832/'
+    },
+    {
+      label: '2x engagement',
+      href: 'https://www.linkedin.com/posts/mateokrossler_dise%C3%B1amos-para-la-calle-el-subte-y-los-platos-activity-7334179486239707136-aAHs'
+    },
+    {
+      label: 'Learn more on my LinkedIn.',
+      href: 'https://www.linkedin.com/in/mateokrossler/?locale=en-US'
+    }
+  ],
+  es: [
+    {
+      label: '+55% CTR',
+      href: 'https://www.linkedin.com/feed/update/urn:li:activity:7320465409940344832/'
+    },
+    {
+      label: '2x engagement',
+      href: 'https://www.linkedin.com/posts/mateokrossler_dise%C3%B1amos-para-la-calle-el-subte-y-los-platos-activity-7334179486239707136-aAHs'
+    },
+    {
+      label: 'Conoce más en mi LinkedIn.',
+      href: 'https://www.linkedin.com/in/mateokrossler'
+    }
+  ]
 }
 
 const detectLanguage = () => {
@@ -56,14 +140,24 @@ const detectLanguage = () => {
 }
 
 const PRESS_FEEDBACK_MS = 110
+const NOISE_DEFAULTS = {
+  size: 320,
+  opacity: 0.5,
+  contrast: 1.72,
+  brightness: 1,
+  blur: 0
+}
 
 export default function App() {
   const [language, setLanguage] = useState(detectLanguage)
   const [activeView, setActiveView] = useState(null)
   const [pressedView, setPressedView] = useState(null)
+  const [noiseSettings, setNoiseSettings] = useState(NOISE_DEFAULTS)
   const pressTimeoutRef = useRef(null)
 
   const copy = content[language]
+  const photographyLinks = PHOTOGRAPHY_LINKS[language]
+  const workLinks = WORK_LINKS[language]
   const activeLabel = activeView ? copy.buttons[activeView] : copy.standby
 
   const displayContent = useMemo(() => {
@@ -73,6 +167,77 @@ export default function App() {
 
     return copy[activeView]
   }, [activeView, copy])
+
+  const renderTextWithLinks = (text, links, keyPrefix) => {
+    const lowerText = text.toLowerCase()
+    const matches = []
+
+    links.forEach((link) => {
+      const target = link.label.toLowerCase()
+      let searchIndex = 0
+
+      while (searchIndex < lowerText.length) {
+        const matchIndex = lowerText.indexOf(target, searchIndex)
+        if (matchIndex === -1) {
+          break
+        }
+
+        matches.push({
+          start: matchIndex,
+          end: matchIndex + target.length,
+          href: link.href
+        })
+        searchIndex = matchIndex + target.length
+      }
+    })
+
+    matches.sort((a, b) => {
+      if (a.start !== b.start) {
+        return a.start - b.start
+      }
+
+      return b.end - b.start - (a.end - a.start)
+    })
+
+    const nonOverlapping = []
+    let cursor = 0
+
+    matches.forEach((match) => {
+      if (match.start >= cursor) {
+        nonOverlapping.push(match)
+        cursor = match.end
+      }
+    })
+
+    const parts = []
+    let textCursor = 0
+
+    nonOverlapping.forEach((match, index) => {
+      if (match.start > textCursor) {
+        parts.push(text.slice(textCursor, match.start))
+      }
+
+      parts.push(
+        <a
+          key={`${keyPrefix}-${match.start}-${index}`}
+          className="display-link display-link-inline"
+          href={match.href}
+          target="_blank"
+          rel="noreferrer"
+        >
+          {text.slice(match.start, match.end)}
+        </a>
+      )
+
+      textCursor = match.end
+    })
+
+    if (textCursor < text.length) {
+      parts.push(text.slice(textCursor))
+    }
+
+    return parts
+  }
 
   useEffect(() => {
     return () => {
@@ -108,11 +273,29 @@ export default function App() {
     </div>
   )
 
+  const updateNoiseSetting = (key, value) => {
+    setNoiseSettings((current) => ({
+      ...current,
+      [key]: Number(value)
+    }))
+  }
+
   return (
-    <main className="layout">
-      <section className="left-column">
+    <>
+      <div className="device-shell">
+        <main
+          className="layout"
+          style={{
+            '--device-noise-size': `${noiseSettings.size}px`,
+            '--device-noise-opacity': noiseSettings.opacity,
+            '--device-noise-contrast': noiseSettings.contrast,
+            '--device-noise-brightness': noiseSettings.brightness,
+            '--device-noise-blur': `${noiseSettings.blur}px`
+          }}
+        >
+        <section className="left-column">
         <div className="left-content">
-          <h1>{'Mateo Kr\u00F6ssler'}</h1>
+          <h1>{'Mateo Krössler'}</h1>
           {copy.intro.map((paragraph) => (
             <p key={paragraph}>{paragraph}</p>
           ))}
@@ -158,13 +341,89 @@ export default function App() {
             <span>{activeLabel}</span>
           </div>
           <div className="display-content">
-            {displayContent.map((paragraph) => (
-              <p key={paragraph}>{paragraph}</p>
+            {displayContent.map((paragraph, index) => (
+              <p key={`${activeView}-${language}-${index}`}>
+                {activeView === 'photography'
+                  ? renderTextWithLinks(paragraph, photographyLinks.inline, `${language}-${index}`)
+                  : activeView === 'work'
+                    ? renderTextWithLinks(paragraph, workLinks, `${language}-${index}`)
+                    : paragraph}
+              </p>
             ))}
           </div>
         </div>
-      </section>
-      {renderLanguageControl('mobile-language')}
-    </main>
+        </section>
+        {renderLanguageControl('mobile-language')}
+      </main>
+      <div className="device-power-tab" aria-hidden="true" />
+      </div>
+
+      <aside className="noise-tuner" aria-label="Noise tuner">
+        <p>Noise Tuner (temporary)</p>
+        <label>
+          Size
+          <input
+            type="range"
+            min="80"
+            max="320"
+            step="1"
+            value={noiseSettings.size}
+            onChange={(event) => updateNoiseSetting('size', event.target.value)}
+          />
+          <span>{noiseSettings.size}px</span>
+        </label>
+        <label>
+          Opacity
+          <input
+            type="range"
+            min="0.05"
+            max="0.7"
+            step="0.01"
+            value={noiseSettings.opacity}
+            onChange={(event) => updateNoiseSetting('opacity', event.target.value)}
+          />
+          <span>{noiseSettings.opacity.toFixed(2)}</span>
+        </label>
+        <label>
+          Contrast
+          <input
+            type="range"
+            min="0.6"
+            max="1.8"
+            step="0.01"
+            value={noiseSettings.contrast}
+            onChange={(event) => updateNoiseSetting('contrast', event.target.value)}
+          />
+          <span>{noiseSettings.contrast.toFixed(2)}</span>
+        </label>
+        <label>
+          Brightness
+          <input
+            type="range"
+            min="0.6"
+            max="1.6"
+            step="0.01"
+            value={noiseSettings.brightness}
+            onChange={(event) => updateNoiseSetting('brightness', event.target.value)}
+          />
+          <span>{noiseSettings.brightness.toFixed(2)}</span>
+        </label>
+        <label>
+          Blur
+          <input
+            type="range"
+            min="0"
+            max="1.4"
+            step="0.01"
+            value={noiseSettings.blur}
+            onChange={(event) => updateNoiseSetting('blur', event.target.value)}
+          />
+          <span>{noiseSettings.blur.toFixed(2)}px</span>
+        </label>
+        <button type="button" onClick={() => setNoiseSettings(NOISE_DEFAULTS)}>
+          Reset
+        </button>
+      </aside>
+    </>
   )
 }
