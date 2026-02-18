@@ -50,6 +50,15 @@ body {
   width: 100%;
 }
 
+body.page-loading #root {
+  opacity: 0;
+}
+
+body.page-loading::before,
+body.page-loading::after {
+  opacity: 0;
+}
+
 .device-shell {
   position: relative;
   z-index: 0;

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useLayoutEffect, useState } from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App'
 import ButtonDesignLab from './ButtonDesignLab'
@@ -40,6 +40,15 @@ const getPage = () => {
 
 function Root() {
   const [page, setPage] = useState(getPage)
+
+  useLayoutEffect(() => {
+    if (typeof document === 'undefined') {
+      return
+    }
+
+    document.body.classList.remove('page-loading')
+    document.body.classList.add('page-ready')
+  }, [])
 
   useEffect(() => {
     const handleRouteChange = () => setPage(getPage())
@@ -98,4 +107,24 @@ const mountApp = () => {
   )
 }
 
-mountApp()
+const waitForFonts = () => {
+  if (typeof document === 'undefined' || !('fonts' in document)) {
+    return Promise.resolve()
+  }
+
+  const FONT_WAIT_TIMEOUT_MS = 2200
+  const requiredFaces = [
+    document.fonts.load("400 1rem 'Archivo'"),
+    document.fonts.load("700 1rem 'Archivo'"),
+    document.fonts.load("900 1rem 'Doto'")
+  ]
+
+  return Promise.race([
+    Promise.allSettled(requiredFaces),
+    new Promise((resolve) => {
+      window.setTimeout(resolve, FONT_WAIT_TIMEOUT_MS)
+    })
+  ])
+}
+
+waitForFonts().finally(mountApp)
