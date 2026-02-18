@@ -445,6 +445,46 @@ export default function App() {
     </div>
   )
 
+  const renderActions = (className) => (
+    <div className={`actions ${className}`}>
+      <div className="action-shell">
+        <button
+          type="button"
+          aria-pressed={activeView === 'work'}
+          className={`action-button action-button-work ${activeView === 'work' ? 'is-active' : ''} ${pressedView === 'work' ? 'is-pressed' : ''}`}
+          onClick={() => {
+            triggerPressFeedback('work')
+            setActiveView('work')
+          }}
+        >
+          <span className="action-button-text">{copy.buttons.work}</span>
+        </button>
+        <button
+          type="button"
+          aria-pressed={activeView === 'skills'}
+          className={`action-button action-button-skills ${activeView === 'skills' ? 'is-active' : ''} ${pressedView === 'skills' ? 'is-pressed' : ''}`}
+          onClick={() => {
+            triggerPressFeedback('skills')
+            setActiveView('skills')
+          }}
+        >
+          <span className="action-button-text">{copy.buttons.skills}</span>
+        </button>
+        <button
+          type="button"
+          aria-pressed={activeView === 'photography'}
+          className={`action-button action-button-photography ${activeView === 'photography' ? 'is-active' : ''} ${pressedView === 'photography' ? 'is-pressed' : ''}`}
+          onClick={() => {
+            triggerPressFeedback('photography')
+            setActiveView('photography')
+          }}
+        >
+          <span className="action-button-text">{copy.buttons.photography}</span>
+        </button>
+      </div>
+    </div>
+  )
+
   return (
     <>
       <div className="device-shell">
@@ -455,43 +495,7 @@ export default function App() {
           {copy.intro.map((paragraph) => (
             <p key={paragraph}>{paragraph}</p>
           ))}
-          <div className="actions">
-            <div className="action-shell">
-              <button
-                type="button"
-                aria-pressed={activeView === 'work'}
-                className={`action-button action-button-work ${activeView === 'work' ? 'is-active' : ''} ${pressedView === 'work' ? 'is-pressed' : ''}`}
-                onClick={() => {
-                  triggerPressFeedback('work')
-                  setActiveView('work')
-                }}
-              >
-                <span className="action-button-text">{copy.buttons.work}</span>
-              </button>
-              <button
-                type="button"
-                aria-pressed={activeView === 'skills'}
-                className={`action-button action-button-skills ${activeView === 'skills' ? 'is-active' : ''} ${pressedView === 'skills' ? 'is-pressed' : ''}`}
-                onClick={() => {
-                  triggerPressFeedback('skills')
-                  setActiveView('skills')
-                }}
-              >
-                <span className="action-button-text">{copy.buttons.skills}</span>
-              </button>
-              <button
-                type="button"
-                aria-pressed={activeView === 'photography'}
-                className={`action-button action-button-photography ${activeView === 'photography' ? 'is-active' : ''} ${pressedView === 'photography' ? 'is-pressed' : ''}`}
-                onClick={() => {
-                  triggerPressFeedback('photography')
-                  setActiveView('photography')
-                }}
-              >
-                <span className="action-button-text">{copy.buttons.photography}</span>
-              </button>
-            </div>
-          </div>
+          {renderActions('actions-inline')}
         </div>
 
         <div className="speaker-grille" aria-hidden="true" />
@@ -534,6 +538,7 @@ export default function App() {
           </div>
         </div>
         </section>
+        {renderActions('actions-shifted')}
         {renderLanguageControl('mobile-language')}
       </main>
       <div className="device-power-tab" aria-hidden="true" />
