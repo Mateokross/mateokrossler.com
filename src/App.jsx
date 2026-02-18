@@ -12,12 +12,12 @@ const content = {
     },
     work: [
       'Recent achievements:',
-      '- Scaled an AI audio player to 40M plays',
+      '- Scaled an AI audio player to 40M+ plays',
       '- Designed a news carousel (2x engagement)',
       '- Redesigned mobile UX (+55% CTR)',
       'Previously:',
       '- Launched a lending and invoice financing API at AREX Markets (B2B fintech)',
-      '- Led design and rollout of sales systems for 3 countries at Kavak (ecommerce), boosting monthly sales by 13%.',
+      '- Led design and rollout of sales systems for 3 countries at Kavak (ecommerce) (+13% sales).',
       '- Developed a virtual fair platform with 10,000+ international users.',
       'I enjoy turning ideas into real products, working closely with design, data, and engineering.',
       'Learn more on my LinkedIn.'
@@ -40,12 +40,12 @@ const content = {
     },
     work: [
       'Logros recientes:', 
-      '- Escalé un reproductor de audio IA a más de 40M reproducciones',
+      '- Escalé un reproductor de audio IA a +40M reproducciones',
       '- Diseñé un carrusel de noticias (2x engagement)',
       '- Rediseñé la UX mobile (+55% CTR)',
       'Anteriormente:',
       '- Lancé una API de préstamos y financiamiento de facturas en AREX Markets (fintech B2B)',
-      '- Lideré el diseño y despliegue de sistemas comerciales para 3 países en Kavak (ecommerce), aumentando las ventas mensuales un 13%.',
+      '- Lideré el diseño y despliegue de sistemas comerciales para 3 países en Kavak (ecommerce) (+13% ventas).',
       '- Desarrollé una plataforma de ferias virtuales con más de 10,000 usuarios internacionales.',
       'Disfruto convertir ideas en productos reales, trabajando de cerca con diseño, data e ingeniería.',
       'Conoce más en mi LinkedIn.'
@@ -121,6 +121,14 @@ const WORK_LINKS = {
       href: 'https://www.linkedin.com/posts/mateokrossler_dise%C3%B1amos-para-la-calle-el-subte-y-los-platos-activity-7334179486239707136-aAHs'
     },
     {
+      label: 'AREX Markets',
+      href: 'https://www.fintechfutures.com/embedded-finance/bankable-acquires-embedded-finance-platform-arex-markets'
+    },
+    {
+      label: 'Kavak',
+      href: 'https://www.lanacion.com.ar/economia/negocios/kavak-levanta-us300-millones-en-una-ronda-liderada-por-andreesen-horowitz-nid17022026/'
+    },
+    {
       label: 'Learn more on my LinkedIn.',
       href: 'https://www.linkedin.com/in/mateokrossler/?locale=en-US'
     }
@@ -133,6 +141,14 @@ const WORK_LINKS = {
     {
       label: 'carrusel de noticias',
       href: 'https://www.linkedin.com/posts/mateokrossler_dise%C3%B1amos-para-la-calle-el-subte-y-los-platos-activity-7334179486239707136-aAHs'
+    },
+    {
+      label: 'AREX Markets',
+      href: 'https://www.fintechfutures.com/embedded-finance/bankable-acquires-embedded-finance-platform-arex-markets'
+    },
+    {
+      label: 'Kavak',
+      href: 'https://www.lanacion.com.ar/economia/negocios/kavak-levanta-us300-millones-en-una-ronda-liderada-por-andreesen-horowitz-nid17022026/'
     },
     {
       label: 'Conoce más en mi LinkedIn.',
