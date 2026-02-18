@@ -344,7 +344,7 @@ background-image: linear-gradient(
   width: 100%;
   padding: 1px;
   border-radius: var(--button-shell-radius);
-  background-color: #696969;
+  background-color: #2c2c2c;
   box-shadow: inset 1px 1px 6px hsla(0, 0%, 0%, 0.35), inset -2px -2px 3px hsla(0, 0%, 100%, 0.05);
   overflow: hidden;
   isolation: isolate;
@@ -908,6 +908,13 @@ background-image: linear-gradient(
       box-shadow:
         
         inset -2px -2px 10px rgba(43, 51, 62, 0.5);
+    }
+
+    .action-shell {
+      box-shadow: inset 1px 1px 6px hsla(0, 0%, 0%, 0.5),
+      inset -2px -2px 3px hsla(0, 0%, 100%, 0.05),
+      2px 2px 8px 0 hsla(0, 0%, 0%, 0.45),
+      1px 1px 2px 0 hsla(0, 0%, 0%, 0.5)
     }
 
     .action-button-work  {
