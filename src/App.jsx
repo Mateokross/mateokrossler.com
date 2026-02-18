@@ -8,6 +8,7 @@ const content = {
     ],
     buttons: {
       work: 'Work',
+      skills: 'Skills',
       photography: 'Photography'
     },
     work: [
@@ -27,6 +28,68 @@ const content = {
       'They have been used on 100+ websites, including the official site of the city of Berlin. Some people made art with them, Buzzfeed used a couple on their quizzes, and a beer company put one on their labels.',
       'See photos on Unsplash.'
     ],
+    skills: [
+      'Product & Strategy',
+      '- Product discovery & roadmap ownership',
+      '- 0→1 launches and growth optimization',
+      '- User research & experimentation',
+      '- KPI definition & metric design',
+      '- Agile methodologies, Scrum, Kanban',
+      '- Design Thinking',
+      '- Prioritization frameworks',
+      'Leadership & Operating Style',
+      '- Cross-functional alignment across design, data, engineering and business',
+      '- Influencing without authority',
+      '- Systems thinking',
+      '- Structured decision-making under ambiguity',
+      '- Clear written documentation & async communication',
+      '- High ownership in fast-moving environments',
+      'AI & Automation',
+      '- LLM integration (OpenAI, X AI, OpenRouter)',
+      '- AI product design & evaluation',
+      '- Prompt design',
+      '- AI audio generation (ElevenLabs)',
+      '- Workflow automation (Zapier, Make, n8n)',
+      'Data & Analytics',
+      '- SQL, MongoDB, BigQuery, AWS Athena',
+      '- Data modeling & event schema design',
+      '- Data pipeline design',
+      '- Business Intelligence (Looker, Tableau, Microstrategy)',
+      '- Cohort & retention analysis',
+      'Software Development',
+      '- HTML, CSS, JavaScript, React',
+      '- Node.js, PHP, Python',
+      '- Google Apps Script',
+      '- API design',
+      '- GitHub',
+      'UX & Design',
+      '- UX-first product thinking',
+      '- Interface & interaction design',
+      '- Wireframing & rapid prototyping (Figma)',
+      '- Usability testing',
+      'Developer Experience',
+      '- API-first product thinking',
+      '- Developer portals',
+      '- Technical documentation',
+      '- Documentation style guidelines',
+      '- DX optimization',
+      'Cloud & Hosting',
+      '- AWS S3',
+      '- Netlify',
+      '- Vercel',
+      '- Cloudflare',
+      'Collaboration & PM Tools',
+      '- Jira, Confluence, Atlassian',
+      '- Notion',
+      '- Trello',
+      '- ClickUp',
+      '- Figma',
+      'Creative Tools',
+      '- Photoshop',
+      '- Illustrator',
+      '- InDesign',
+      '- Premiere'
+    ],
     standby: 'Standby'
   },
   es: {
@@ -36,6 +99,7 @@ const content = {
     ],
     buttons: {
       work: 'Trabajo',
+      skills: 'Habilidades',
       photography: 'Fotografía'
     },
     work: [
@@ -54,6 +118,67 @@ const content = {
       'Publiqué algunas fotos en Unsplash, donde acumulé más de 9 millones de vistas y 100 mil descargas.',
       'Están siendo usadas en >100 páginas web, incluyendo el sitio oficial de la ciudad de Berlín. Hay gente que las usó para hacer arte, Buzzfeed usó algunas en sus quizzes, y una empresa de cerveza puso una en sus etiquetas.',
       'Ver fotos en Unsplash.'
+    ],
+    skills: [
+      'Producto y Estrategia',
+      '- Descubrimiento de producto y gestión de roadmap',
+      '- Lanzamientos 0→1 y optimización de crecimiento',
+      '- Investigación de usuarios y experimentación',
+      '- Definición de KPIs y diseño de métricas',
+      '- Metodologías ágiles, Scrum, Kanban',
+      '- Design Thinking',
+      '- Frameworks de priorización',
+      'Liderazgo y Estilo Operativo',
+      '- Alineamiento con diseño, data, ingeniería y negocio',
+      '- Influencia sin autoridad',
+      '- Pensamiento sistémico',
+      '- Toma de decisiones estructurada en contextos ambiguos',
+      '- Documentación clara y comunicación asíncrona',
+      '- Alto ownership en entornos de ritmo acelerado',
+      'IA y Automatización',
+      '- Integración de LLM (OpenAI, X AI, OpenRouter)',
+      '- Diseño y evaluación de productos IA',
+      '- Diseño de prompts',
+      '- Generación de audio con IA (ElevenLabs)',
+      '- Automatización de workflows (Zapier, Make, n8n)',
+      'Datos y Analítica',
+      '- SQL, MongoDB, BigQuery, AWS Athena',
+      '- Modelado de datos y diseño de esquemas de eventos',
+      '- Diseño de pipelines de datos',
+      '- Business Intelligence (Looker, Tableau, Microstrategy)',
+      '- Análisis de cohorts y retención',
+      'Desarrollo de Software',
+      '- HTML, CSS, JavaScript, React',
+      '- Node.js, PHP, Python',
+      '- Google Apps Script',
+      '- Diseño de APIs',
+      '- GitHub',
+      'UX y Diseño',
+      '- Pensamiento de producto con enfoque UX-first',
+      '- Diseño de interfaces e interacción',
+      '- Wireframing y prototipado rápido (Figma)',
+      '- Pruebas de usabilidad',
+      'Experiencia de Desarrollador',
+      '- Pensamiento de producto API-first',
+      '- Portales para desarrolladores',
+      '- Documentación técnica',
+      '- Guías de estilo para documentación',
+      '- Optimización de DX',
+      'Cloud y Hosting',
+      '- AWS S3',
+      '- Netlify',
+      '- Vercel',
+      '- Cloudflare',
+      'Herramientas de Colaboración y PM',
+      '- Jira, Confluence, Atlassian',
+      '- Notion',
+      '- Trello',
+      '- ClickUp',
+      'Herramientas Creativas',
+      '- Photoshop',
+      '- Illustrator',
+      '- InDesign',
+      '- Premiere'
     ],
     standby: 'En espera'
   }
@@ -166,6 +291,7 @@ const detectLanguage = () => {
 }
 
 const PRESS_FEEDBACK_MS = 110
+const SHOW_SKILLS_BUTTON = false
 
 export default function App() {
   const [language, setLanguage] = useState(detectLanguage)
@@ -187,7 +313,7 @@ export default function App() {
   }, [activeView, copy])
 
   const displayBlocks = useMemo(() => {
-    if (activeView !== 'work') {
+    if (activeView !== 'work' && activeView !== 'skills') {
       return displayContent.map((text) => ({ type: 'paragraph', text }))
     }
 
@@ -344,6 +470,21 @@ export default function App() {
                 <span className="action-button-text">{copy.buttons.work}</span>
               </button>
             </div>
+            {SHOW_SKILLS_BUTTON && (
+              <div className="action-shell">
+                <button
+                  type="button"
+                  aria-pressed={activeView === 'skills'}
+                  className={`action-button action-button-photo ${activeView === 'skills' ? 'is-active' : ''} ${pressedView === 'skills' ? 'is-pressed' : ''}`}
+                  onClick={() => {
+                    triggerPressFeedback('skills')
+                    setActiveView('skills')
+                  }}
+                >
+                  <span className="action-button-text">{copy.buttons.skills}</span>
+                </button>
+              </div>
+            )}
             <div className="action-shell">
               <button
                 type="button"
@@ -378,7 +519,9 @@ export default function App() {
                   <ul className="display-list" key={`${activeView}-${language}-list-${index}`}>
                     {block.items.map((item, itemIndex) => (
                       <li key={`${activeView}-${language}-item-${index}-${itemIndex}`}>
-                        {renderTextWithLinks(item, workLinks, `${language}-${index}-${itemIndex}`)}
+                        {activeView === 'work'
+                          ? renderTextWithLinks(item, workLinks, `${language}-${index}-${itemIndex}`)
+                          : item}
                       </li>
                     ))}
                   </ul>
