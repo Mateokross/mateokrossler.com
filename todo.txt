@@ -7,3 +7,4 @@ Detalle y subpáginas en work
 texturas de scratches
 animación texto cool
 tablet responsive
+favicon

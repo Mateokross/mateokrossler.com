@@ -11,9 +11,14 @@ const content = {
       photography: 'Photography'
     },
     work: [
-      'At Powerbeans, I helped scale an AI audio player to 40M plays and designed new experiences like a news carousel (2x engagement) and a redesigned mobile UX (+55% CTR).',
-      'I previously launched a lending and invoice financing API at AREX Markets (B2B fintech), and led the design and rollout of regional sales systems at Kavak (ecommerce), boosting monthly sales by 13%. ',
-      'I also developed products from scratch as a freelancer, including a virtual fair platform with 10,000+ international users.',
+      'Recent achievements:',
+      '- Scaled an AI audio player to 40M plays',
+      '- Designed a news carousel (2x engagement)',
+      '- Redesigned mobile UX (+55% CTR)',
+      'Previously:',
+      '- Launched a lending and invoice financing API at AREX Markets (B2B fintech)',
+      '- Led design and rollout of sales systems for 3 countries at Kavak (ecommerce), boosting monthly sales by 13%.',
+      '- Developed a virtual fair platform with 10,000+ international users.',
       'I enjoy turning ideas into real products, working closely with design, data, and engineering.',
       'Learn more on my LinkedIn.'
     ],
@@ -34,9 +39,14 @@ const content = {
       photography: 'Fotografía'
     },
     work: [
-      'En Powerbeans, ayudé a escalar un reproductor de audio IA a más de 40M de reproducciones y diseñé nuevas experiencias como un carrusel de noticias (2x engagement) y rediseñé la UX en mobile (+55% CTR).',
-      'Antes lancé una API de préstamos en AREX Markets (fintech B2B), y lideré el diseño e implementación de sistemas regionales de ventas en Kavak (ecommerce), aumentando las ventas mensuales un 13%. ',
-      'También desarrollé productos desde cero como freelancer, incluyendo una plataforma de ferias virtuales con más de 10,000 usuarios internacionales.',
+      'Logros recientes:', 
+      '- Escalé un reproductor de audio IA a más de 40M reproducciones',
+      '- Diseñé un carrusel de noticias (2x engagement)',
+      '- Rediseñé la UX mobile (+55% CTR)',
+      'Anteriormente:',
+      '- Lancé una API de préstamos y financiamiento de facturas en AREX Markets (fintech B2B)',
+      '- Lideré el diseño y despliegue de sistemas comerciales para 3 países en Kavak (ecommerce), aumentando las ventas mensuales un 13%.',
+      '- Desarrollé una plataforma de ferias virtuales con más de 10,000 usuarios internacionales.',
       'Disfruto convertir ideas en productos reales, trabajando de cerca con diseño, data e ingeniería.',
       'Conoce más en mi LinkedIn.'
     ],
@@ -103,11 +113,11 @@ const PHOTOGRAPHY_LINKS = {
 const WORK_LINKS = {
   en: [
     {
-      label: '+55% CTR',
+      label: 'mobile UX',
       href: 'https://www.linkedin.com/feed/update/urn:li:activity:7320465409940344832/'
     },
     {
-      label: '2x engagement',
+      label: 'news carousel',
       href: 'https://www.linkedin.com/posts/mateokrossler_dise%C3%B1amos-para-la-calle-el-subte-y-los-platos-activity-7334179486239707136-aAHs'
     },
     {
@@ -117,11 +127,11 @@ const WORK_LINKS = {
   ],
   es: [
     {
-      label: '+55% CTR',
+      label: 'UX mobile',
       href: 'https://www.linkedin.com/feed/update/urn:li:activity:7320465409940344832/'
     },
     {
-      label: '2x engagement',
+      label: 'carrusel de noticias',
       href: 'https://www.linkedin.com/posts/mateokrossler_dise%C3%B1amos-para-la-calle-el-subte-y-los-platos-activity-7334179486239707136-aAHs'
     },
     {
@@ -167,6 +177,35 @@ export default function App() {
 
     return copy[activeView]
   }, [activeView, copy])
+
+  const displayBlocks = useMemo(() => {
+    if (activeView !== 'work') {
+      return displayContent.map((text) => ({ type: 'paragraph', text }))
+    }
+
+    const blocks = []
+    let listItems = []
+
+    displayContent.forEach((line) => {
+      if (line.startsWith('- ')) {
+        listItems.push(line.slice(2))
+        return
+      }
+
+      if (listItems.length > 0) {
+        blocks.push({ type: 'list', items: listItems })
+        listItems = []
+      }
+
+      blocks.push({ type: 'paragraph', text: line })
+    })
+
+    if (listItems.length > 0) {
+      blocks.push({ type: 'list', items: listItems })
+    }
+
+    return blocks
+  }, [activeView, displayContent])
 
   const renderTextWithLinks = (text, links, keyPrefix) => {
     const lowerText = text.toLowerCase()
@@ -341,15 +380,29 @@ export default function App() {
             <span>{activeLabel}</span>
           </div>
           <div className="display-content">
-            {displayContent.map((paragraph, index) => (
-              <p key={`${activeView}-${language}-${index}`}>
-                {activeView === 'photography'
-                  ? renderTextWithLinks(paragraph, photographyLinks.inline, `${language}-${index}`)
-                  : activeView === 'work'
-                    ? renderTextWithLinks(paragraph, workLinks, `${language}-${index}`)
-                    : paragraph}
-              </p>
-            ))}
+            {displayBlocks.map((block, index) => {
+              if (block.type === 'list') {
+                return (
+                  <ul className="display-list" key={`${activeView}-${language}-list-${index}`}>
+                    {block.items.map((item, itemIndex) => (
+                      <li key={`${activeView}-${language}-item-${index}-${itemIndex}`}>
+                        {renderTextWithLinks(item, workLinks, `${language}-${index}-${itemIndex}`)}
+                      </li>
+                    ))}
+                  </ul>
+                )
+              }
+
+              return (
+                <p key={`${activeView}-${language}-${index}`}>
+                  {activeView === 'photography'
+                    ? renderTextWithLinks(block.text, photographyLinks.inline, `${language}-${index}`)
+                    : activeView === 'work'
+                      ? renderTextWithLinks(block.text, workLinks, `${language}-${index}`)
+                      : block.text}
+                </p>
+              )
+            })}
           </div>
         </div>
         </section>
