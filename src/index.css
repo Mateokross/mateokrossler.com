@@ -144,7 +144,7 @@ body::after {
     1px 1px 2px 0 hsla(0, 0%, 0%, 0.5),
     -2px -2px 2px -1px hsla(0, 0%, 100%, 0.2)
     ; */
-  overflow: visible;
+  overflow: hidden;
 }
 
 .layout::before {
@@ -209,6 +209,7 @@ body::after {
   z-index: 1;
   width: 100%;
   height: auto;
+  min-height: 0;
 }
 
 .left-column {
@@ -523,15 +524,20 @@ background-image: linear-gradient(
 
 .display {
   position: relative;
+  display: flex;
+  min-height: 0;
+  overflow: hidden;
   /* padding: 0.85rem; */
 }
 
 .display-frame {
   position: relative;
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  flex: 1 1 auto;
+  grid-template-rows: auto minmax(0, 1fr);
   font-family: 'Doto', 'Archivo', sans-serif;
-  height: auto;
+  height: 100%;
+  max-height: 100%;
   min-height: 0;
   border-radius: calc(var(--radius-xl) - 0.35rem);
   border: 1px solid #2f343b;
@@ -546,6 +552,7 @@ background-image: linear-gradient(
     inset 0 -1px 0 rgba(0, 0, 0, 0.5),
     inset 1px 1px 1px -1px hsla(0, 0%, 100%, 0.7),
     inset 1px 1px 2px 0px hsla(0, 0%, 100%, 0.1);
+  contain: layout paint;
 }
 
 .display-frame::before {
@@ -581,6 +588,7 @@ background-image: linear-gradient(
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--display-muted);
+  flex-shrink: 0;
 }
 
 .status-dot {
@@ -607,8 +615,37 @@ background-image: linear-gradient(
   flex-direction: column;
   gap: 0.7rem;
   height: 100%;
-  overflow: auto;
+  min-height: 0;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  overscroll-behavior: contain;
   padding-right: 0.1rem;
+}
+
+.display-content::-webkit-scrollbar {
+  width: 3px;
+}
+
+.display-content::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+.display-content::-webkit-scrollbar-thumb {
+  background-color: transparent;
+  border: 3px dotted var(--display-ink);
+}
+
+.display-content::-webkit-scrollbar-button {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+@supports (scrollbar-width: thin) and (not selector(::-webkit-scrollbar)) {
+  .display-content {
+    scrollbar-width: thin;
+    scrollbar-color: var(--display-ink) transparent;
+  }
 }
 
 .display-content p {
@@ -695,7 +732,10 @@ background-image: linear-gradient(
     gap: 0.9rem;
     grid-template-rows: auto minmax(0, 1fr);
     margin-block: var(--page-gutter);
+    height: calc(100vh - (var(--page-gutter) * 2));
+    height: calc(100dvh - (var(--page-gutter) * 2));
     min-height: calc(100vh - (var(--page-gutter) * 2));
+    min-height: calc(100dvh - (var(--page-gutter) * 2));
     padding-bottom: 4rem;
   }
 
@@ -767,6 +807,7 @@ background-image: linear-gradient(
 @media (min-width: 900px) {
   .layout {
     grid-template-columns: 1fr 1fr;
+    grid-template-rows: minmax(0, 1fr);
     align-items: stretch;
     gap: 1rem;
     padding: 1.2rem;
