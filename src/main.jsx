@@ -51,6 +51,46 @@ function Root() {
   }, [])
 
   useEffect(() => {
+    if (typeof document === 'undefined' || typeof window === 'undefined') {
+      return undefined
+    }
+
+    let frameId = null
+
+    const syncViewportHeight = () => {
+      frameId = null
+      const viewportHeight = window.visualViewport?.height ?? window.innerHeight
+      document.documentElement.style.setProperty('--app-viewport-height', `${Math.round(viewportHeight)}px`)
+    }
+
+    const scheduleSync = () => {
+      if (frameId !== null) {
+        return
+      }
+
+      frameId = window.requestAnimationFrame(syncViewportHeight)
+    }
+
+    scheduleSync()
+
+    window.addEventListener('resize', scheduleSync)
+    window.addEventListener('orientationchange', scheduleSync)
+    window.visualViewport?.addEventListener('resize', scheduleSync)
+    window.visualViewport?.addEventListener('scroll', scheduleSync)
+
+    return () => {
+      if (frameId !== null) {
+        window.cancelAnimationFrame(frameId)
+      }
+
+      window.removeEventListener('resize', scheduleSync)
+      window.removeEventListener('orientationchange', scheduleSync)
+      window.visualViewport?.removeEventListener('resize', scheduleSync)
+      window.visualViewport?.removeEventListener('scroll', scheduleSync)
+    }
+  }, [])
+
+  useEffect(() => {
     const handleRouteChange = () => setPage(getPage())
 
     window.addEventListener('popstate', handleRouteChange)
