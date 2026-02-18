@@ -319,6 +319,7 @@ const detectToggleFallbackView = () => {
 }
 
 const PRESS_FEEDBACK_MS = 110
+const BART_EASTER_EGG_PATH = '/img/bart.webp'
 const SCRATCH_DEFAULTS = {
   deviceSize: 557,
   deviceOpacity: 11,
@@ -334,6 +335,7 @@ export default function App() {
   const [activeView, setActiveView] = useState(detectInitialView)
   const [pressedView, setPressedView] = useState(null)
   const [scratchSettings, setScratchSettings] = useState(SCRATCH_DEFAULTS)
+  const [bartImageSrc, setBartImageSrc] = useState('')
   const pressTimeoutRef = useRef(null)
 
   const copy = content[language]
@@ -490,6 +492,79 @@ export default function App() {
     }
   }, [])
 
+  useEffect(() => {
+    if (typeof window === 'undefined') {
+      return undefined
+    }
+
+    let isCancelled = false
+    let isScheduled = false
+    let idleRequestId = null
+    let delayTimeoutId = null
+    let fallbackTimeoutId = null
+    let onLoad = null
+
+    const commitImageSrc = () => {
+      if (isCancelled) {
+        return
+      }
+
+      setBartImageSrc(BART_EASTER_EGG_PATH)
+    }
+
+    const scheduleImageLoad = () => {
+      if (isCancelled || isScheduled) {
+        return
+      }
+
+      isScheduled = true
+
+      const scheduleDelayedCommit = () => {
+        delayTimeoutId = window.setTimeout(commitImageSrc, 900)
+      }
+
+      if (typeof window.requestIdleCallback === 'function') {
+        idleRequestId = window.requestIdleCallback(scheduleDelayedCommit, { timeout: 3000 })
+        return
+      }
+
+      scheduleDelayedCommit()
+    }
+
+    if (document.readyState === 'complete') {
+      scheduleImageLoad()
+    } else {
+      onLoad = () => {
+        scheduleImageLoad()
+      }
+
+      window.addEventListener('load', onLoad, { once: true })
+      fallbackTimeoutId = window.setTimeout(() => {
+        scheduleImageLoad()
+      }, 6500)
+    }
+
+    return () => {
+      isCancelled = true
+
+      if (delayTimeoutId !== null) {
+        window.clearTimeout(delayTimeoutId)
+      }
+
+      if (fallbackTimeoutId !== null) {
+        window.clearTimeout(fallbackTimeoutId)
+      }
+
+      if (idleRequestId !== null && typeof window.cancelIdleCallback === 'function') {
+        window.cancelIdleCallback(idleRequestId)
+      }
+
+      if (onLoad) {
+        window.removeEventListener('load', onLoad)
+      }
+    }
+  }, [])
+
   const triggerPressFeedback = (view) => {
     if (pressTimeoutRef.current) {
       window.clearTimeout(pressTimeoutRef.current)
@@ -591,6 +666,17 @@ export default function App() {
   return (
     <>
       <div className="device-shell" style={scratchStyleVars}>
+        {bartImageSrc && (
+          <img
+            className="bart-easter-egg"
+            src={bartImageSrc}
+            alt=""
+            aria-hidden="true"
+            loading="lazy"
+            decoding="async"
+            fetchpriority="low"
+          />
+        )}
         <main className="layout">
         <div className="surface-scratch surface-scratch-device" aria-hidden="true" />
         <section className="left-column">

@@ -82,6 +82,18 @@ body.page-loading::after {
   max-width: 1350px;
 }
 
+.bart-easter-egg {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: min(16%, 140px);
+  transform: translate(-50%, -46%) rotate(-2deg);
+  opacity: 1;
+  pointer-events: none;
+  user-select: none;
+  z-index: -2;
+}
+
 body::before {
   content: '';
   position: fixed;
@@ -915,6 +927,12 @@ background-image: linear-gradient(
 
   .device-shell {
     width: calc(100% - (var(--page-gutter) * 2));
+  }
+
+  .bart-easter-egg {
+    width: min(20%, 120px);
+    opacity: 1;
+    transform: translate(-50%, -45%) rotate(-2deg);
   }
 
   .device-power-tab {
