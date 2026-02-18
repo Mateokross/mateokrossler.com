@@ -98,24 +98,4 @@ const mountApp = () => {
   )
 }
 
-const waitForFonts = () => {
-  if (typeof document === 'undefined' || !('fonts' in document)) {
-    return Promise.resolve()
-  }
-
-  const FONT_WAIT_TIMEOUT_MS = 2200
-  const requiredFaces = [
-    document.fonts.load("400 1rem 'Archivo'"),
-    document.fonts.load("700 1rem 'Archivo'"),
-    document.fonts.load("900 1rem 'Doto'")
-  ]
-
-  return Promise.race([
-    Promise.allSettled(requiredFaces),
-    new Promise((resolve) => {
-      window.setTimeout(resolve, FONT_WAIT_TIMEOUT_MS)
-    })
-  ])
-}
-
-waitForFonts().finally(mountApp)
+mountApp()
