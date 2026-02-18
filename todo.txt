@@ -1,6 +1,3 @@
 COULD
 posthog
-Detalle y subpáginas en work
-texturas de scratches
-animación texto cool
-tablet responsive
+a11y

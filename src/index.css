@@ -382,9 +382,10 @@ background-image: linear-gradient(
       inset -2px -2px 3px hsla(0, 0%, 100%, 0.05),
       2px 2px 8px 0 hsla(0, 0%, 0%, 0.45),
       1px 1px 2px 0 hsla(0, 0%, 0%, 0.5),
-      -2px -2px 4px 0px hsla(0, 0%, 100%, 0.5),
-      -1px -1px 1px 0px hsla(0, 0%, 100%, 0.9);
-  overflow: hidden;
+      -2px -2px 4px 0px hsla(0, 0%, 100%, 0.3),
+      -1px -1px 1px 0px hsla(0, 0%, 100%, 0.7)
+      ;
+  /* overflow: hidden; */
   isolation: isolate;
 }
 
@@ -514,6 +515,11 @@ background-image: linear-gradient(
 .action-button:active .action-button-text,
 .action-button.is-pressed .action-button-text {
   transform: translateY(0.5px);
+}
+
+.action-button:focus-visible {
+  outline: 2px solid rgba(22, 24, 29, 0.55);
+  outline-offset: 2px;
 }
 
 
@@ -1045,10 +1051,11 @@ background-image: linear-gradient(
     box-shadow: 
         inset 1px 1px 6px hsla(0, 0%, 0%, 0.5),
         inset -2px -2px 3px hsla(0, 0%, 100%, 0.05),
-        2px 2px 8px 0 hsla(0, 0%, 0%, 0.45),
-        1px 1px 2px 0 hsla(0, 0%, 0%, 0.5),
-        -2px -2px 4px 0px hsla(0, 0%, 100%, 0.5),
-        -1px -1px 1px 0px hsla(0, 0%, 100%, 0.1);
+        2px 2px 8px 0 hsla(0, 0%, 0%, 0.2),
+        1px 1px 2px 0 hsla(0, 0%, 0%, 0.2),
+        -2px -2px 4px 0px hsla(0, 0%, 100%, 0.3),
+        -1px -1px 1px 0px hsla(0, 0%, 100%, 0.1)
+        ;
 
 }
     .action-button-work  {
