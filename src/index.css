@@ -345,7 +345,12 @@ background-image: linear-gradient(
   padding: 1px;
   border-radius: var(--button-shell-radius);
   background-color: #2c2c2c;
-  box-shadow: inset 1px 1px 6px hsla(0, 0%, 0%, 0.35), inset -2px -2px 3px hsla(0, 0%, 100%, 0.05);
+  box-shadow: inset 1px 1px 6px hsla(0, 0%, 0%, 0.5),
+      inset -2px -2px 3px hsla(0, 0%, 100%, 0.05),
+      2px 2px 8px 0 hsla(0, 0%, 0%, 0.45),
+      1px 1px 2px 0 hsla(0, 0%, 0%, 0.5),
+      -2px -2px 4px 0px hsla(0, 0%, 100%, 0.5),
+      -1px -1px 1px 0px hsla(0, 0%, 100%, 0.9);
   overflow: hidden;
   isolation: isolate;
 }
@@ -911,12 +916,15 @@ background-image: linear-gradient(
     }
 
     .action-shell {
-      box-shadow: inset 1px 1px 6px hsla(0, 0%, 0%, 0.5),
-      inset -2px -2px 3px hsla(0, 0%, 100%, 0.05),
-      2px 2px 8px 0 hsla(0, 0%, 0%, 0.45),
-      1px 1px 2px 0 hsla(0, 0%, 0%, 0.5)
-    }
+    box-shadow: 
+        inset 1px 1px 6px hsla(0, 0%, 0%, 0.5),
+        inset -2px -2px 3px hsla(0, 0%, 100%, 0.05),
+        2px 2px 8px 0 hsla(0, 0%, 0%, 0.45),
+        1px 1px 2px 0 hsla(0, 0%, 0%, 0.5),
+        -2px -2px 4px 0px hsla(0, 0%, 100%, 0.5),
+        -1px -1px 1px 0px hsla(0, 0%, 100%, 0.1);
 
+}
     .action-button-work  {
         box-shadow: 
         inset 25px 25px 42px -19px hsla(0, 0%, 100%, 0.13),
