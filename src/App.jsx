@@ -430,6 +430,11 @@ export default function App() {
     }, PRESS_FEEDBACK_MS)
   }
 
+  const handleViewToggle = (view) => {
+    triggerPressFeedback(view)
+    setActiveView((currentView) => (currentView === view ? null : view))
+  }
+
   const renderLanguageControl = (layoutClassName) => (
     <div className={`language-control ${layoutClassName}`}>
       <span className="toggle-label">EN</span>
@@ -452,10 +457,7 @@ export default function App() {
           type="button"
           aria-pressed={activeView === 'work'}
           className={`action-button action-button-work ${activeView === 'work' ? 'is-active' : ''} ${pressedView === 'work' ? 'is-pressed' : ''}`}
-          onClick={() => {
-            triggerPressFeedback('work')
-            setActiveView('work')
-          }}
+          onClick={() => handleViewToggle('work')}
         >
           <span className="action-button-text">{copy.buttons.work}</span>
         </button>
@@ -463,10 +465,7 @@ export default function App() {
           type="button"
           aria-pressed={activeView === 'skills'}
           className={`action-button action-button-skills ${activeView === 'skills' ? 'is-active' : ''} ${pressedView === 'skills' ? 'is-pressed' : ''}`}
-          onClick={() => {
-            triggerPressFeedback('skills')
-            setActiveView('skills')
-          }}
+          onClick={() => handleViewToggle('skills')}
         >
           <span className="action-button-text">{copy.buttons.skills}</span>
         </button>
@@ -474,10 +473,7 @@ export default function App() {
           type="button"
           aria-pressed={activeView === 'photography'}
           className={`action-button action-button-photography ${activeView === 'photography' ? 'is-active' : ''} ${pressedView === 'photography' ? 'is-pressed' : ''}`}
-          onClick={() => {
-            triggerPressFeedback('photography')
-            setActiveView('photography')
-          }}
+          onClick={() => handleViewToggle('photography')}
         >
           <span className="action-button-text">{copy.buttons.photography}</span>
         </button>
