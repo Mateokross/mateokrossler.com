@@ -347,7 +347,7 @@ background-image: linear-gradient(
 }
 
 .action-button-work {
-  background-color: #eb4100;
+  background-color: #f63f18;
   /* box-shadow:
     rgba(0, 0, 0, 0.377) 4px 4px 6px,
     #fb702c 2px 2px 8px 0 inset,
@@ -405,13 +405,6 @@ background-image: linear-gradient(
   transform: translateY(0.5px);
 }
 
-.action-button.is-active {
-  filter: saturate(1.08);
-}
-
-.action-button.is-active .action-button-text {
-  /* text-shadow: 0 0 6px rgba(255, 255, 255, 0.28); */
-}
 
 .language-control {
   display: inline-flex;
