@@ -7,10 +7,15 @@ const content = {
       'Extremely curious. Hobby photographer. Fan of nature, traveling, cinema, and reading.'
     ],
     buttons: {
+      home: 'Home',
       work: 'Work',
       skills: 'Skills',
       photography: 'Photography'
     },
+    home: [
+      'Leading Product & Data at Powerbeans, an AI media and AdTech startup. 6+ years of experience building products.',
+      'Extremely curious. Hobby photographer. Fan of nature, traveling, cinema, and reading.'
+    ],
     work: [
       'Recent achievements:',
       '- Scaled an AI audio player to 40M+ plays',
@@ -98,10 +103,15 @@ const content = {
       'Extremadamente curioso. Fotógrafo de hobby. Fan de la naturaleza, viajar, el cine y la lectura.'
     ],
     buttons: {
+      home: 'Inicio',
       work: 'Trabajo',
       skills: 'Habilidades',
       photography: 'Fotografía'
     },
+    home: [
+      'Liderando Producto y Data en Powerbeans, una startup de IA y AdTech. +6 años construyendo productos digitales.',
+      'Extremadamente curioso. Fotógrafo de hobby. Fan de la naturaleza, viajar, el cine y la lectura.'
+    ],
     work: [
       'Logros recientes:', 
       '- Escalé un reproductor de audio IA a +40M reproducciones',
@@ -290,11 +300,27 @@ const detectLanguage = () => {
   return navigator.language?.toLowerCase().startsWith('es') ? 'es' : 'en'
 }
 
+const detectInitialView = () => {
+  if (typeof window === 'undefined') {
+    return null
+  }
+
+  return window.innerWidth < 900 ? 'home' : null
+}
+
+const detectToggleFallbackView = () => {
+  if (typeof window === 'undefined') {
+    return null
+  }
+
+  return window.innerWidth < 900 ? 'home' : null
+}
+
 const PRESS_FEEDBACK_MS = 110
 
 export default function App() {
   const [language, setLanguage] = useState(detectLanguage)
-  const [activeView, setActiveView] = useState(null)
+  const [activeView, setActiveView] = useState(detectInitialView)
   const [pressedView, setPressedView] = useState(null)
   const pressTimeoutRef = useRef(null)
 
@@ -419,6 +445,39 @@ export default function App() {
     }
   }, [])
 
+  useEffect(() => {
+    if (typeof window === 'undefined' || typeof window.matchMedia !== 'function') {
+      return undefined
+    }
+
+    const mobileMediaQuery = window.matchMedia('(max-width: 899px)')
+    const ensureMobileHome = (isMobile) => {
+      if (!isMobile) {
+        return
+      }
+
+      setActiveView((currentView) => currentView ?? 'home')
+    }
+
+    ensureMobileHome(mobileMediaQuery.matches)
+
+    const handleMobileChange = (event) => {
+      ensureMobileHome(event.matches)
+    }
+
+    if (typeof mobileMediaQuery.addEventListener === 'function') {
+      mobileMediaQuery.addEventListener('change', handleMobileChange)
+      return () => {
+        mobileMediaQuery.removeEventListener('change', handleMobileChange)
+      }
+    }
+
+    mobileMediaQuery.addListener(handleMobileChange)
+    return () => {
+      mobileMediaQuery.removeListener(handleMobileChange)
+    }
+  }, [])
+
   const triggerPressFeedback = (view) => {
     if (pressTimeoutRef.current) {
       window.clearTimeout(pressTimeoutRef.current)
@@ -432,7 +491,7 @@ export default function App() {
 
   const handleViewToggle = (view) => {
     triggerPressFeedback(view)
-    setActiveView((currentView) => (currentView === view ? null : view))
+    setActiveView((currentView) => (currentView === view ? detectToggleFallbackView() : view))
   }
 
   const renderLanguageControl = (layoutClassName) => (
@@ -487,9 +546,12 @@ export default function App() {
         <main className="layout">
         <section className="left-column">
         <div className="left-content">
-          <h1>{'Mateo Krössler'}</h1>
+          <div className="title-row">
+            <h1>{'Mateo Krössler'}</h1>
+            <span className="device-model-tag">MK-1</span>
+          </div>
           {copy.intro.map((paragraph) => (
-            <p key={paragraph}>{paragraph}</p>
+            <p className="intro-copy" key={paragraph}>{paragraph}</p>
           ))}
           {renderActions('actions-inline')}
         </div>
