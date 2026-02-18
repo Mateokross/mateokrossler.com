@@ -112,6 +112,11 @@ body::after {
 
 
 .layout {
+  --device-noise-size: 320px;
+  --device-noise-opacity: 0.5;
+  --device-noise-contrast: 1.72;
+  --device-noise-brightness: 1;
+  --device-noise-blur: 0px;
   position: relative;
   z-index: 1;
   isolation: isolate;
@@ -729,6 +734,11 @@ background-image: linear-gradient(
   }
 
   .layout {
+    --device-noise-size: 188px;
+    --device-noise-opacity: 0.49;
+    --device-noise-contrast: 1.26;
+    --device-noise-brightness: 0.95;
+    --device-noise-blur: 0px;
     padding: 0.85rem;
     gap: 0.9rem;
     grid-template-rows: auto minmax(0, 1fr);
@@ -747,8 +757,8 @@ background-image: linear-gradient(
   .device-power-tab {
     top: 5.25rem;
     right: -3px;
-    width: 1.02rem;
-    height: 2.55rem;
+    width: 16px;
+    height: 80px;
     border-radius: 0.44rem;
   }
 
@@ -841,93 +851,6 @@ background-image: linear-gradient(
   .left-content p {
     font-size: clamp(1.2rem, 1.35vw, 1.24rem);
     line-height: 1.56;
-  }
-}
-
-.noise-tuner {
-  display: none;
-  position: fixed;
-  right: 0.8rem;
-  bottom: 0.8rem;
-  z-index: 12;
-  width: min(310px, calc(100vw - 1.6rem));
-  padding: 0.7rem 0.75rem 0.8rem;
-  border-radius: 12px;
-  border: 1px solid #757c84;
-  background:
-    linear-gradient(152deg, rgba(199, 204, 211, 0.96) 0%, rgba(158, 164, 172, 0.96) 100%);
-  box-shadow:
-    0 14px 24px -14px rgba(0, 0, 0, 0.62),
-    0 7px 10px rgba(0, 0, 0, 0.22),
-    inset 0 1px 0 rgba(255, 255, 255, 0.48);
-  backdrop-filter: blur(1.2px);
-}
-
-.noise-tuner p {
-  margin: 0 0 0.5rem;
-  font-size: 0.72rem;
-  font-weight: 600;
-  letter-spacing: 0.07em;
-  text-transform: uppercase;
-  color: #2f333a;
-}
-
-.noise-tuner label {
-  display: grid;
-  grid-template-columns: 68px 1fr 52px;
-  align-items: center;
-  gap: 0.45rem;
-  margin: 0;
-  font-size: 0.74rem;
-  color: #2f333a;
-}
-
-.noise-tuner label + label {
-  margin-top: 0.3rem;
-}
-
-.noise-tuner input[type='range'] {
-  width: 100%;
-  accent-color: #4f555e;
-  cursor: pointer;
-}
-
-.noise-tuner span {
-  text-align: right;
-  font-variant-numeric: tabular-nums;
-  color: #3d424a;
-}
-
-.noise-tuner button {
-  margin-top: 0.55rem;
-  width: 100%;
-  border: 1px solid #727983;
-  border-radius: 8px;
-  padding: 0.36rem 0.5rem;
-  font-family: 'Archivo', 'Segoe UI', sans-serif;
-  font-size: 0.73rem;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: #1f2329;
-  background: linear-gradient(180deg, #d8dce1 0%, #b9c0c8 100%);
-  box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.62),
-    0 2px 4px rgba(0, 0, 0, 0.2);
-  cursor: pointer;
-}
-
-.noise-tuner button:active {
-  box-shadow:
-    inset 0 1px 3px rgba(0, 0, 0, 0.3),
-    0 1px 2px rgba(0, 0, 0, 0.18);
-}
-
-@media (max-width: 899px) {
-  .noise-tuner {
-    right: 0.35rem;
-    left: 0.35rem;
-    bottom: 0.35rem;
-    width: auto;
   }
 }
 

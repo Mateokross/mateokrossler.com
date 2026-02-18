@@ -166,19 +166,11 @@ const detectLanguage = () => {
 }
 
 const PRESS_FEEDBACK_MS = 110
-const NOISE_DEFAULTS = {
-  size: 320,
-  opacity: 0.5,
-  contrast: 1.72,
-  brightness: 1,
-  blur: 0
-}
 
 export default function App() {
   const [language, setLanguage] = useState(detectLanguage)
   const [activeView, setActiveView] = useState(null)
   const [pressedView, setPressedView] = useState(null)
-  const [noiseSettings, setNoiseSettings] = useState(NOISE_DEFAULTS)
   const pressTimeoutRef = useRef(null)
 
   const copy = content[language]
@@ -328,26 +320,10 @@ export default function App() {
     </div>
   )
 
-  const updateNoiseSetting = (key, value) => {
-    setNoiseSettings((current) => ({
-      ...current,
-      [key]: Number(value)
-    }))
-  }
-
   return (
     <>
       <div className="device-shell">
-        <main
-          className="layout"
-          style={{
-            '--device-noise-size': `${noiseSettings.size}px`,
-            '--device-noise-opacity': noiseSettings.opacity,
-            '--device-noise-contrast': noiseSettings.contrast,
-            '--device-noise-brightness': noiseSettings.brightness,
-            '--device-noise-blur': `${noiseSettings.blur}px`
-          }}
-        >
+        <main className="layout">
         <section className="left-column">
         <div className="left-content">
           <h1>{'Mateo Krössler'}</h1>
@@ -426,73 +402,6 @@ export default function App() {
       </main>
       <div className="device-power-tab" aria-hidden="true" />
       </div>
-
-      <aside className="noise-tuner" aria-label="Noise tuner">
-        <p>Noise Tuner (temporary)</p>
-        <label>
-          Size
-          <input
-            type="range"
-            min="80"
-            max="320"
-            step="1"
-            value={noiseSettings.size}
-            onChange={(event) => updateNoiseSetting('size', event.target.value)}
-          />
-          <span>{noiseSettings.size}px</span>
-        </label>
-        <label>
-          Opacity
-          <input
-            type="range"
-            min="0.05"
-            max="0.7"
-            step="0.01"
-            value={noiseSettings.opacity}
-            onChange={(event) => updateNoiseSetting('opacity', event.target.value)}
-          />
-          <span>{noiseSettings.opacity.toFixed(2)}</span>
-        </label>
-        <label>
-          Contrast
-          <input
-            type="range"
-            min="0.6"
-            max="1.8"
-            step="0.01"
-            value={noiseSettings.contrast}
-            onChange={(event) => updateNoiseSetting('contrast', event.target.value)}
-          />
-          <span>{noiseSettings.contrast.toFixed(2)}</span>
-        </label>
-        <label>
-          Brightness
-          <input
-            type="range"
-            min="0.6"
-            max="1.6"
-            step="0.01"
-            value={noiseSettings.brightness}
-            onChange={(event) => updateNoiseSetting('brightness', event.target.value)}
-          />
-          <span>{noiseSettings.brightness.toFixed(2)}</span>
-        </label>
-        <label>
-          Blur
-          <input
-            type="range"
-            min="0"
-            max="1.4"
-            step="0.01"
-            value={noiseSettings.blur}
-            onChange={(event) => updateNoiseSetting('blur', event.target.value)}
-          />
-          <span>{noiseSettings.blur.toFixed(2)}px</span>
-        </label>
-        <button type="button" onClick={() => setNoiseSettings(NOISE_DEFAULTS)}>
-          Reset
-        </button>
-      </aside>
     </>
   )
 }
