@@ -291,7 +291,6 @@ const detectLanguage = () => {
 }
 
 const PRESS_FEEDBACK_MS = 110
-const SHOW_SKILLS_BUTTON = false
 
 export default function App() {
   const [language, setLanguage] = useState(detectLanguage)
@@ -469,27 +468,21 @@ export default function App() {
               >
                 <span className="action-button-text">{copy.buttons.work}</span>
               </button>
-            </div>
-            {SHOW_SKILLS_BUTTON && (
-              <div className="action-shell">
-                <button
-                  type="button"
-                  aria-pressed={activeView === 'skills'}
-                  className={`action-button action-button-photo ${activeView === 'skills' ? 'is-active' : ''} ${pressedView === 'skills' ? 'is-pressed' : ''}`}
-                  onClick={() => {
-                    triggerPressFeedback('skills')
-                    setActiveView('skills')
-                  }}
-                >
-                  <span className="action-button-text">{copy.buttons.skills}</span>
-                </button>
-              </div>
-            )}
-            <div className="action-shell">
+              <button
+                type="button"
+                aria-pressed={activeView === 'skills'}
+                className={`action-button action-button-skills ${activeView === 'skills' ? 'is-active' : ''} ${pressedView === 'skills' ? 'is-pressed' : ''}`}
+                onClick={() => {
+                  triggerPressFeedback('skills')
+                  setActiveView('skills')
+                }}
+              >
+                <span className="action-button-text">{copy.buttons.skills}</span>
+              </button>
               <button
                 type="button"
                 aria-pressed={activeView === 'photography'}
-                className={`action-button action-button-photo ${activeView === 'photography' ? 'is-active' : ''} ${pressedView === 'photography' ? 'is-pressed' : ''}`}
+                className={`action-button action-button-photography ${activeView === 'photography' ? 'is-active' : ''} ${pressedView === 'photography' ? 'is-pressed' : ''}`}
                 onClick={() => {
                   triggerPressFeedback('photography')
                   setActiveView('photography')
