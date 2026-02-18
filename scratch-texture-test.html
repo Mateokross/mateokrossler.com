@@ -1,0 +1,321 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Scratch Texture Test</title>
+    <style>
+      html,
+      body {
+        height: 100%;
+      }
+
+      body {
+        margin: 0;
+        background: #8f8f8f;
+        font-family: Arial, sans-serif;
+        color: #101217;
+      }
+
+      .stage {
+        width: min(96vw, 1240px);
+        margin: 1.5rem auto 2rem;
+      }
+
+      .stage h1 {
+        margin: 0 0 0.5rem;
+        font-size: 1.2rem;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+      }
+
+      .stage p {
+        margin: 0 0 1rem;
+        font-size: 0.9rem;
+      }
+
+      .panel-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 0.9rem;
+      }
+
+      .panel {
+        background: #9a9a9a;
+        border: 1px solid rgba(30, 33, 38, 0.28);
+        border-radius: 11px;
+        padding: 0.65rem;
+        box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2);
+      }
+
+      .panel h2 {
+        margin: 0 0 0.45rem;
+        font-size: 0.78rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .preview {
+        border-radius: 9px;
+        background: #7b7b7b;
+        padding: 0.42rem;
+      }
+
+      svg {
+        display: block;
+        width: 100%;
+        height: auto;
+      }
+
+      .controls {
+        margin-top: 0.5rem;
+      }
+
+      .control-row {
+        display: grid;
+        grid-template-columns: 68px 1fr 44px;
+        align-items: center;
+        gap: 0.45rem;
+        font-size: 0.72rem;
+        font-weight: 700;
+        text-transform: uppercase;
+      }
+
+      .control-row + .control-row {
+        margin-top: 0.3rem;
+      }
+
+      .control-row input {
+        width: 100%;
+      }
+
+      .control-row output {
+        text-align: right;
+        font-variant-numeric: tabular-nums;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="stage">
+      <h1>Scratch Pattern Lab</h1>
+      <p>4 spaces to test transparent white scratch textures. Tune size, direction, density, and opacity independently.</p>
+
+      <section class="panel-grid">
+        <article class="panel" data-seed="101">
+          <h2>Space 1</h2>
+          <div class="preview">
+            <svg viewBox="0 0 420 170" width="420" height="170" aria-label="Scratch preview space 1">
+              <defs>
+                <linearGradient id="button-base-1" x1="0%" y1="0%" x2="0%" y2="100%">
+                  <stop offset="0%" stop-color="#6e7177" />
+                  <stop offset="54%" stop-color="#5c5f65" />
+                  <stop offset="100%" stop-color="#51545a" />
+                </linearGradient>
+                <clipPath id="button-clip-1">
+                  <rect x="16" y="20" width="388" height="130" rx="18" />
+                </clipPath>
+              </defs>
+              <rect x="12" y="16" width="396" height="138" rx="22" fill="#4c5057" />
+              <rect x="16" y="20" width="388" height="130" rx="18" fill="url(#button-base-1)" />
+              <g class="scratch-layer" clip-path="url(#button-clip-1)"></g>
+            </svg>
+          </div>
+          <div class="controls">
+            <label class="control-row"><span>Size</span><input data-control="size" type="range" min="10" max="100" value="34" /><output data-output="size"></output></label>
+            <label class="control-row"><span>Direction</span><input data-control="direction" type="range" min="-90" max="90" value="-26" /><output data-output="direction"></output></label>
+            <label class="control-row"><span>Density</span><input data-control="density" type="range" min="6" max="90" value="26" /><output data-output="density"></output></label>
+            <label class="control-row"><span>Opacity</span><input data-control="opacity" type="range" min="0" max="100" value="23" /><output data-output="opacity"></output></label>
+          </div>
+        </article>
+
+        <article class="panel" data-seed="202">
+          <h2>Space 2</h2>
+          <div class="preview">
+            <svg viewBox="0 0 420 170" width="420" height="170" aria-label="Scratch preview space 2">
+              <defs>
+                <linearGradient id="button-base-2" x1="0%" y1="0%" x2="0%" y2="100%">
+                  <stop offset="0%" stop-color="#6e7177" />
+                  <stop offset="54%" stop-color="#5c5f65" />
+                  <stop offset="100%" stop-color="#51545a" />
+                </linearGradient>
+                <clipPath id="button-clip-2">
+                  <rect x="16" y="20" width="388" height="130" rx="18" />
+                </clipPath>
+              </defs>
+              <rect x="12" y="16" width="396" height="138" rx="22" fill="#4c5057" />
+              <rect x="16" y="20" width="388" height="130" rx="18" fill="url(#button-base-2)" />
+              <g class="scratch-layer" clip-path="url(#button-clip-2)"></g>
+            </svg>
+          </div>
+          <div class="controls">
+            <label class="control-row"><span>Size</span><input data-control="size" type="range" min="10" max="100" value="22" /><output data-output="size"></output></label>
+            <label class="control-row"><span>Direction</span><input data-control="direction" type="range" min="-90" max="90" value="38" /><output data-output="direction"></output></label>
+            <label class="control-row"><span>Density</span><input data-control="density" type="range" min="6" max="90" value="56" /><output data-output="density"></output></label>
+            <label class="control-row"><span>Opacity</span><input data-control="opacity" type="range" min="0" max="100" value="18" /><output data-output="opacity"></output></label>
+          </div>
+        </article>
+
+        <article class="panel" data-seed="303">
+          <h2>Space 3</h2>
+          <div class="preview">
+            <svg viewBox="0 0 420 170" width="420" height="170" aria-label="Scratch preview space 3">
+              <defs>
+                <linearGradient id="button-base-3" x1="0%" y1="0%" x2="0%" y2="100%">
+                  <stop offset="0%" stop-color="#6e7177" />
+                  <stop offset="54%" stop-color="#5c5f65" />
+                  <stop offset="100%" stop-color="#51545a" />
+                </linearGradient>
+                <clipPath id="button-clip-3">
+                  <rect x="16" y="20" width="388" height="130" rx="18" />
+                </clipPath>
+              </defs>
+              <rect x="12" y="16" width="396" height="138" rx="22" fill="#4c5057" />
+              <rect x="16" y="20" width="388" height="130" rx="18" fill="url(#button-base-3)" />
+              <g class="scratch-layer" clip-path="url(#button-clip-3)"></g>
+            </svg>
+          </div>
+          <div class="controls">
+            <label class="control-row"><span>Size</span><input data-control="size" type="range" min="10" max="100" value="72" /><output data-output="size"></output></label>
+            <label class="control-row"><span>Direction</span><input data-control="direction" type="range" min="-90" max="90" value="-48" /><output data-output="direction"></output></label>
+            <label class="control-row"><span>Density</span><input data-control="density" type="range" min="6" max="90" value="18" /><output data-output="density"></output></label>
+            <label class="control-row"><span>Opacity</span><input data-control="opacity" type="range" min="0" max="100" value="32" /><output data-output="opacity"></output></label>
+          </div>
+        </article>
+
+        <article class="panel" data-seed="404">
+          <h2>Space 4</h2>
+          <div class="preview">
+            <svg viewBox="0 0 420 170" width="420" height="170" aria-label="Scratch preview space 4">
+              <defs>
+                <linearGradient id="button-base-4" x1="0%" y1="0%" x2="0%" y2="100%">
+                  <stop offset="0%" stop-color="#6e7177" />
+                  <stop offset="54%" stop-color="#5c5f65" />
+                  <stop offset="100%" stop-color="#51545a" />
+                </linearGradient>
+                <clipPath id="button-clip-4">
+                  <rect x="16" y="20" width="388" height="130" rx="18" />
+                </clipPath>
+              </defs>
+              <rect x="12" y="16" width="396" height="138" rx="22" fill="#4c5057" />
+              <rect x="16" y="20" width="388" height="130" rx="18" fill="url(#button-base-4)" />
+              <g class="scratch-layer" clip-path="url(#button-clip-4)"></g>
+            </svg>
+          </div>
+          <div class="controls">
+            <label class="control-row"><span>Size</span><input data-control="size" type="range" min="10" max="100" value="16" /><output data-output="size"></output></label>
+            <label class="control-row"><span>Direction</span><input data-control="direction" type="range" min="-90" max="90" value="12" /><output data-output="direction"></output></label>
+            <label class="control-row"><span>Density</span><input data-control="density" type="range" min="6" max="90" value="72" /><output data-output="density"></output></label>
+            <label class="control-row"><span>Opacity</span><input data-control="opacity" type="range" min="0" max="100" value="15" /><output data-output="opacity"></output></label>
+          </div>
+        </article>
+      </section>
+    </main>
+
+    <script>
+      const SVG_NS = 'http://www.w3.org/2000/svg'
+      const SCRATCH_BOUNDS = { x: 16, y: 20, w: 388, h: 130 }
+
+      const mulberry32 = (seed) => {
+        let t = seed >>> 0
+        return () => {
+          t += 0x6d2b79f5
+          let value = t
+          value = Math.imul(value ^ (value >>> 15), value | 1)
+          value ^= value + Math.imul(value ^ (value >>> 7), value | 61)
+          return ((value ^ (value >>> 14)) >>> 0) / 4294967296
+        }
+      }
+
+      const formatValue = (name, value) => {
+        if (name === 'size' || name === 'opacity') {
+          return `${value}%`
+        }
+        if (name === 'direction') {
+          return `${value}deg`
+        }
+        return `${value}`
+      }
+
+      const createLine = (layer, x1, y1, x2, y2, width) => {
+        const line = document.createElementNS(SVG_NS, 'line')
+        line.setAttribute('x1', x1.toFixed(2))
+        line.setAttribute('y1', y1.toFixed(2))
+        line.setAttribute('x2', x2.toFixed(2))
+        line.setAttribute('y2', y2.toFixed(2))
+        line.setAttribute('stroke-width', width.toFixed(2))
+        layer.appendChild(line)
+      }
+
+      const renderPanel = (panel) => {
+        const size = Number(panel.querySelector('[data-control="size"]').value)
+        const direction = Number(panel.querySelector('[data-control="direction"]').value)
+        const density = Number(panel.querySelector('[data-control="density"]').value)
+        const opacity = Number(panel.querySelector('[data-control="opacity"]').value)
+        const seed = Number(panel.dataset.seed || 1)
+
+        panel.querySelectorAll('[data-output]').forEach((output) => {
+          const name = output.getAttribute('data-output')
+          const inputValue = Number(panel.querySelector(`[data-control="${name}"]`).value)
+          output.textContent = formatValue(name, inputValue)
+        })
+
+        const layer = panel.querySelector('.scratch-layer')
+        layer.innerHTML = ''
+        layer.setAttribute('stroke', '#fff')
+        layer.setAttribute('fill', 'none')
+        layer.setAttribute('stroke-linecap', 'round')
+        layer.setAttribute('stroke-opacity', (opacity / 100).toFixed(2))
+
+        const random = mulberry32(
+          seed + Math.round(size * 19) + density * 13 + Math.round((direction + 120) * 7)
+        )
+        const sizeScale = size / 100
+        const lineCount = density
+
+        for (let index = 0; index < lineCount; index += 1) {
+          const centerX = SCRATCH_BOUNDS.x + random() * SCRATCH_BOUNDS.w
+          const centerY = SCRATCH_BOUNDS.y + random() * SCRATCH_BOUNDS.h
+          const angleJitter = (random() - 0.5) * 24
+          const radians = ((direction + angleJitter) * Math.PI) / 180
+          const length = (10 + random() * 55) * (0.4 + sizeScale * 1.45)
+          const halfLength = length * 0.5
+          const dx = Math.cos(radians) * halfLength
+          const dy = Math.sin(radians) * halfLength
+          const strokeWidth = (0.14 + random() * 0.9) * (0.35 + sizeScale * 0.95)
+
+          createLine(layer, centerX - dx, centerY - dy, centerX + dx, centerY + dy, strokeWidth)
+
+          if (random() < 0.42) {
+            const microAngle = radians + (random() - 0.5) * 0.65
+            const microLength = length * (0.14 + random() * 0.32)
+            const microHalfLength = microLength * 0.5
+            const offsetX = (random() - 0.5) * 8 * (0.4 + sizeScale)
+            const offsetY = (random() - 0.5) * 8 * (0.4 + sizeScale)
+            const microDx = Math.cos(microAngle) * microHalfLength
+            const microDy = Math.sin(microAngle) * microHalfLength
+            const microWidth = strokeWidth * (0.45 + random() * 0.35)
+
+            createLine(
+              layer,
+              centerX + offsetX - microDx,
+              centerY + offsetY - microDy,
+              centerX + offsetX + microDx,
+              centerY + offsetY + microDy,
+              microWidth
+            )
+          }
+        }
+      }
+
+      document.querySelectorAll('.panel').forEach((panel) => {
+        panel.querySelectorAll('input[type="range"]').forEach((input) => {
+          input.addEventListener('input', () => {
+            renderPanel(panel)
+          })
+        })
+
+        renderPanel(panel)
+      })
+    </script>
+  </body>
+</html>

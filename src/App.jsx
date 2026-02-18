@@ -319,11 +319,21 @@ const detectToggleFallbackView = () => {
 }
 
 const PRESS_FEEDBACK_MS = 110
+const SCRATCH_DEFAULTS = {
+  deviceSize: 557,
+  deviceOpacity: 11,
+  displaySize: 482,
+  displayOpacity: 1,
+  buttonSize: 140,
+  buttonOpacity: 10
+}
+const SHOW_SCRATCH_CONTROLS = false
 
 export default function App() {
   const [language, setLanguage] = useState(detectLanguage)
   const [activeView, setActiveView] = useState(detectInitialView)
   const [pressedView, setPressedView] = useState(null)
+  const [scratchSettings, setScratchSettings] = useState(SCRATCH_DEFAULTS)
   const pressTimeoutRef = useRef(null)
 
   const copy = content[language]
@@ -542,10 +552,47 @@ export default function App() {
     </div>
   )
 
+  const scratchStyleVars = useMemo(() => {
+    const deviceHeight = Math.round(scratchSettings.deviceSize * 0.34)
+    const displayHeight = Math.round(scratchSettings.displaySize * 0.34)
+    const buttonHeight = Math.round(scratchSettings.buttonSize * 0.34)
+
+    return {
+      '--device-scratch-size': `${scratchSettings.deviceSize}px ${deviceHeight}px`,
+      '--device-scratch-opacity': (scratchSettings.deviceOpacity / 100).toFixed(2),
+      '--display-scratch-size': `${scratchSettings.displaySize}px ${displayHeight}px`,
+      '--display-scratch-opacity': (scratchSettings.displayOpacity / 100).toFixed(2),
+      '--button-scratch-size': `${scratchSettings.buttonSize}px ${buttonHeight}px`,
+      '--button-scratch-opacity': (scratchSettings.buttonOpacity / 100).toFixed(2)
+    }
+  }, [scratchSettings])
+
+  const renderScratchControl = (id, label, key, min, max, suffix = '') => (
+    <label className="scratch-control-row" htmlFor={id}>
+      <span>{label}</span>
+      <input
+        id={id}
+        type="range"
+        min={min}
+        max={max}
+        value={scratchSettings[key]}
+        onChange={(event) => {
+          const value = Number(event.target.value)
+          setScratchSettings((current) => ({ ...current, [key]: value }))
+        }}
+      />
+      <output htmlFor={id}>
+        {scratchSettings[key]}
+        {suffix}
+      </output>
+    </label>
+  )
+
   return (
     <>
-      <div className="device-shell">
+      <div className="device-shell" style={scratchStyleVars}>
         <main className="layout">
+        <div className="surface-scratch surface-scratch-device" aria-hidden="true" />
         <section className="left-column">
         <div className="left-content">
           <div className="title-row">
@@ -601,6 +648,17 @@ export default function App() {
         {renderActions('actions-shifted')}
         {renderLanguageControl('mobile-language')}
       </main>
+      {SHOW_SCRATCH_CONTROLS && (
+        <aside className="scratch-controls" aria-label="Scratch texture controls">
+          <h2>Scratch Controls</h2>
+          {renderScratchControl('scratch-device-size', 'Device Size', 'deviceSize', 180, 920)}
+          {renderScratchControl('scratch-device-opacity', 'Device Opacity', 'deviceOpacity', 0, 100, '%')}
+          {renderScratchControl('scratch-display-size', 'Display Size', 'displaySize', 140, 760)}
+          {renderScratchControl('scratch-display-opacity', 'Display Opacity', 'displayOpacity', 0, 100, '%')}
+          {renderScratchControl('scratch-button-size', 'Button Size', 'buttonSize', 140, 640)}
+          {renderScratchControl('scratch-button-opacity', 'Button Opacity', 'buttonOpacity', 0, 100, '%')}
+        </aside>
+      )}
       <div className="device-power-tab" aria-hidden="true" />
       </div>
     </>
