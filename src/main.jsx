@@ -112,7 +112,12 @@ function Root() {
 }
 
 const mountApp = () => {
-  ReactDOM.createRoot(document.getElementById('root')).render(
+  const rootElement = document.getElementById('root')
+  if (!rootElement) {
+    return
+  }
+
+  const appTree = (
     <React.StrictMode>
       <PostHogProvider
         apiKey={import.meta.env.VITE_PUBLIC_POSTHOG_KEY}
@@ -122,6 +127,13 @@ const mountApp = () => {
       </PostHogProvider>
     </React.StrictMode>
   )
+
+  if (rootElement.hasChildNodes()) {
+    ReactDOM.hydrateRoot(rootElement, appTree)
+    return
+  }
+
+  ReactDOM.createRoot(rootElement).render(appTree)
 }
 
 const waitForFonts = () => {
