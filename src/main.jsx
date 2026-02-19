@@ -1,8 +1,7 @@
-import React, { useEffect, useLayoutEffect, useState } from 'react'
+import React, { useEffect, useLayoutEffect } from 'react'
 import ReactDOM from 'react-dom/client'
 import { PostHogProvider } from '@posthog/react'
 import App from './App'
-import ButtonDesignLab from './ButtonDesignLab'
 import './index.css'
 
 const posthogOptions = {
@@ -33,20 +32,7 @@ const createAudioPlayer = (sourcePath, volume = 0.55) => {
 const playButtonSound = createAudioPlayer('/sounds/button.ogg', 0.58)
 const playToggleSound = createAudioPlayer('/sounds/toggle.ogg', 0.55)
 
-const getPage = () => {
-  const path = window.location.pathname
-  const hash = window.location.hash
-
-  if (path === '/button-lab' || hash === '#/button-lab') {
-    return 'button-lab'
-  }
-
-  return 'home'
-}
-
 function Root() {
-  const [page, setPage] = useState(getPage)
-
   useLayoutEffect(() => {
     if (typeof document === 'undefined') {
       return
@@ -97,22 +83,6 @@ function Root() {
   }, [])
 
   useEffect(() => {
-    const handleRouteChange = () => setPage(getPage())
-
-    window.addEventListener('popstate', handleRouteChange)
-    window.addEventListener('hashchange', handleRouteChange)
-
-    return () => {
-      window.removeEventListener('popstate', handleRouteChange)
-      window.removeEventListener('hashchange', handleRouteChange)
-    }
-  }, [])
-
-  useEffect(() => {
-    if (page !== 'home') {
-      return undefined
-    }
-
     const handleClickSound = (event) => {
       if (!(event.target instanceof Element)) {
         return
@@ -136,11 +106,7 @@ function Root() {
     return () => {
       document.removeEventListener('click', handleClickSound)
     }
-  }, [page])
-
-  if (page === 'button-lab') {
-    return <ButtonDesignLab />
-  }
+  }, [])
 
   return <App />
 }
