@@ -1,8 +1,14 @@
 import React, { useEffect, useLayoutEffect, useState } from 'react'
 import ReactDOM from 'react-dom/client'
+import { PostHogProvider } from '@posthog/react'
 import App from './App'
 import ButtonDesignLab from './ButtonDesignLab'
 import './index.css'
+
+const posthogOptions = {
+  api_host: import.meta.env.VITE_PUBLIC_POSTHOG_HOST,
+  defaults: '2026-01-30'
+}
 
 const createAudioPlayer = (sourcePath, volume = 0.55) => {
   let baseAudio = null
@@ -142,7 +148,12 @@ function Root() {
 const mountApp = () => {
   ReactDOM.createRoot(document.getElementById('root')).render(
     <React.StrictMode>
-      <Root />
+      <PostHogProvider
+        apiKey={import.meta.env.VITE_PUBLIC_POSTHOG_KEY}
+        options={posthogOptions}
+      >
+        <Root />
+      </PostHogProvider>
     </React.StrictMode>
   )
 }

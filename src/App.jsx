@@ -1,4 +1,5 @@
 ﻿import { useEffect, useMemo, useRef, useState } from 'react'
+import { usePostHog } from '@posthog/react'
 
 const content = {
   en: {
@@ -333,6 +334,7 @@ const SCRATCH_DEFAULTS = {
 const SHOW_SCRATCH_CONTROLS = false
 
 export default function App() {
+  const posthog = usePostHog()
   const [language, setLanguage] = useState(detectLanguage)
   const [activeView, setActiveView] = useState(detectInitialView)
   const [pressedView, setPressedView] = useState(null)
@@ -580,7 +582,25 @@ export default function App() {
 
   const handleViewToggle = (view) => {
     triggerPressFeedback(view)
-    setActiveView((currentView) => (currentView === view ? detectToggleFallbackView() : view))
+    setActiveView((currentView) => {
+      const nextView = currentView === view ? detectToggleFallbackView() : view
+      posthog?.capture('main_button_clicked', {
+        button_name: view,
+        current_view: currentView ?? 'standby',
+        next_view: nextView ?? 'standby',
+        language
+      })
+      return nextView
+    })
+  }
+
+  const handleLanguageToggle = (event) => {
+    const nextLanguage = event.target.checked ? 'es' : 'en'
+    posthog?.capture('language_toggle_clicked', {
+      current_language: language,
+      next_language: nextLanguage
+    })
+    setLanguage(nextLanguage)
   }
 
   const renderLanguageControl = (layoutClassName) => (
@@ -591,7 +611,7 @@ export default function App() {
           type="checkbox"
           checked={language === 'es'}
           aria-label="Toggle language"
-          onChange={(event) => setLanguage(event.target.checked ? 'es' : 'en')}
+          onChange={handleLanguageToggle}
         />
       </div>
       <span className="toggle-label">ES</span>
@@ -752,3 +772,4 @@ export default function App() {
     </>
   )
 }
+
