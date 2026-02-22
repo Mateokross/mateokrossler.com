@@ -98,6 +98,8 @@ const content = {
       '- InDesign',
       '- Premiere'
     ],
+    speakerToast: "That's a \"speaker\" :)",
+    speakerLabel: 'Speaker',
     standby: 'Standby'
   },
   es: {
@@ -172,7 +174,7 @@ const content = {
       '- Diseño de interfaces e interacción',
       '- Wireframing y prototipado rápido (Figma)',
       '- Pruebas de usabilidad',
-      '- Implementación y testeo de accessibilidad (A11Y)',
+      '- Implementación y testeo de accesibilidad (A11Y)',
       'Experiencia de Desarrollador',
       '- Pensamiento de producto API-first',
       '- Portales para desarrolladores',
@@ -195,6 +197,8 @@ const content = {
       '- InDesign',
       '- Premiere'
     ],
+    speakerToast: 'Esto es un "parlante" :)',
+    speakerLabel: 'Parlante',
     standby: 'En espera'
   }
 }
@@ -297,6 +301,29 @@ const WORK_LINKS = {
   ]
 }
 
+const TESTIMONIALS = [
+  {
+    quote: 'He excels in communication, leadership, problem-solving and teamwork',
+    name: 'Estefanía Gual',
+    title: 'Chief Product Office @ Vivara',
+    rotation: '-0.44deg'
+  },
+  {
+    quote: 'Deep knowledge of the product methodology and a business long-term vision',
+    name: 'Matías Decundo',
+    title: 'Product Leader @ Qu',
+    rotation: '0.31deg'
+  },
+  {
+    quote: 'Strong from a technical perspective with great problem solving skills',
+    name: 'Santiago G. C.',
+    title: 'Product Strategy Mgmt. @ Kavak',
+    rotation: '-0.24deg'
+  }
+]
+
+const RECOMMENDATIONS_LINK = 'https://www.linkedin.com/in/mateokrossler/#:~:text=Show%20all-,Recommendations,-Show%20all%20pending'
+
 const detectLanguage = () => {
   if (typeof navigator === 'undefined') {
     return 'en'
@@ -322,6 +349,7 @@ const detectToggleFallbackView = () => {
 }
 
 const PRESS_FEEDBACK_MS = 110
+const SPEAKER_TOAST_MS = 1800
 const BART_EASTER_EGG_PATH = '/img/bart.webp'
 const SCRATCH_DEFAULTS = {
   deviceSize: 557,
@@ -338,9 +366,11 @@ export default function App() {
   const [language, setLanguage] = useState(detectLanguage)
   const [activeView, setActiveView] = useState(detectInitialView)
   const [pressedView, setPressedView] = useState(null)
+  const [isSpeakerToastVisible, setIsSpeakerToastVisible] = useState(false)
   const [scratchSettings, setScratchSettings] = useState(SCRATCH_DEFAULTS)
   const [bartImageSrc, setBartImageSrc] = useState('')
   const pressTimeoutRef = useRef(null)
+  const speakerToastTimeoutRef = useRef(null)
 
   const copy = content[language]
   const photographyLinks = PHOTOGRAPHY_LINKS[language]
@@ -459,6 +489,10 @@ export default function App() {
     return () => {
       if (pressTimeoutRef.current) {
         window.clearTimeout(pressTimeoutRef.current)
+      }
+
+      if (speakerToastTimeoutRef.current) {
+        window.clearTimeout(speakerToastTimeoutRef.current)
       }
     }
   }, [])
@@ -603,6 +637,27 @@ export default function App() {
     setLanguage(nextLanguage)
   }
 
+  const showSpeakerToast = () => {
+    if (speakerToastTimeoutRef.current) {
+      window.clearTimeout(speakerToastTimeoutRef.current)
+    }
+
+    setIsSpeakerToastVisible(true)
+    speakerToastTimeoutRef.current = window.setTimeout(() => {
+      setIsSpeakerToastVisible(false)
+      speakerToastTimeoutRef.current = null
+    }, SPEAKER_TOAST_MS)
+  }
+
+  const handleSpeakerKeyDown = (event) => {
+    if (event.key !== 'Enter' && event.key !== ' ') {
+      return
+    }
+
+    event.preventDefault()
+    showSpeakerToast()
+  }
+
   const renderLanguageControl = (layoutClassName) => (
     <div className={`language-control ${layoutClassName}`}>
       <span className="toggle-label">EN</span>
@@ -648,6 +703,31 @@ export default function App() {
       </div>
     </div>
   )
+
+  const renderTestimonialStickers = () => {
+    return (
+      <div className="testimonial-stack" aria-label="Recommendations">
+        {TESTIMONIALS.map((testimonial, index) => (
+          <a
+            key={`testimonial-${index}`}
+            className={`testimonial-sticker testimonial-sticker-${index + 1}`}
+            href={RECOMMENDATIONS_LINK}
+            target="_blank"
+            rel="noreferrer"
+            style={{ '--sticker-rotation': testimonial.rotation }}
+          >
+            <p className="testimonial-quote">"{testimonial.quote}"</p>
+            <div className="testimonial-footer">
+              <p className="testimonial-meta">
+                <span className="testimonial-name">{testimonial.name}</span>
+                <span className="testimonial-title">{testimonial.title}</span>
+              </p>
+            </div>
+          </a>
+        ))}
+      </div>
+    )
+  }
 
   const scratchStyleVars = useMemo(() => {
     const deviceHeight = Math.round(scratchSettings.deviceSize * 0.34)
@@ -711,9 +791,26 @@ export default function App() {
             <p className="intro-copy" key={paragraph}>{paragraph}</p>
           ))}
           {renderActions('actions-inline')}
+          {renderTestimonialStickers()}
         </div>
 
-        <div className="speaker-grille" aria-hidden="true" />
+        <div className="speaker-zone">
+          <div
+            className="speaker-grille"
+            role="button"
+            tabIndex={0}
+            aria-label={copy.speakerLabel}
+            onClick={showSpeakerToast}
+            onKeyDown={handleSpeakerKeyDown}
+          />
+          <div
+            className={`speaker-toast ${isSpeakerToastVisible ? 'is-visible' : ''}`}
+            role="status"
+            aria-live="polite"
+          >
+            {copy.speakerToast}
+          </div>
+        </div>
 
         {renderLanguageControl('desktop-language')}
       </section>
