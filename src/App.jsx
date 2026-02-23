@@ -31,13 +31,13 @@ const content = {
     ],
     photography: [
       "I published some of my pictures on Unsplash, where I've accumulated more than 9M views and 100K downloads.",
-      'They have been used on 100+ websites, including the official site of the city of Berlin. Some people made art with them, Buzzfeed used a couple on their quizzes, and a beer company put one on their labels.',
+      'They have been used on 200+ websites, including the official site of the city of Berlin. Some people made art with them, Buzzfeed used a couple on their quizzes, and a beer company put one on their labels.',
       'See photos on Unsplash.'
     ],
     skills: [
       'Product & Strategy',
       '- Product discovery & roadmap ownership',
-      '- 0→1 launches and growth optimization',
+      '- 0→1 products and growth optimization',
       '- User research & experimentation',
       '- KPI definition & metric design',
       '- Agile methodologies, Scrum, Kanban',
@@ -131,13 +131,13 @@ const content = {
     ],
     photography: [
       'Publiqué algunas fotos en Unsplash, donde acumulé más de 9 millones de vistas y 100 mil descargas.',
-      'Están siendo usadas en >100 páginas web, incluyendo el sitio oficial de la ciudad de Berlín. Hay gente que las usó para hacer arte, Buzzfeed usó algunas en sus quizzes, y una empresa de cerveza puso una en sus etiquetas.',
+      'Están siendo usadas en >200 páginas web, incluyendo el sitio oficial de la ciudad de Berlín. Hay gente que las usó para hacer arte, Buzzfeed usó algunas en sus quizzes, y una empresa de cerveza puso una en sus etiquetas.',
       'Ver fotos en Unsplash.'
     ],
     skills: [
       'Producto y Estrategia',
       '- Descubrimiento de producto y gestión de roadmap',
-      '- Lanzamientos 0→1 y optimización de crecimiento',
+      '- Productos 0→1 y optimización de crecimiento',
       '- Investigación de usuarios y experimentación',
       '- Definición de KPIs y diseño de métricas',
       '- Metodologías ágiles, Scrum, Kanban',
@@ -301,29 +301,6 @@ const WORK_LINKS = {
   ]
 }
 
-const TESTIMONIALS = [
-  {
-    quote: 'He excels in communication, leadership, problem-solving and teamwork',
-    name: 'Estefanía Gual',
-    title: 'Chief Product Office @ Vivara',
-    rotation: '-0.44deg'
-  },
-  {
-    quote: 'Deep knowledge of the product methodology and a business long-term vision',
-    name: 'Matías Decundo',
-    title: 'Product Leader @ Qu',
-    rotation: '0.31deg'
-  },
-  {
-    quote: 'Strong from a technical perspective with great problem solving skills',
-    name: 'Santiago G. C.',
-    title: 'Product Strategy Mgmt. @ Kavak',
-    rotation: '-0.24deg'
-  }
-]
-
-const RECOMMENDATIONS_LINK = 'https://www.linkedin.com/in/mateokrossler/#:~:text=Show%20all-,Recommendations,-Show%20all%20pending'
-
 const detectLanguage = () => {
   if (typeof navigator === 'undefined') {
     return 'en'
@@ -348,6 +325,14 @@ const detectToggleFallbackView = () => {
   return window.innerWidth < 900 ? 'home' : null
 }
 
+const detectTallViewport = () => {
+  if (typeof window === 'undefined') {
+    return true
+  }
+
+  return window.innerHeight >= 670
+}
+
 const PRESS_FEEDBACK_MS = 110
 const SPEAKER_TOAST_MS = 1800
 const BART_EASTER_EGG_PATH = '/img/bart.webp'
@@ -365,17 +350,21 @@ export default function App() {
   const posthog = usePostHog()
   const [language, setLanguage] = useState(detectLanguage)
   const [activeView, setActiveView] = useState(detectInitialView)
+  const [referencesUnlocked, setReferencesUnlocked] = useState(false)
+  const [isTallViewport, setIsTallViewport] = useState(detectTallViewport)
   const [pressedView, setPressedView] = useState(null)
   const [isSpeakerToastVisible, setIsSpeakerToastVisible] = useState(false)
   const [scratchSettings, setScratchSettings] = useState(SCRATCH_DEFAULTS)
   const [bartImageSrc, setBartImageSrc] = useState('')
   const pressTimeoutRef = useRef(null)
   const speakerToastTimeoutRef = useRef(null)
+  const referencesUnlockTimeoutRef = useRef(null)
 
   const copy = content[language]
   const photographyLinks = PHOTOGRAPHY_LINKS[language]
   const workLinks = WORK_LINKS[language]
   const activeLabel = activeView ? copy.buttons[activeView] : copy.standby
+  const isReferencesEligibleView = activeView === 'work' || activeView === 'skills'
 
   const displayContent = useMemo(() => {
     if (!activeView) {
@@ -494,8 +483,38 @@ export default function App() {
       if (speakerToastTimeoutRef.current) {
         window.clearTimeout(speakerToastTimeoutRef.current)
       }
+
+      if (referencesUnlockTimeoutRef.current) {
+        window.clearTimeout(referencesUnlockTimeoutRef.current)
+      }
     }
   }, [])
+
+  useEffect(() => {
+    if (typeof window === 'undefined' || referencesUnlocked) {
+      return undefined
+    }
+
+    if (!isReferencesEligibleView) {
+      if (referencesUnlockTimeoutRef.current) {
+        window.clearTimeout(referencesUnlockTimeoutRef.current)
+        referencesUnlockTimeoutRef.current = null
+      }
+      return undefined
+    }
+
+    referencesUnlockTimeoutRef.current = window.setTimeout(() => {
+      setReferencesUnlocked(true)
+      referencesUnlockTimeoutRef.current = null
+    }, 3000)
+
+    return () => {
+      if (referencesUnlockTimeoutRef.current) {
+        window.clearTimeout(referencesUnlockTimeoutRef.current)
+        referencesUnlockTimeoutRef.current = null
+      }
+    }
+  }, [isReferencesEligibleView, referencesUnlocked])
 
   useEffect(() => {
     if (typeof window === 'undefined' || typeof window.matchMedia !== 'function') {
@@ -527,6 +546,31 @@ export default function App() {
     mobileMediaQuery.addListener(handleMobileChange)
     return () => {
       mobileMediaQuery.removeListener(handleMobileChange)
+    }
+  }, [])
+
+  useEffect(() => {
+    if (typeof window === 'undefined' || typeof window.matchMedia !== 'function') {
+      return undefined
+    }
+
+    const tallViewportQuery = window.matchMedia('(min-height: 670px)')
+    setIsTallViewport(tallViewportQuery.matches)
+
+    const handleTallViewportChange = (event) => {
+      setIsTallViewport(event.matches)
+    }
+
+    if (typeof tallViewportQuery.addEventListener === 'function') {
+      tallViewportQuery.addEventListener('change', handleTallViewportChange)
+      return () => {
+        tallViewportQuery.removeEventListener('change', handleTallViewportChange)
+      }
+    }
+
+    tallViewportQuery.addListener(handleTallViewportChange)
+    return () => {
+      tallViewportQuery.removeListener(handleTallViewportChange)
     }
   }, [])
 
@@ -704,31 +748,6 @@ export default function App() {
     </div>
   )
 
-  const renderTestimonialStickers = () => {
-    return (
-      <div className="testimonial-stack" aria-label="Recommendations">
-        {TESTIMONIALS.map((testimonial, index) => (
-          <a
-            key={`testimonial-${index}`}
-            className={`testimonial-sticker testimonial-sticker-${index + 1}`}
-            href={RECOMMENDATIONS_LINK}
-            target="_blank"
-            rel="noreferrer"
-            style={{ '--sticker-rotation': testimonial.rotation }}
-          >
-            <p className="testimonial-quote">"{testimonial.quote}"</p>
-            <div className="testimonial-footer">
-              <p className="testimonial-meta">
-                <span className="testimonial-name">{testimonial.name}</span>
-                <span className="testimonial-title">{testimonial.title}</span>
-              </p>
-            </div>
-          </a>
-        ))}
-      </div>
-    )
-  }
-
   const scratchStyleVars = useMemo(() => {
     const deviceHeight = Math.round(scratchSettings.deviceSize * 0.34)
     const displayHeight = Math.round(scratchSettings.displaySize * 0.34)
@@ -791,8 +810,35 @@ export default function App() {
             <p className="intro-copy" key={paragraph}>{paragraph}</p>
           ))}
           {renderActions('actions-inline')}
-          {renderTestimonialStickers()}
         </div>
+
+        {referencesUnlocked && isTallViewport && (
+          <div className="references-sticker-zone">
+            <div className="references-sticker-stack" aria-hidden="true">
+              <img
+                className="references-sticker references-sticker-1"
+                src="/img/sticker-1.svg"
+                alt=""
+                loading="lazy"
+                decoding="async"
+              />
+              <img
+                className="references-sticker references-sticker-2"
+                src="/img/sticker-2.svg"
+                alt=""
+                loading="lazy"
+                decoding="async"
+              />
+              <img
+                className="references-sticker references-sticker-3"
+                src="/img/sticker-3.svg"
+                alt=""
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+          </div>
+        )}
 
         <div className="speaker-zone">
           <div
@@ -869,4 +915,6 @@ export default function App() {
     </>
   )
 }
+
+
 

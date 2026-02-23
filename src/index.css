@@ -1,4 +1,4 @@
-﻿:root {
+:root {
   --table-dark: #1f140f;
   --table-mid: #2a1b15;
   --table-light: #3a251d;
@@ -263,11 +263,98 @@ body::after {
   display: flex;
   flex-direction: column;
   padding: 1.2rem 1.1rem;
-  overflow: hidden;
+  overflow: visible;
 }
 
 .left-content {
   /* max-width: 55ch; */
+}
+
+.references-sticker-zone {
+  display: none;
+}
+
+.references-sticker-stack {
+  position: relative;
+  width: min(100%, 500px);
+  height: min(100%, 230px);
+  overflow: visible;
+  pointer-events: none;
+}
+
+.references-sticker {
+  --sticker-x: 0px;
+  --sticker-y: 0px;
+  --sticker-rotation: 0deg;
+  --sticker-size: 320px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: var(--sticker-size);
+  height: auto;
+  transform: translate3d(
+    calc(-50% + var(--sticker-x)),
+    calc(-50% + var(--sticker-y)),
+    0
+  ) rotate(var(--sticker-rotation));
+  transform-origin: 50% 100%;
+  backface-visibility: hidden;
+  opacity: 0;
+  animation: sticker-paste-in 1120ms cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+  will-change: transform, opacity;
+}
+
+.references-sticker-1 {
+  --sticker-x: calc(var(--sticker-size) * -0.35);
+  --sticker-y: calc(var(--sticker-size) * -0.1625);
+  --sticker-rotation: -1deg;
+  animation-delay: 880ms;
+  z-index: 3;
+}
+
+.references-sticker-2 {
+  --sticker-x: calc(var(--sticker-size) * 0.35);
+  --sticker-y: calc(var(--sticker-size) * -0.1625);
+  --sticker-rotation: 2deg;
+  animation-delay: 440ms;
+  z-index: 2;
+}
+
+.references-sticker-3 {
+  --sticker-x: 0px;
+  --sticker-y: calc(var(--sticker-size) * 0.225);
+  --sticker-rotation: 0deg;
+  animation-delay: 0ms;
+  z-index: 1;
+}
+
+@keyframes sticker-paste-in {
+  0% {
+    opacity: 0;
+    transform: translate3d(
+      calc(-50% + var(--sticker-x)),
+      calc(-50% + var(--sticker-y) - 20px),
+      0
+    ) rotate(calc(var(--sticker-rotation) - 5deg)) scale(1.04);
+  }
+
+  68% {
+    opacity: 1;
+    transform: translate3d(
+      calc(-50% + var(--sticker-x)),
+      calc(-50% + var(--sticker-y) + 2px),
+      0
+    ) rotate(calc(var(--sticker-rotation) + 0.3deg)) scale(0.998);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate3d(
+      calc(-50% + var(--sticker-x)),
+      calc(-50% + var(--sticker-y)),
+      0
+    ) rotate(var(--sticker-rotation)) scale(1);
+  }
 }
 
 .title-row {
@@ -368,14 +455,6 @@ background-image: linear-gradient(
 }
 
 .actions-shifted {
-  display: none;
-}
-
-.testimonial-stack {
-  display: none;
-}
-
-.testimonial-sticker {
   display: none;
 }
 
@@ -529,17 +608,6 @@ background-image: linear-gradient(
   outline: 2px solid rgba(22, 24, 29, 0.55);
   outline-offset: 2px;
 }
-
-.testimonial-sticker p {
-  margin: 0;
-  color: #1c2026;
-  text-shadow: none;
-  background-image: none;
-  -webkit-background-clip: border-box;
-  background-clip: border-box;
-  -webkit-text-fill-color: currentColor;
-}
-
 
 .language-control {
   display: inline-flex;
@@ -1208,6 +1276,13 @@ background-image: linear-gradient(
   }
 }
 
+@media (prefers-reduced-motion: reduce) {
+  .references-sticker {
+    animation: none;
+    opacity: 1;
+  }
+}
+
 @media (min-width: 900px) {
   .layout {
     grid-template-columns: 1fr 1fr;
@@ -1234,103 +1309,100 @@ background-image: linear-gradient(
     display: none;
   }
 
-  .testimonial-stack {
-    position: absolute;
-    left: 1.95rem;
-    right: 1.95rem;
-    bottom: 3.7rem;
+  .references-sticker-zone {
     display: none;
-    grid-template-columns: repeat(2, auto);
-    grid-template-areas:
-      "sticker-a sticker-b"
-      "sticker-c sticker-c";
-    justify-content: center;
-    align-items: start;
-    column-gap: 0.78rem;
-    row-gap: 0.18rem;
-    z-index: 5;
-  }
-
-  .testimonial-sticker {
-    --sticker-rotation: -0.5deg;
     position: relative;
+    flex: 1 1 auto;
+    min-height: 0;
+    align-items: center;
+    justify-content: center;
+    margin-top: 0.4rem;
+    margin-bottom: 3.05rem;
+    padding-inline: 1rem;
+    overflow: visible;
+    pointer-events: none;
+  }
+
+}
+
+@media (min-width: 900px) and (min-height: 670px) {
+  .references-sticker-zone {
     display: flex;
-    flex-direction: column;
-    gap: 0.22rem;
-    width: fit-content;
-    max-width: calc(100% - 0.2rem);
-    justify-self: start;
-    align-self: start;
-    padding: 0.62rem 0.72rem 0.64rem;
-    border-radius: 3px;
-    text-decoration: none;
-    background-color: #fbfbfb;
-    transform-origin: center;
-    transform: rotate(var(--sticker-rotation)) skew(-1deg, 0.24deg);
-    box-shadow:
-      inset 1px 1px 0 rgba(255, 255, 255, 0.92),
-      1px 1px 3px -1px rgba(0, 0, 0, 0.1);
-  }
-
-  .testimonial-sticker-1 {
-    grid-area: sticker-a;
-  }
-
-  .testimonial-sticker-2 {
-    grid-area: sticker-b;
-  }
-
-  .testimonial-sticker-3 {
-    grid-area: sticker-c;
-    justify-self: center;
-    margin-top: -0.16rem;
-  }
-
-
-  .testimonial-sticker:focus-visible {
-    outline: 2px solid rgba(18, 22, 29, 0.48);
-    outline-offset: 2px;
-  }
-
-  .testimonial-quote {
-    font-size: 0.76rem;
-    font-weight: 600;
-    line-height: 1.28;
-    letter-spacing: 0.01em;
-    max-width: 31ch;
-  }
-
-  .testimonial-sticker-2 .testimonial-quote {
-    max-width: 38ch;
-  }
-
-  .testimonial-footer {
-    display: block;
-    margin-top: 0.14rem;
-  }
-
-  .testimonial-meta {
-    display: inline-flex;
-    align-items: baseline;
-    gap: 0.24rem;
-    min-width: 0;
-    font-size: 0.66rem;
-    line-height: 1.18;
-  }
-
-  .testimonial-name {
-    font-weight: 700;
-    white-space: nowrap;
-  }
-
-  .testimonial-title {
-    font-weight: 600;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    color: #4a525f;
   }
 }
+
+@media (min-width: 900px) and (max-width: 1399px) {
+  .references-sticker {
+    --sticker-size: clamp(230px, 25vw, 320px);
+  }
+}
+@media (min-width: 1351px) {
+  .references-sticker-1 {
+    --sticker-x: calc(var(--sticker-size) * -0.35 - 53px);
+    --sticker-y: calc(var(--sticker-size) * -0.1625 + 6px);
+  }
+
+  .references-sticker-2 {
+    --sticker-x: calc(var(--sticker-size) * 0.35 + 55px);
+    --sticker-y: calc(var(--sticker-size) * -0.1625 + 8px);
+  }
+
+  .references-sticker-3 {
+    --sticker-x: -2px;
+    --sticker-y: calc(var(--sticker-size) * 0.225 - 19px);
+  }
+}
+@media (min-width: 1201px) and (max-width: 1350px) {
+  .references-sticker-1 {
+    --sticker-x: calc(var(--sticker-size) * -0.35 - 37px);
+    --sticker-y: calc(var(--sticker-size) * -0.1625 + 6px);
+  }
+
+  .references-sticker-2 {
+    --sticker-x: calc(var(--sticker-size) * 0.35 + 37px);
+    --sticker-y: calc(var(--sticker-size) * -0.1625 + 8px);
+  }
+
+  .references-sticker-3 {
+    --sticker-x: -2px;
+    --sticker-y: calc(var(--sticker-size) * 0.225 - 19px);
+  }
+}
+
+@media (min-width: 1000px) and (max-width: 1200px) {
+  .references-sticker-1 {
+    --sticker-x: calc(var(--sticker-size) * -0.35 - 34px);
+    --sticker-y: calc(var(--sticker-size) * -0.1625 - 20px);
+  }
+
+  .references-sticker-2 {
+    --sticker-x: calc(var(--sticker-size) * 0.35 + 33px);
+    --sticker-y: calc(var(--sticker-size) * -0.1625 + 37px);
+  }
+
+  .references-sticker-3 {
+    --sticker-x: 4px;
+    --sticker-y: calc(var(--sticker-size) * 0.225 + 13px);
+  }
+}
+
+@media (min-width: 900px) and (max-width: 999px) {
+  .references-sticker-1 {
+    --sticker-x: calc(var(--sticker-size) * -0.35 - 27px);
+    --sticker-y: calc(var(--sticker-size) * -0.1625 - 7px);
+  }
+
+  .references-sticker-2 {
+    --sticker-x: calc(var(--sticker-size) * 0.35 + 28px);
+    --sticker-y: calc(var(--sticker-size) * -0.1625 + 35px);
+  }
+
+  .references-sticker-3 {
+    --sticker-x: -24px;
+    --sticker-y: calc(var(--sticker-size) * 0.225 + 16px);
+  }
+}
+
 
 @media (min-width: 900px) and (max-width: 1300px) {
   .left-content h1 {
@@ -1343,43 +1415,5 @@ background-image: linear-gradient(
     line-height: 1.5;
   }
 }
-
-@media (min-width: 900px) and (max-width: 1000px) {
-  .testimonial-stack {
-    left: 1.35rem;
-    right: 1.35rem;
-    bottom: 3.45rem;
-    column-gap: 0.56rem;
-    row-gap: 0.12rem;
-  }
-
-  .testimonial-sticker {
-    padding: 0.5rem 0.58rem 0.52rem;
-  }
-
-  .testimonial-quote {
-    font-size: 0.69rem;
-    line-height: 1.24;
-    max-width: 23ch;
-  }
-
-  .testimonial-sticker-2 .testimonial-quote {
-    max-width: 28ch;
-  }
-
-  .testimonial-meta {
-    gap: 0.18rem;
-    font-size: 0.6rem;
-    line-height: 1.16;
-  }
-}
-
-
-
-
-
-
-
-
 
 
