@@ -137,7 +137,7 @@ const content = {
     skills: [
       'Producto y Estrategia',
       '- Descubrimiento de producto y gestión de roadmap',
-      '- Productos 0→1 y optimización de crecimiento',
+      '- Productos 0→1 y growth',
       '- Investigación de usuarios y experimentación',
       '- Definición de KPIs y diseño de métricas',
       '- Metodologías ágiles, Scrum, Kanban',

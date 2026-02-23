@@ -605,8 +605,8 @@ background-image: linear-gradient(
 }
 
 .action-button:focus-visible {
-  outline: 2px solid rgba(22, 24, 29, 0.55);
-  outline-offset: 2px;
+  outline: none;
+  filter: brightness(1.18) saturate(1.08);
 }
 
 .language-control {
