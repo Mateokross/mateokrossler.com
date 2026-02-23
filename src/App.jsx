@@ -99,7 +99,6 @@ const content = {
       '- Premiere'
     ],
     speakerToast: "That's a \"speaker\" :)",
-    speakerLabel: 'Speaker',
     standby: 'Standby'
   },
   es: {
@@ -198,7 +197,6 @@ const content = {
       '- Premiere'
     ],
     speakerToast: 'Esto es un "parlante" :)',
-    speakerLabel: 'Parlante',
     standby: 'En espera'
   }
 }
@@ -693,15 +691,6 @@ export default function App() {
     }, SPEAKER_TOAST_MS)
   }
 
-  const handleSpeakerKeyDown = (event) => {
-    if (event.key !== 'Enter' && event.key !== ' ') {
-      return
-    }
-
-    event.preventDefault()
-    showSpeakerToast()
-  }
-
   const renderLanguageControl = (layoutClassName) => (
     <div className={`language-control ${layoutClassName}`}>
       <span className="toggle-label">EN</span>
@@ -791,7 +780,7 @@ export default function App() {
           <img
             className="bart-easter-egg"
             src={bartImageSrc}
-            alt=""
+            alt="bart simpson showing his behind"
             aria-hidden="true"
             loading="lazy"
             decoding="async"
@@ -814,25 +803,28 @@ export default function App() {
 
         {referencesUnlocked && isTallViewport && (
           <div className="references-sticker-zone">
-            <div className="references-sticker-stack" aria-hidden="true">
+            <div className="references-sticker-stack">
               <img
                 className="references-sticker references-sticker-1"
                 src="/img/sticker-1.svg"
-                alt=""
+                alt="“He excels in communication, leadership, problem-solving and teamwork”, Estefanía Gual, Chief Product Officer @ Vivara"
+                tabIndex={0}
                 loading="lazy"
                 decoding="async"
               />
               <img
                 className="references-sticker references-sticker-2"
                 src="/img/sticker-2.svg"
-                alt=""
+                alt="“Has a strong product judgement, gets things done and delivers real results”, Matías Battolla, CEO @ Powerbeans"
+                tabIndex={0}
                 loading="lazy"
                 decoding="async"
               />
               <img
                 className="references-sticker references-sticker-3"
                 src="/img/sticker-3.svg"
-                alt=""
+                alt="“Deep knowledge of the product methodology and a business long-term vision”, Matías Decundo, Product Leader @ Qu"
+                tabIndex={0}
                 loading="lazy"
                 decoding="async"
               />
@@ -843,11 +835,8 @@ export default function App() {
         <div className="speaker-zone">
           <div
             className="speaker-grille"
-            role="button"
-            tabIndex={0}
-            aria-label={copy.speakerLabel}
+            aria-hidden="true"
             onClick={showSpeakerToast}
-            onKeyDown={handleSpeakerKeyDown}
           />
           <div
             className={`speaker-toast ${isSpeakerToastVisible ? 'is-visible' : ''}`}

@@ -304,6 +304,11 @@ body::after {
   will-change: transform, opacity;
 }
 
+.references-sticker:focus-visible {
+  outline: none;
+  filter: brightness(1.18) saturate(1.08);
+}
+
 .references-sticker-1 {
   --sticker-x: calc(var(--sticker-size) * -0.35);
   --sticker-y: calc(var(--sticker-size) * -0.1625);
