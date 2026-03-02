@@ -787,7 +787,7 @@ export default function App({ initialPathname = '/', initialLanguage = 'en' }) {
 
   const renderActions = (className) => (
     <div className={`actions ${className}`}>
-      <div className="action-shell">
+      <nav className="action-shell" aria-label="Section navigation">
         <a
           href={getPathnameFromView('work')}
           aria-current={activeView === 'work' ? 'page' : undefined}
@@ -812,7 +812,7 @@ export default function App({ initialPathname = '/', initialLanguage = 'en' }) {
         >
           <span className="action-button-text">{copy.buttons.photography}</span>
         </a>
-      </div>
+      </nav>
     </div>
   )
 
@@ -933,7 +933,7 @@ export default function App({ initialPathname = '/', initialLanguage = 'en' }) {
         <div className="display-frame">
           <div className="display-status">
             <span className={`status-dot ${activeView ? 'is-on' : ''}`} aria-hidden="true" />
-            <span>{activeLabel}</span>
+            <h2>{activeLabel}</h2>
           </div>
           <div className="display-content">
             {displayBlocks.map((block, index) => {
@@ -951,14 +951,19 @@ export default function App({ initialPathname = '/', initialLanguage = 'en' }) {
                 )
               }
 
+              const nextBlock = displayBlocks[index + 1]
+              const isDisplayHeading = (activeView === 'work' || activeView === 'skills')
+                && (block.text.endsWith(':') || nextBlock?.type === 'list')
+              const TextTag = isDisplayHeading ? 'h2' : 'p'
+
               return (
-                <p key={`${activeView}-${language}-${index}`}>
+                <TextTag key={`${activeView}-${language}-${index}`}>
                   {activeView === 'photography'
                     ? renderTextWithLinks(block.text, photographyLinks.inline, `${language}-${index}`)
                     : activeView === 'work'
                       ? renderTextWithLinks(block.text, workLinks, `${language}-${index}`)
                       : block.text}
-                </p>
+                </TextTag>
               )
             })}
           </div>

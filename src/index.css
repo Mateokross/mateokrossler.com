@@ -915,6 +915,14 @@ background-image: linear-gradient(
   flex-shrink: 0;
 }
 
+.display-status h2 {
+  margin: 0;
+  font: inherit;
+  letter-spacing: inherit;
+  text-transform: inherit;
+  color: inherit;
+}
+
 .status-dot {
   width: 9px;
   height: 9px;
@@ -972,7 +980,8 @@ background-image: linear-gradient(
   }
 }
 
-.display-content p {
+.display-content p,
+.display-content h2 {
   margin: 0;
   font-family: 'Doto', 'Archivo', sans-serif;
   font-weight: 900;
