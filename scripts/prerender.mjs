@@ -10,28 +10,28 @@ const routes = [
   {
     pathname: '/',
     outputPath: distIndexPath,
-    title: 'Mateo Krossler | Product and Data',
+    title: 'Mateo Krössler',
     description: 'Leading Product and Data at Powerbeans, an AI startup. 6+ years building digital products.',
     canonicalPath: '/'
   },
   {
     pathname: '/work',
     outputPath: resolve(distRoot, 'work/index.html'),
-    title: 'Work | Mateo Krossler',
+    title: 'Work | Mateo Krössler',
     description: 'Product leadership achievements across AI media, fintech, and ecommerce.',
     canonicalPath: '/work'
   },
   {
     pathname: '/skills',
     outputPath: resolve(distRoot, 'skills/index.html'),
-    title: 'Skills | Mateo Krossler',
+    title: 'Skills | Mateo Krössler',
     description: 'Product strategy, data analytics, AI integration, software development, and UX skills.',
     canonicalPath: '/skills'
   },
   {
     pathname: '/photography',
     outputPath: resolve(distRoot, 'photography/index.html'),
-    title: 'Photography | Mateo Krossler',
+    title: 'Photography | Mateo Krössler',
     description: 'Photography highlights, publications, and featured work from Unsplash.',
     canonicalPath: '/photography'
   }
@@ -45,7 +45,7 @@ const buildStructuredDataScript = ({ title, description, canonicalPath }) => {
       {
         '@type': 'Person',
         '@id': `${siteOrigin}/#person`,
-        name: 'Mateo Krossler',
+        name: 'Mateo Krössler',
         url: `${siteOrigin}/`,
         jobTitle: 'Product and Data Lead',
         sameAs: [
@@ -57,7 +57,7 @@ const buildStructuredDataScript = ({ title, description, canonicalPath }) => {
         '@type': 'WebSite',
         '@id': `${siteOrigin}/#website`,
         url: `${siteOrigin}/`,
-        name: 'Mateo Krossler',
+        name: 'Mateo Krössler',
         inLanguage: ['en', 'es'],
         publisher: {
           '@id': `${siteOrigin}/#person`
