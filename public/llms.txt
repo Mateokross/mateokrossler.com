@@ -1,0 +1,20 @@
+# Mateo Krössler
+> Personal website for Mateo Krössler, Product and Data lead focused on AI products, analytics, and UX.
+
+## Primary Pages
+- [Home](https://mateokrossler.com/): Main profile and intro.
+- [Work](https://mateokrossler.com/work): Product achievements and recent outcomes.
+- [Skills](https://mateokrossler.com/skills): Detailed skill set across product, data, AI, development, and UX.
+- [Photography](https://mateokrossler.com/photography): Photography background and published work.
+
+## External Profiles
+- [LinkedIn](https://www.linkedin.com/in/mateokrossler/)
+- [Unsplash](https://unsplash.com/@mateokross)
+
+## Structured Discovery
+- [Sitemap](https://mateokrossler.com/sitemap.xml)
+- [Robots](https://mateokrossler.com/robots.txt)
+
+## Notes
+- Canonical language for indexing is English.
+- Spanish content is available via the in-page language toggle.
