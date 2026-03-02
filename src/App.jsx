@@ -299,20 +299,56 @@ const WORK_LINKS = {
   ]
 }
 
-const detectLanguage = () => {
-  if (typeof navigator === 'undefined') {
-    return 'en'
-  }
-
-  return navigator.language?.toLowerCase().startsWith('es') ? 'es' : 'en'
+const VIEW_PATHS = {
+  work: '/work',
+  skills: '/skills',
+  photography: '/photography'
 }
 
-const detectInitialView = () => {
-  if (typeof window === 'undefined') {
-    return null
+const PATH_VIEWS = {
+  '/work': 'work',
+  '/skills': 'skills',
+  '/photography': 'photography'
+}
+
+const normalizeLanguage = (language) => (language === 'es' ? 'es' : 'en')
+
+const normalizePathname = (pathname = '/') => {
+  if (typeof pathname !== 'string' || pathname.length === 0) {
+    return '/'
   }
 
-  return window.innerWidth < 900 ? 'home' : null
+  const basePath = pathname.split('?')[0].split('#')[0] || '/'
+  const withLeadingSlash = basePath.startsWith('/') ? basePath : `/${basePath}`
+  const normalizedPath = withLeadingSlash.length > 1 && withLeadingSlash.endsWith('/')
+    ? withLeadingSlash.slice(0, -1)
+    : withLeadingSlash
+
+  return normalizedPath.toLowerCase()
+}
+
+const getViewFromPathname = (pathname) => {
+  const normalizedPath = normalizePathname(pathname)
+  return PATH_VIEWS[normalizedPath] ?? null
+}
+
+const getPathnameFromView = (view) => VIEW_PATHS[view] ?? '/'
+
+const detectInitialView = (pathname = '/') => getViewFromPathname(pathname)
+
+const resolveViewFromPathname = (pathname, includeRootMobileFallback = false) => {
+  const normalizedPath = normalizePathname(pathname)
+  const routeView = getViewFromPathname(normalizedPath)
+
+  if (routeView) {
+    return routeView
+  }
+
+  if (includeRootMobileFallback && normalizedPath === '/') {
+    return detectToggleFallbackView()
+  }
+
+  return null
 }
 
 const detectToggleFallbackView = () => {
@@ -344,10 +380,10 @@ const SCRATCH_DEFAULTS = {
 }
 const SHOW_SCRATCH_CONTROLS = false
 
-export default function App() {
+export default function App({ initialPathname = '/', initialLanguage = 'en' }) {
   const posthog = usePostHog()
-  const [language, setLanguage] = useState(detectLanguage)
-  const [activeView, setActiveView] = useState(detectInitialView)
+  const [language, setLanguage] = useState(() => normalizeLanguage(initialLanguage))
+  const [activeView, setActiveView] = useState(() => detectInitialView(initialPathname))
   const [referencesUnlocked, setReferencesUnlocked] = useState(false)
   const [isTallViewport, setIsTallViewport] = useState(detectTallViewport)
   const [pressedView, setPressedView] = useState(null)
@@ -548,6 +584,21 @@ export default function App() {
   }, [])
 
   useEffect(() => {
+    if (typeof window === 'undefined') {
+      return undefined
+    }
+
+    const syncViewWithPath = () => {
+      setActiveView(resolveViewFromPathname(window.location.pathname, true))
+    }
+
+    window.addEventListener('popstate', syncViewWithPath)
+    return () => {
+      window.removeEventListener('popstate', syncViewWithPath)
+    }
+  }, [])
+
+  useEffect(() => {
     if (typeof window === 'undefined' || typeof window.matchMedia !== 'function') {
       return undefined
     }
@@ -660,14 +711,42 @@ export default function App() {
     triggerPressFeedback(view)
     setActiveView((currentView) => {
       const nextView = currentView === view ? detectToggleFallbackView() : view
+      const currentPath = getPathnameFromView(currentView)
+      const nextPath = getPathnameFromView(nextView)
+
+      if (typeof window !== 'undefined') {
+        const browserPath = normalizePathname(window.location.pathname)
+        if (browserPath !== nextPath) {
+          window.history.pushState({}, '', nextPath)
+        }
+      }
+
       posthog?.capture('main_button_clicked', {
         button_name: view,
         current_view: currentView ?? 'standby',
         next_view: nextView ?? 'standby',
+        current_path: currentPath,
+        next_path: nextPath,
         language
       })
       return nextView
     })
+  }
+
+  const handleActionLinkClick = (event, view) => {
+    if (event.defaultPrevented) {
+      return
+    }
+
+    const isPrimaryClick = event.button === 0
+    const hasModifier = event.metaKey || event.altKey || event.ctrlKey || event.shiftKey
+
+    if (!isPrimaryClick || hasModifier) {
+      return
+    }
+
+    event.preventDefault()
+    handleViewToggle(view)
   }
 
   const handleLanguageToggle = (event) => {
@@ -709,30 +788,30 @@ export default function App() {
   const renderActions = (className) => (
     <div className={`actions ${className}`}>
       <div className="action-shell">
-        <button
-          type="button"
-          aria-pressed={activeView === 'work'}
+        <a
+          href={getPathnameFromView('work')}
+          aria-current={activeView === 'work' ? 'page' : undefined}
           className={`action-button action-button-work ${activeView === 'work' ? 'is-active' : ''} ${pressedView === 'work' ? 'is-pressed' : ''}`}
-          onClick={() => handleViewToggle('work')}
+          onClick={(event) => handleActionLinkClick(event, 'work')}
         >
           <span className="action-button-text">{copy.buttons.work}</span>
-        </button>
-        <button
-          type="button"
-          aria-pressed={activeView === 'skills'}
+        </a>
+        <a
+          href={getPathnameFromView('skills')}
+          aria-current={activeView === 'skills' ? 'page' : undefined}
           className={`action-button action-button-skills ${activeView === 'skills' ? 'is-active' : ''} ${pressedView === 'skills' ? 'is-pressed' : ''}`}
-          onClick={() => handleViewToggle('skills')}
+          onClick={(event) => handleActionLinkClick(event, 'skills')}
         >
           <span className="action-button-text">{copy.buttons.skills}</span>
-        </button>
-        <button
-          type="button"
-          aria-pressed={activeView === 'photography'}
+        </a>
+        <a
+          href={getPathnameFromView('photography')}
+          aria-current={activeView === 'photography' ? 'page' : undefined}
           className={`action-button action-button-photography ${activeView === 'photography' ? 'is-active' : ''} ${pressedView === 'photography' ? 'is-pressed' : ''}`}
-          onClick={() => handleViewToggle('photography')}
+          onClick={(event) => handleActionLinkClick(event, 'photography')}
         >
           <span className="action-button-text">{copy.buttons.photography}</span>
-        </button>
+        </a>
       </div>
     </div>
   )

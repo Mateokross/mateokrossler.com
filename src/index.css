@@ -499,6 +499,8 @@ background-image: linear-gradient(
   position: relative;
   overflow: hidden;
   isolation: isolate;
+  color: inherit;
+  text-decoration: none;
 }
 
 .action-button::before {

@@ -32,7 +32,7 @@ const createAudioPlayer = (sourcePath, volume = 0.55) => {
 const playButtonSound = createAudioPlayer('/sounds/button.ogg', 0.58)
 const playToggleSound = createAudioPlayer('/sounds/toggle.ogg', 0.55)
 
-function Root() {
+function Root({ initialPathname = '/', initialLanguage = 'en' }) {
   useLayoutEffect(() => {
     if (typeof document === 'undefined') {
       return
@@ -94,8 +94,8 @@ function Root() {
         return
       }
 
-      const buttonControl = event.target.closest('button')
-      if (!buttonControl || buttonControl.hasAttribute('disabled')) {
+      const actionControl = event.target.closest('button, a.action-button')
+      if (!actionControl) {
         return
       }
 
@@ -108,7 +108,7 @@ function Root() {
     }
   }, [])
 
-  return <App />
+  return <App initialPathname={initialPathname} initialLanguage={initialLanguage} />
 }
 
 const mountApp = () => {
@@ -117,13 +117,16 @@ const mountApp = () => {
     return
   }
 
+  const initialPathname = typeof window === 'undefined' ? '/' : window.location.pathname
+  const initialLanguage = 'en'
+
   const appTree = (
     <React.StrictMode>
       <PostHogProvider
         apiKey={import.meta.env.VITE_PUBLIC_POSTHOG_KEY}
         options={posthogOptions}
       >
-        <Root />
+        <Root initialPathname={initialPathname} initialLanguage={initialLanguage} />
       </PostHogProvider>
     </React.StrictMode>
   )
