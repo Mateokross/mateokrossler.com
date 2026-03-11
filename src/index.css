@@ -54,8 +54,10 @@ body {
   position: relative;
   isolation: isolate;
   overflow-x: hidden;
-  background-color: #020307;
-  background-image: radial-gradient(circle at 52% 58%, #080d1f 0%, #040811 54%, #020307 100%);
+  background-color: #09111c;
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 180ms ease;
 }
 
 #root {
@@ -64,6 +66,16 @@ body {
   align-items: center;
   justify-content: center;
   width: 100%;
+}
+
+body.page-loading {
+  opacity: 0;
+  visibility: hidden;
+}
+
+body.page-ready {
+  opacity: 1;
+  visibility: visible;
 }
 
 body.page-loading #root {
@@ -97,22 +109,17 @@ body.page-loading::after {
 body::before {
   content: '';
   position: fixed;
-  inset: -10vmax;
+  inset: -32px;
   pointer-events: none;
   background:
-    radial-gradient(47% 45% at 50% 76%, rgba(74, 92, 206, 0.82) 0%, rgba(74, 92, 206, 0.5) 30%, rgba(74, 92, 206, 0) 82%),
-    radial-gradient(42% 38% at 66% 50%, rgba(73, 103, 198, 0.62) 0%, rgba(73, 103, 198, 0.34) 34%, rgba(73, 103, 198, 0) 84%),
-    radial-gradient(54% 42% at 70% 28%, rgba(228, 97, 151, 0.9) 0%, rgba(228, 97, 151, 0.54) 34%, rgba(228, 97, 151, 0) 84%),
-    radial-gradient(52% 46% at 79% 90%, rgba(253, 139, 32, 0.9) 0%, rgba(253, 139, 32, 0.52) 33%, rgba(253, 139, 32, 0) 82%),
-    radial-gradient(44% 38% at 33% 77%, rgba(174, 101, 210, 0.82) 0%, rgba(174, 101, 210, 0.46) 33%, rgba(174, 101, 210, 0) 78%),
-    radial-gradient(34% 33% at 26% 20%, rgba(44, 62, 162, 0.28) 0%, rgba(44, 62, 162, 0.1) 32%, rgba(44, 62, 162, 0) 72%),
-    radial-gradient(125% 110% at 50% 52%, #0a0f26 0%, #04070f 52%, #020307 100%);
-  filter: blur(48px) saturate(108%);
+    linear-gradient(180deg, rgba(6, 11, 20, 0.08) 0%, rgba(6, 11, 20, 0.08) 100%),
+    url('/img/bliss.png') center center / cover no-repeat;
+  filter: blur(5px) saturate(110%) brightness(1);
   z-index: -2;
-  opacity: 0.9;
+  opacity: 1;
 }
 
-body::after {
+/* body::after {
   content: '';
   position: fixed;
   inset: 0;
@@ -128,7 +135,7 @@ body::after {
   background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, repeat;
   mix-blend-mode: soft-light;
   opacity: 0.56;
-}
+} */
 
 
 .layout {

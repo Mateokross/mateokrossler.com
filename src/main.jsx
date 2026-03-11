@@ -31,6 +31,7 @@ const createAudioPlayer = (sourcePath, volume = 0.55) => {
 
 const playButtonSound = createAudioPlayer('/sounds/button.ogg', 0.58)
 const playToggleSound = createAudioPlayer('/sounds/toggle.ogg', 0.55)
+const BACKGROUND_IMAGE_PATH = '/img/bliss.png'
 
 function Root({ initialPathname = '/', initialLanguage = 'en' }) {
   useLayoutEffect(() => {
@@ -159,4 +160,65 @@ const waitForFonts = () => {
   ])
 }
 
-waitForFonts().finally(mountApp)
+const waitForBackgroundImage = () => {
+  if (typeof window === 'undefined' || typeof Image === 'undefined') {
+    return Promise.resolve()
+  }
+
+  const BACKGROUND_WAIT_TIMEOUT_MS = 3200
+
+  return new Promise((resolve) => {
+    const image = new Image()
+    let timeoutId = null
+    let settled = false
+
+    const finish = () => {
+      if (settled) {
+        return
+      }
+
+      settled = true
+      image.removeEventListener('load', handleLoad)
+      image.removeEventListener('error', handleError)
+
+      if (timeoutId !== null) {
+        window.clearTimeout(timeoutId)
+      }
+
+      resolve()
+    }
+
+    const handleLoad = () => {
+      if (typeof image.decode !== 'function') {
+        finish()
+        return
+      }
+
+      image.decode().catch(() => {}).finally(finish)
+    }
+
+    const handleError = () => {
+      finish()
+    }
+
+    image.decoding = 'async'
+    image.fetchPriority = 'high'
+    image.src = BACKGROUND_IMAGE_PATH
+
+    if (image.complete) {
+      if (image.naturalWidth > 0) {
+        handleLoad()
+        return
+      }
+
+      finish()
+      return
+    }
+
+    image.addEventListener('load', handleLoad)
+    image.addEventListener('error', handleError)
+    timeoutId = window.setTimeout(finish, BACKGROUND_WAIT_TIMEOUT_MS)
+  })
+}
+
+Promise.all([waitForFonts(), waitForBackgroundImage()]).finally(mountApp)
