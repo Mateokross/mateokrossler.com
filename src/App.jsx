@@ -369,7 +369,6 @@ const detectTallViewport = () => {
 
 const PRESS_FEEDBACK_MS = 110
 const SPEAKER_TOAST_MS = 1800
-const BART_EASTER_EGG_PATH = '/img/bart.webp'
 const SCRATCH_DEFAULTS = {
   deviceSize: 557,
   deviceOpacity: 11,
@@ -389,7 +388,6 @@ export default function App({ initialPathname = '/', initialLanguage = 'en' }) {
   const [pressedView, setPressedView] = useState(null)
   const [isSpeakerToastVisible, setIsSpeakerToastVisible] = useState(false)
   const [scratchSettings, setScratchSettings] = useState(SCRATCH_DEFAULTS)
-  const [bartImageSrc, setBartImageSrc] = useState('')
   const pressTimeoutRef = useRef(null)
   const speakerToastTimeoutRef = useRef(null)
   const referencesUnlockTimeoutRef = useRef(null)
@@ -623,79 +621,6 @@ export default function App({ initialPathname = '/', initialLanguage = 'en' }) {
     }
   }, [])
 
-  useEffect(() => {
-    if (typeof window === 'undefined') {
-      return undefined
-    }
-
-    let isCancelled = false
-    let isScheduled = false
-    let idleRequestId = null
-    let delayTimeoutId = null
-    let fallbackTimeoutId = null
-    let onLoad = null
-
-    const commitImageSrc = () => {
-      if (isCancelled) {
-        return
-      }
-
-      setBartImageSrc(BART_EASTER_EGG_PATH)
-    }
-
-    const scheduleImageLoad = () => {
-      if (isCancelled || isScheduled) {
-        return
-      }
-
-      isScheduled = true
-
-      const scheduleDelayedCommit = () => {
-        delayTimeoutId = window.setTimeout(commitImageSrc, 900)
-      }
-
-      if (typeof window.requestIdleCallback === 'function') {
-        idleRequestId = window.requestIdleCallback(scheduleDelayedCommit, { timeout: 3000 })
-        return
-      }
-
-      scheduleDelayedCommit()
-    }
-
-    if (document.readyState === 'complete') {
-      scheduleImageLoad()
-    } else {
-      onLoad = () => {
-        scheduleImageLoad()
-      }
-
-      window.addEventListener('load', onLoad, { once: true })
-      fallbackTimeoutId = window.setTimeout(() => {
-        scheduleImageLoad()
-      }, 6500)
-    }
-
-    return () => {
-      isCancelled = true
-
-      if (delayTimeoutId !== null) {
-        window.clearTimeout(delayTimeoutId)
-      }
-
-      if (fallbackTimeoutId !== null) {
-        window.clearTimeout(fallbackTimeoutId)
-      }
-
-      if (idleRequestId !== null && typeof window.cancelIdleCallback === 'function') {
-        window.cancelIdleCallback(idleRequestId)
-      }
-
-      if (onLoad) {
-        window.removeEventListener('load', onLoad)
-      }
-    }
-  }, [])
-
   const triggerPressFeedback = (view) => {
     if (pressTimeoutRef.current) {
       window.clearTimeout(pressTimeoutRef.current)
@@ -855,17 +780,6 @@ export default function App({ initialPathname = '/', initialLanguage = 'en' }) {
   return (
     <>
       <div className="device-shell" style={scratchStyleVars}>
-        {bartImageSrc && (
-          <img
-            className="bart-easter-egg"
-            src={bartImageSrc}
-            alt="bart simpson showing his behind"
-            aria-hidden="true"
-            loading="lazy"
-            decoding="async"
-            fetchpriority="low"
-          />
-        )}
         <main className="layout">
         <div className="surface-scratch surface-scratch-device" aria-hidden="true" />
         <section className="left-column">
