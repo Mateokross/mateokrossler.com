@@ -24,6 +24,12 @@
   --display-scratch-opacity: 0.01;
   --button-scratch-size: 140px 48px;
   --button-scratch-opacity: 0.10;
+  /* --selection-shell-bg: rgba(74, 126, 255, 0.22); */
+  /* --selection-shell-bg: rgba(104, 214, 196, 0.24); */
+  /* --selection-shell-bg: rgba(255, 214, 120, 0.28); */
+  --selection-shell-bg: rgba(28, 34, 42, 0.18);
+  /* --selection-shell-bg: rgba(246, 113, 84, 0.22); */
+  --selection-display-bg: rgba(46, 207, 112, 0.28);
 }
 
 *,
@@ -76,6 +82,22 @@ body.page-loading {
 body.page-ready {
   opacity: 1;
   visibility: visible;
+}
+
+.left-column ::selection {
+  background: var(--selection-shell-bg);
+}
+
+.left-column ::-moz-selection {
+  background: var(--selection-shell-bg);
+}
+
+.display-frame ::selection {
+  background: var(--selection-display-bg);
+}
+
+.display-frame ::-moz-selection {
+  background: var(--selection-display-bg);
 }
 
 body.page-loading #root {
