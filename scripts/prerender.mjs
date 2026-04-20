@@ -15,18 +15,18 @@ const routes = [
     canonicalPath: '/'
   },
   {
-    pathname: '/work',
-    outputPath: resolve(distRoot, 'work/index.html'),
-    title: 'Work | Mateo Krössler',
-    description: 'Product leadership achievements across AI media, fintech, and ecommerce.',
-    canonicalPath: '/work'
+    pathname: '/consulting',
+    outputPath: resolve(distRoot, 'consulting/index.html'),
+    title: 'Consulting | Mateo Krössler',
+    description: 'AI, data, and automation consulting focused on practical systems and business outcomes.',
+    canonicalPath: '/consulting'
   },
   {
-    pathname: '/skills',
-    outputPath: resolve(distRoot, 'skills/index.html'),
-    title: 'Skills | Mateo Krössler',
-    description: 'Product strategy, data analytics, AI integration, software development, and UX skills.',
-    canonicalPath: '/skills'
+    pathname: '/experience',
+    outputPath: resolve(distRoot, 'experience/index.html'),
+    title: 'Experience | Mateo Krössler',
+    description: 'Product leadership achievements across AI media, fintech, and ecommerce.',
+    canonicalPath: '/experience'
   },
   {
     pathname: '/photography',

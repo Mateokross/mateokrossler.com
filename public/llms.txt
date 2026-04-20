@@ -3,8 +3,8 @@
 
 ## Primary Pages
 - [Home](https://mateokrossler.com/): Main profile and intro.
-- [Work](https://mateokrossler.com/work): Product achievements and recent outcomes.
-- [Skills](https://mateokrossler.com/skills): Detailed skill set across product, data, AI, development, and UX.
+- [Consulting](https://mateokrossler.com/consulting): AI, data, and automation consulting for practical business outcomes.
+- [Experience](https://mateokrossler.com/experience): Product achievements and recent outcomes.
 - [Photography](https://mateokrossler.com/photography): Photography background and published work.
 
 ## External Profiles

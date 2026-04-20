@@ -9,15 +9,26 @@ const content = {
     ],
     buttons: {
       home: 'Home',
-      work: 'Work',
-      skills: 'Skills',
+      consulting: 'Consulting',
+      experience: 'Experience',
       photography: 'Photography'
     },
     home: [
       'Leading Product & Data at Powerbeans, an AI media and AdTech startup. 6+ years of experience building products.',
       'Extremely curious. Hobby photographer. Fan of nature, traveling, cinema, and reading.'
     ],
-    work: [
+    consulting: [
+      'What I do:',
+      '- I help SMBs improve their operations with AI, data, and automation.',
+      '- I recommend and execute. If it doesn’t create impact, we don’t do it.',
+      'How I help:',
+      '- Automation',
+      '- Artificial intelligence',
+      '- Data and analytics',
+      '- Business analysis',
+      'Learn more at rojonaranja.com'
+    ],
+    experience: [
       'Recent achievements:',
       '- Scaled an AI audio player to 40M+ plays',
       '- Designed a news carousel (2x engagement)',
@@ -34,6 +45,59 @@ const content = {
       'They have been used on 200+ websites, including the official site of the city of Berlin. Some people made art with them, Buzzfeed used a couple on their quizzes, and a beer company put one on their labels.',
       'See photos on Unsplash.'
     ],
+    speakerToast: "That's a \"speaker\" :)",
+    standby: 'Standby'
+  },
+  es: {
+    intro: [
+      'Liderando Producto y Data en Powerbeans, una startup de IA y AdTech. +6 años construyendo productos digitales.',
+      'Extremadamente curioso. Fotógrafo de hobby. Fan de la naturaleza, viajar, el cine y la lectura.'
+    ],
+    buttons: {
+      home: 'Inicio',
+      consulting: 'Consultoría',
+      experience: 'Experiencia',
+      photography: 'Fotografía'
+    },
+    home: [
+      'Liderando Producto y Data en Powerbeans, una startup de IA y AdTech. +6 años construyendo productos digitales.',
+      'Extremadamente curioso. Fotógrafo de hobby. Fan de la naturaleza, viajar, el cine y la lectura.'
+    ],
+    consulting: [
+      'Qué hago:',
+      '- Ayudo a pymes a mejorar su operación con IA, data y automatización.',
+      '- Recomiendo y ejecuto. Si no genera impacto, no se hace.',
+      'Cómo ayudo:',
+      '- Automatización',
+      '- Inteligencia artificial',
+      '- Datos y analítica',
+      '- Análisis de negocio',
+      'Conoce más en rojonaranja.com'
+    ],
+    experience: [
+      'Logros recientes:', 
+      '- Escalé un reproductor de audio IA a +40M reproducciones',
+      '- Diseñé un carrusel de noticias (2x engagement)',
+      '- Rediseñé la UX mobile (+55% CTR)',
+      'Anteriormente:',
+      '- Lancé una API de préstamos y financiamiento de facturas en AREX Markets (fintech B2B)',
+      '- Lideré el diseño y despliegue de sistemas comerciales para 3 países en Kavak (ecommerce) (+13% ventas).',
+      '- Desarrollé una plataforma de ferias virtuales con más de 10,000 usuarios internacionales.',
+      'Disfruto convertir ideas en productos reales, trabajando de cerca con diseño, data e ingeniería.',
+      'Conoce más en mi LinkedIn.'
+    ],
+    photography: [
+      'Publiqué algunas fotos en Unsplash, donde acumulé más de 9 millones de vistas y 100 mil descargas.',
+      'Están siendo usadas en >200 páginas web, incluyendo el sitio oficial de la ciudad de Berlín. Hay gente que las usó para hacer arte, Buzzfeed usó algunas en sus quizzes, y una empresa de cerveza puso una en sus etiquetas.',
+      'Ver fotos en Unsplash.'
+    ],
+    speakerToast: 'Esto es un "parlante" :)',
+    standby: 'En espera'
+  }
+}
+
+const archivedContent = {
+  en: {
     skills: [
       'Product & Strategy',
       '- Product discovery & roadmap ownership',
@@ -97,42 +161,9 @@ const content = {
       '- Illustrator',
       '- InDesign',
       '- Premiere'
-    ],
-    speakerToast: "That's a \"speaker\" :)",
-    standby: 'Standby'
+    ]
   },
   es: {
-    intro: [
-      'Liderando Producto y Data en Powerbeans, una startup de IA y AdTech. +6 años construyendo productos digitales.',
-      'Extremadamente curioso. Fotógrafo de hobby. Fan de la naturaleza, viajar, el cine y la lectura.'
-    ],
-    buttons: {
-      home: 'Inicio',
-      work: 'Trabajo',
-      skills: 'Habilidades',
-      photography: 'Fotografía'
-    },
-    home: [
-      'Liderando Producto y Data en Powerbeans, una startup de IA y AdTech. +6 años construyendo productos digitales.',
-      'Extremadamente curioso. Fotógrafo de hobby. Fan de la naturaleza, viajar, el cine y la lectura.'
-    ],
-    work: [
-      'Logros recientes:', 
-      '- Escalé un reproductor de audio IA a +40M reproducciones',
-      '- Diseñé un carrusel de noticias (2x engagement)',
-      '- Rediseñé la UX mobile (+55% CTR)',
-      'Anteriormente:',
-      '- Lancé una API de préstamos y financiamiento de facturas en AREX Markets (fintech B2B)',
-      '- Lideré el diseño y despliegue de sistemas comerciales para 3 países en Kavak (ecommerce) (+13% ventas).',
-      '- Desarrollé una plataforma de ferias virtuales con más de 10,000 usuarios internacionales.',
-      'Disfruto convertir ideas en productos reales, trabajando de cerca con diseño, data e ingeniería.',
-      'Conoce más en mi LinkedIn.'
-    ],
-    photography: [
-      'Publiqué algunas fotos en Unsplash, donde acumulé más de 9 millones de vistas y 100 mil descargas.',
-      'Están siendo usadas en >200 páginas web, incluyendo el sitio oficial de la ciudad de Berlín. Hay gente que las usó para hacer arte, Buzzfeed usó algunas en sus quizzes, y una empresa de cerveza puso una en sus etiquetas.',
-      'Ver fotos en Unsplash.'
-    ],
     skills: [
       'Producto y Estrategia',
       '- Descubrimiento de producto y gestión de roadmap',
@@ -195,9 +226,7 @@ const content = {
       '- Illustrator',
       '- InDesign',
       '- Premiere'
-    ],
-    speakerToast: 'Esto es un "parlante" :)',
-    standby: 'En espera'
+    ]
   }
 }
 
@@ -252,7 +281,22 @@ const PHOTOGRAPHY_LINKS = {
   }
 }
 
-const WORK_LINKS = {
+const CONSULTING_LINKS = {
+  en: [
+    {
+      label: 'Learn more at rojonaranja.com',
+      href: 'https://rojonaranja.com/'
+    }
+  ],
+  es: [
+    {
+      label: 'Conoce más en rojonaranja.com',
+      href: 'https://rojonaranja.com/'
+    }
+  ]
+}
+
+const EXPERIENCE_LINKS = {
   en: [
     {
       label: 'mobile UX',
@@ -300,14 +344,16 @@ const WORK_LINKS = {
 }
 
 const VIEW_PATHS = {
-  work: '/work',
-  skills: '/skills',
+  consulting: '/consulting',
+  experience: '/experience',
   photography: '/photography'
 }
 
 const PATH_VIEWS = {
-  '/work': 'work',
-  '/skills': 'skills',
+  '/consulting': 'consulting',
+  '/experience': 'experience',
+  '/work': 'experience',
+  '/skills': 'experience',
   '/photography': 'photography'
 }
 
@@ -394,9 +440,10 @@ export default function App({ initialPathname = '/', initialLanguage = 'en' }) {
 
   const copy = content[language]
   const photographyLinks = PHOTOGRAPHY_LINKS[language]
-  const workLinks = WORK_LINKS[language]
+  const consultingLinks = CONSULTING_LINKS[language]
+  const experienceLinks = EXPERIENCE_LINKS[language]
   const activeLabel = activeView ? copy.buttons[activeView] : copy.standby
-  const isReferencesEligibleView = activeView === 'work' || activeView === 'skills'
+  const isReferencesEligibleView = activeView === 'consulting' || activeView === 'experience'
 
   const displayContent = useMemo(() => {
     if (!activeView) {
@@ -407,7 +454,7 @@ export default function App({ initialPathname = '/', initialLanguage = 'en' }) {
   }, [activeView, copy])
 
   const displayBlocks = useMemo(() => {
-    if (activeView !== 'work' && activeView !== 'skills') {
+    if (activeView !== 'consulting' && activeView !== 'experience') {
       return displayContent.map((text) => ({ type: 'paragraph', text }))
     }
 
@@ -586,8 +633,23 @@ export default function App({ initialPathname = '/', initialLanguage = 'en' }) {
       return undefined
     }
 
+    const canonicalView = resolveViewFromPathname(window.location.pathname, true)
+    const canonicalPath = getPathnameFromView(canonicalView)
+
+    if (canonicalView && normalizePathname(window.location.pathname) !== canonicalPath) {
+      window.history.replaceState({}, '', canonicalPath)
+    }
+
     const syncViewWithPath = () => {
-      setActiveView(resolveViewFromPathname(window.location.pathname, true))
+      const nextView = resolveViewFromPathname(window.location.pathname, true)
+      const nextPath = getPathnameFromView(nextView)
+      const browserPath = normalizePathname(window.location.pathname)
+
+      if (nextView && browserPath !== nextPath) {
+        window.history.replaceState({}, '', nextPath)
+      }
+
+      setActiveView(nextView)
     }
 
     window.addEventListener('popstate', syncViewWithPath)
@@ -714,20 +776,20 @@ export default function App({ initialPathname = '/', initialLanguage = 'en' }) {
     <div className={`actions ${className}`}>
       <nav className="action-shell" aria-label="Section navigation">
         <a
-          href={getPathnameFromView('work')}
-          aria-current={activeView === 'work' ? 'page' : undefined}
-          className={`action-button action-button-work ${activeView === 'work' ? 'is-active' : ''} ${pressedView === 'work' ? 'is-pressed' : ''}`}
-          onClick={(event) => handleActionLinkClick(event, 'work')}
+          href={getPathnameFromView('consulting')}
+          aria-current={activeView === 'consulting' ? 'page' : undefined}
+          className={`action-button action-button-consulting ${activeView === 'consulting' ? 'is-active' : ''} ${pressedView === 'consulting' ? 'is-pressed' : ''}`}
+          onClick={(event) => handleActionLinkClick(event, 'consulting')}
         >
-          <span className="action-button-text">{copy.buttons.work}</span>
+          <span className="action-button-text">{copy.buttons.consulting}</span>
         </a>
         <a
-          href={getPathnameFromView('skills')}
-          aria-current={activeView === 'skills' ? 'page' : undefined}
-          className={`action-button action-button-skills ${activeView === 'skills' ? 'is-active' : ''} ${pressedView === 'skills' ? 'is-pressed' : ''}`}
-          onClick={(event) => handleActionLinkClick(event, 'skills')}
+          href={getPathnameFromView('experience')}
+          aria-current={activeView === 'experience' ? 'page' : undefined}
+          className={`action-button action-button-experience ${activeView === 'experience' ? 'is-active' : ''} ${pressedView === 'experience' ? 'is-pressed' : ''}`}
+          onClick={(event) => handleActionLinkClick(event, 'experience')}
         >
-          <span className="action-button-text">{copy.buttons.skills}</span>
+          <span className="action-button-text">{copy.buttons.experience}</span>
         </a>
         <a
           href={getPathnameFromView('photography')}
@@ -856,8 +918,10 @@ export default function App({ initialPathname = '/', initialLanguage = 'en' }) {
                   <ul className="display-list" key={`${activeView}-${language}-list-${index}`}>
                     {block.items.map((item, itemIndex) => (
                       <li key={`${activeView}-${language}-item-${index}-${itemIndex}`}>
-                        {activeView === 'work'
-                          ? renderTextWithLinks(item, workLinks, `${language}-${index}-${itemIndex}`)
+                        {activeView === 'experience'
+                          ? renderTextWithLinks(item, experienceLinks, `${language}-${index}-${itemIndex}`)
+                          : activeView === 'consulting'
+                            ? renderTextWithLinks(item, consultingLinks, `${language}-${index}-${itemIndex}`)
                           : item}
                       </li>
                     ))}
@@ -866,7 +930,7 @@ export default function App({ initialPathname = '/', initialLanguage = 'en' }) {
               }
 
               const nextBlock = displayBlocks[index + 1]
-              const isDisplayHeading = (activeView === 'work' || activeView === 'skills')
+              const isDisplayHeading = (activeView === 'consulting' || activeView === 'experience')
                 && (block.text.endsWith(':') || nextBlock?.type === 'list')
               const TextTag = isDisplayHeading ? 'h2' : 'p'
 
@@ -874,8 +938,10 @@ export default function App({ initialPathname = '/', initialLanguage = 'en' }) {
                 <TextTag key={`${activeView}-${language}-${index}`}>
                   {activeView === 'photography'
                     ? renderTextWithLinks(block.text, photographyLinks.inline, `${language}-${index}`)
-                    : activeView === 'work'
-                      ? renderTextWithLinks(block.text, workLinks, `${language}-${index}`)
+                    : activeView === 'experience'
+                      ? renderTextWithLinks(block.text, experienceLinks, `${language}-${index}`)
+                      : activeView === 'consulting'
+                        ? renderTextWithLinks(block.text, consultingLinks, `${language}-${index}`)
                       : block.text}
                 </TextTag>
               )
