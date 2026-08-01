@@ -4,7 +4,7 @@ import { usePostHog } from '@posthog/react'
 const content = {
   en: {
     intro: [
-      'Leading Product & Data at Powerbeans, an AI media and AdTech startup. 6+ years of experience building products.',
+      'Leading Product & Data at Powerbeans, an AI media and AdTech startup. 7+ years of experience building products.',
       'Extremely curious. Hobby photographer. Fan of nature, traveling, cinema, and reading.'
     ],
     buttons: {
@@ -14,7 +14,7 @@ const content = {
       photography: 'Photography'
     },
     home: [
-      'Leading Product & Data at Powerbeans, an AI media and AdTech startup. 6+ years of experience building products.',
+      'Leading Product & Data at Powerbeans, an AI media and AdTech startup. 7+ years of experience building products.',
       'Extremely curious. Hobby photographer. Fan of nature, traveling, cinema, and reading.'
     ],
     consulting: [
@@ -41,7 +41,7 @@ const content = {
       'Learn more on my LinkedIn.'
     ],
     photography: [
-      "I published some of my pictures on Unsplash, where I've accumulated more than 9M views and 100K downloads.",
+      "I published some of my pictures on Unsplash, where I've accumulated more than 10M views and 100K downloads.",
       'They have been used on 200+ websites, including the official site of the city of Berlin. Some people made art with them, Buzzfeed used a couple on their quizzes, and a beer company put one on their labels.',
       'See photos on Unsplash.'
     ],
@@ -50,7 +50,7 @@ const content = {
   },
   es: {
     intro: [
-      'Liderando Producto y Data en Powerbeans, una startup de IA y AdTech. +6 años construyendo productos digitales.',
+      'Liderando Producto y Data en Powerbeans, una startup de IA y AdTech. +7 años construyendo productos digitales.',
       'Extremadamente curioso. Fotógrafo de hobby. Fan de la naturaleza, viajar, el cine y la lectura.'
     ],
     buttons: {
@@ -60,7 +60,7 @@ const content = {
       photography: 'Fotografía'
     },
     home: [
-      'Liderando Producto y Data en Powerbeans, una startup de IA y AdTech. +6 años construyendo productos digitales.',
+      'Liderando Producto y Data en Powerbeans, una startup de IA y AdTech. +7 años construyendo productos digitales.',
       'Extremadamente curioso. Fotógrafo de hobby. Fan de la naturaleza, viajar, el cine y la lectura.'
     ],
     consulting: [
@@ -87,7 +87,7 @@ const content = {
       'Conoce más en mi LinkedIn.'
     ],
     photography: [
-      'Publiqué algunas fotos en Unsplash, donde acumulé más de 9 millones de vistas y 100 mil descargas.',
+      'Publiqué algunas fotos en Unsplash, donde acumulé más de 10 millones de vistas y 100 mil descargas.',
       'Están siendo usadas en >200 páginas web, incluyendo el sitio oficial de la ciudad de Berlín. Hay gente que las usó para hacer arte, Buzzfeed usó algunas en sus quizzes, y una empresa de cerveza puso una en sus etiquetas.',
       'Ver fotos en Unsplash.'
     ],
